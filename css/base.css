@@ -1,0 +1,175 @@
+/* base.css — дизайн-система AKCO (aksystems.org).
+   Светлая тема в стиле dropship.io, акцент — фирменная бирюза AKCO. */
+
+:root {
+  /* Палитра (светлая) */
+  --color-bg: #ffffff;
+  --color-bg-2: #f4f9f8;            /* фон alt-секций */
+  --color-surface: #ffffff;         /* карточки */
+  --color-text: #0d1b1e;            /* тёмный navy-teal */
+  --color-text-muted: #586a68;
+  --color-line: #e6eeed;            /* границы */
+
+  /* Акцент — бирюза AKCO */
+  --color-accent: #15857a;          /* deep teal — кнопки/ссылки, контраст на белом */
+  --color-accent-strong: #0f6b62;   /* hover */
+  --color-brand: #7fbab4;           /* фирменный светлый бирюзовый */
+  --color-accent-tint: #e8f4f2;     /* подложка бейджей/иконок */
+
+  /* Тени */
+  --shadow-sm: 0 2px 8px rgba(13, 27, 30, 0.06);
+  --shadow-card: 0 10px 34px rgba(13, 27, 30, 0.08);
+  --shadow-lg: 0 24px 60px rgba(13, 27, 30, 0.12);
+
+  /* Шрифты — Montserrat (по брифу) */
+  --font-display: "Montserrat", system-ui, sans-serif;
+  --font-body: "Montserrat", system-ui, sans-serif;
+
+  /* Раскладка */
+  --container: 1180px;
+  --gutter: clamp(16px, 4vw, 48px);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --header-h: 72px;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-text);
+  background: var(--color-bg);
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; color: var(--color-text); }
+a { transition: color 0.2s var(--ease); }
+a:hover { color: var(--color-accent); }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+.section { padding-block: clamp(56px, 9vw, 116px); }
+.section--alt { background: var(--color-bg-2); }
+
+/* Утилиты */
+.accent { color: var(--color-accent); }
+.tm { font-size: 0.5em; vertical-align: super; }
+
+/* «Карта» — в светлой теме это белая карточка с тенью (бывш. .glass) */
+.glass {
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+}
+
+/* Бейдж-пилюля */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 15px;
+  border-radius: 999px;
+  background: var(--color-accent-tint);
+  color: var(--color-accent);
+  border: 1px solid var(--color-line);
+  font-size: 0.83rem;
+  font-weight: 600;
+}
+
+/* Кнопки */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  padding: 0.85em 1.6em;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 0.18s var(--ease), background 0.18s var(--ease), box-shadow 0.18s var(--ease);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--color-accent); color: #fff; box-shadow: var(--shadow-sm); }
+.btn-primary:hover { background: var(--color-accent-strong); color: #fff; box-shadow: var(--shadow-card); }
+.btn-ghost { background: #fff; border-color: var(--color-line); color: var(--color-text); }
+.btn-ghost:hover { border-color: var(--color-accent); color: var(--color-accent); }
+
+/* ---------- Шапка ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-line);
+}
+.site-header .container { display: flex; align-items: center; justify-content: space-between; }
+.brand { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-weight: 800; font-size: 1.2rem; letter-spacing: 0.01em; color: var(--color-text); }
+.brand-logo { display: block; width: 34px; height: 34px; border-radius: 50%; }
+.nav { display: flex; gap: clamp(14px, 2.4vw, 32px); align-items: center; }
+.nav a { color: var(--color-text-muted); font-size: 0.93rem; font-weight: 500; }
+.nav a:hover, .nav a[aria-current] { color: var(--color-text); }
+.nav-cta {
+  color: #fff !important;
+  background: var(--color-accent);
+  padding: 0.55em 1.2em;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow-sm);
+}
+.nav-cta:hover { background: var(--color-accent-strong); }
+.nav-toggle { display: none; background: none; border: 0; color: var(--color-text); font-size: 1.4rem; cursor: pointer; }
+
+/* ---------- Подвал ---------- */
+.site-footer {
+  border-top: 1px solid var(--color-line);
+  background: var(--color-bg-2);
+  padding-block: 52px;
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+}
+.site-footer .container { display: flex; flex-wrap: wrap; gap: 24px; justify-content: space-between; align-items: center; }
+.site-footer .site-footer__grid { display: grid; grid-template-columns: 1.3fr 1.4fr 1fr; gap: 32px; align-items: start; }
+.footer-col .brand { display: inline-block; margin-bottom: 10px; font-size: 1.25rem; }
+.footer-col p { margin-bottom: 10px; line-height: 1.6; }
+.footer-col a:hover { color: var(--color-accent); }
+.footer-small { font-size: 0.78rem; }
+
+/* ---------- Reveal-анимации ---------- */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.6s var(--ease), transform 0.6s var(--ease); }
+.reveal.is-in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* ---------- Адаптив шапки ---------- */
+@media (max-width: 820px) {
+  .nav-toggle { display: block; }
+  .nav {
+    position: fixed;
+    inset: var(--header-h) 0 auto 0;
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+    border-bottom: 1px solid var(--color-line);
+    box-shadow: var(--shadow-card);
+    padding: 8px var(--gutter) 16px;
+    transform: translateY(-130%);
+    transition: transform 0.3s var(--ease);
+  }
+  .nav.is-open { transform: translateY(0); }
+  .nav a { padding: 13px 0; width: 100%; }
+  .nav-cta { text-align: center; margin-top: 8px; }
+  .site-footer .site-footer__grid { grid-template-columns: 1fr; }
+}

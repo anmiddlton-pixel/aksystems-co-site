@@ -1,0 +1,1431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+<title>AKCO™ — Concerto for Industry | aksystems.co</title>
+<meta name="description" content="AKCO — a full-cycle international engineering concern (co-engineering). Deployment-ready AI-powered AK.Family ecosystems across 8 industrial domains, one integrated team and a single scope of accountability across MENA, China and the CIS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Montserrat',sans-serif;background:#2b2c2e;color:#ebebeb;overflow-x:hidden;-webkit-font-smoothing:antialiased;cursor:none}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+
+:root{
+  --ink:#ebebeb;
+  --ink2:#c0c0c0;
+  --muted:#c8c8c8;
+  --muted2:#6f6f6f;
+  --bg:#2b2c2e;
+  --bg2:#323335;
+  --bg3:#3a3b3d;
+  --glass:rgba(40,40,40,0.85);
+  --glass2:rgba(35,35,35,0.9);
+  --teal:#c2c2c2;
+  --teal2:#626262;
+  --teal-lt:rgba(168,168,168,0.18);
+  --border:rgba(150,150,150,0.28);
+  --border2:rgba(150,150,150,0.5);
+  --r:14px;--rl:22px;--rxl:28px;
+}
+
+/* CURSOR */
+.cur{position:fixed;width:9px;height:9px;background:var(--teal);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .22s,height .22s}
+.ring{position:fixed;width:32px;height:32px;border:1.5px solid rgba(168,168,168,.35);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%)}
+@media(max-width:768px){.cur,.ring{display:none}body{cursor:auto}}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:600;height:68px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;transition:background .35s,box-shadow .35s;background:transparent}
+nav.sc{background:rgba(24,24,24,.92);backdrop-filter:blur(20px);box-shadow:0 1px 0 var(--border)}
+.nl{display:flex;gap:24px;flex-shrink:0}
+.nl a{font-size:11.5px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55);transition:color .2s;white-space:nowrap}
+.nl a:hover{color:#fff}
+.brand-name{font-size:17px;font-weight:800;letter-spacing:.04em;color:#fff}
+.brand-name span{color:var(--teal)}
+.brand-name sup{font-size:10px;font-weight:600;vertical-align:super;color:rgba(168,168,168,.7)}
+.nbtn{font-family:inherit;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:10px 22px;border-radius:8px;border:1.5px solid var(--border2);background:transparent;color:var(--teal);cursor:pointer;transition:all .22s}
+.nbtn:hover{background:var(--teal);border-color:var(--teal);color:#fff}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+.burger span{width:22px;height:1.5px;background:#fff;display:block;transition:background .2s}
+.mob{display:none;position:fixed;inset:0;background:#303030;z-index:490;padding:92px 32px 32px;flex-direction:column}
+.mob.open{display:flex}
+.mob a{font-size:20px;font-weight:600;color:#fff;padding:16px 0;border-bottom:1px solid var(--border)}
+@media(max-width:900px){.nl,.nbtn{display:none}.burger{display:flex}nav{padding:0 24px}}
+
+/* HERO */
+.hero{position:relative;height:100vh;min-height:680px;overflow:hidden}
+.hbg{position:absolute;inset:-3% 0;width:100%;height:106%;overflow:hidden;will-change:transform}
+.hbg-vid{position:absolute;inset:0;width:100%;height:100%}
+
+/* Крупный заголовок ЗА панелью (z-index:1) — ICE|LEND: начинается от блюр-границы */
+.htitle{position:absolute;left:40%;bottom:140px;
+  font-size:clamp(52px,9vw,130px);font-weight:800;letter-spacing:-.04em;line-height:.88;
+  color:#fff;white-space:nowrap;z-index:1;
+  text-shadow:0 8px 40px rgba(0,0,0,.55);pointer-events:none}
+.htitle em{font-style:italic;font-weight:200;color:rgba(255,255,255,.38);display:block;font-size:.8em}
+
+/* Watermark AK — дальний фон */
+.hwm{position:absolute;right:2%;top:4%;font-size:clamp(180px,28vw,380px);
+  font-weight:800;letter-spacing:-.05em;color:rgba(78,78,78,.04);
+  z-index:1;line-height:1;pointer-events:none;user-select:none}
+
+/* Главная стеклянная панель — уже, по центру */
+.hpanel{position:absolute;left:12%;right:12%;top:80px;bottom:88px;
+  border-radius:22px;overflow:hidden;z-index:2;
+  border:1px solid rgba(255,255,255,.22);
+  box-shadow:0 30px 72px rgba(0,0,0,.52)}
+/* blur-слой: слева матовое, справа прозрачное */
+.hpanel::before{content:'';position:absolute;inset:0;z-index:0;
+  -webkit-backdrop-filter:blur(14px) saturate(118%) brightness(1.02);
+          backdrop-filter:blur(14px) saturate(118%) brightness(1.02);
+  background:rgba(255,255,255,.025);
+  -webkit-mask-image:linear-gradient(90deg,#000 0%,#000 38%,transparent 65%);
+          mask-image:linear-gradient(90deg,#000 0%,#000 38%,transparent 65%)}
+/* тинт-слой: тёмнее слева, прозрачно справа */
+.hpanel::after{content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(90deg,rgba(9,9,9,.72) 0%,rgba(9,9,9,.30) 38%,transparent 62%)}
+
+/* Морфинг-логотип справа поверх видео */
+.hlogo{position:absolute;top:50%;right:3%;transform:translateY(-50%);width:36%;max-width:500px;height:66%;z-index:2;pointer-events:none;display:flex;align-items:center;justify-content:center}
+.hlogo svg{width:100%;height:100%;opacity:.45}
+/* Мобильный: текст сверху, логотип снизу — не пересекаются */
+@media(max-width:900px){
+  .hlogo{top:auto;bottom:96px;right:auto;left:50%;transform:translateX(-50%);width:58%;max-width:290px;height:auto;z-index:1}
+  .hlogo svg{height:auto;opacity:.55}
+}
+
+/* Контент поверх фото (без панели) */
+.hov{position:absolute;inset:0;background:linear-gradient(105deg,rgba(16,16,16,.5) 0%,rgba(16,16,16,.2) 55%,transparent 100%);pointer-events:none}
+.hov::after{content:'';position:absolute;bottom:0;left:0;right:0;height:150px;background:linear-gradient(to top,rgba(27,27,27,.65) 0%,transparent 100%)}
+.hc{position:absolute;z-index:2;left:72px;top:50%;transform:translateY(-50%);max-width:600px}
+@media(max-width:900px){.hc{left:24px;right:24px;top:104px;bottom:auto;transform:none;max-width:none}}
+
+.ey{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.eyl{width:28px;height:1.5px;background:var(--ink2)}
+.ey span{font-size:10px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#e2e2e2}
+.ht{font-size:clamp(36px,4.8vw,72px);font-weight:200;line-height:1.06;letter-spacing:-.025em;color:#fff;margin-bottom:16px}
+.ht strong{font-weight:800;display:block}
+.hd{font-size:14px;font-weight:300;color:rgba(255,255,255,.92);line-height:1.8;max-width:480px;margin-bottom:28px}
+.hbtns{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border-radius:10px;border:none;cursor:pointer;transition:all .24s;text-decoration:none}
+.btn-p{font-size:12px;padding:14px 30px;background:rgba(10,10,10,.28);backdrop-filter:blur(20px) saturate(110%);-webkit-backdrop-filter:blur(20px) saturate(110%);color:#fff;border:1px solid rgba(255,255,255,.14)}
+.btn-p:hover{background:rgba(10,10,10,.5);transform:translateY(-2px);box-shadow:0 8px 28px rgba(0,0,0,.4)}
+.btn-g{font-size:12px;padding:13px 28px;background:transparent;color:rgba(255,255,255,.7);border:1.5px solid rgba(255,255,255,.4)}
+.btn-g:hover{color:#fff;border-color:rgba(255,255,255,.7)}
+.casesec .btn-g:hover,.cardsec .btn-g:hover{color:var(--teal)}
+
+/* Правый мета-блок в прозрачной зоне */
+.hmeta{position:absolute;right:52px;top:50%;transform:translateY(-50%);
+  width:32%;z-index:3;display:flex;flex-direction:column;gap:20px;
+  padding-left:24px;border-left:1px solid rgba(255,255,255,.16)}
+.hmi{display:flex;flex-direction:column;gap:4px}
+.hml{font-size:9.5px;letter-spacing:.18em;text-transform:uppercase;
+  color:rgba(255,255,255,.38);font-weight:700}
+.hmv{font-size:13.5px;font-weight:700;color:#fff;line-height:1.38;
+  text-shadow:0 2px 10px rgba(0,0,0,.7)}
+
+/* Scroll indicator */
+.schi{position:absolute;right:80px;bottom:106px;z-index:3;display:flex;flex-direction:column;align-items:center;gap:8px}
+.schi span{font-size:9px;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.22);writing-mode:vertical-rl}
+.schl{width:1px;height:36px;background:rgba(78,78,78,.1);overflow:hidden;position:relative}
+.schl::after{content:'';position:absolute;top:-100%;left:0;right:0;height:100%;background:var(--teal);animation:sa 1.8s 1s infinite}
+@keyframes sa{0%{top:-100%}100%{top:100%}}
+.hi{opacity:0;animation:fu .9s forwards}
+.hi.d1{animation-delay:.15s}.hi.d2{animation-delay:.35s}.hi.d3{animation-delay:.55s}.hi.d4{animation-delay:.75s}
+@keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:680px){
+  .hwm,.htitle{display:none}
+}
+
+/* DIRECTION TILES (bottom of hero) */
+.dtiles{position:absolute;bottom:0;left:0;right:0;z-index:3;display:grid;grid-template-columns:repeat(4,1fr)}
+.dtile{padding:22px 28px;border-top:1px solid rgba(78,78,78,.18);border-right:1px solid rgba(78,78,78,.12);
+  background:rgba(10,10,10,.28);
+  backdrop-filter:blur(20px) saturate(110%);-webkit-backdrop-filter:blur(20px) saturate(110%);
+  transition:background .25s;cursor:pointer;text-decoration:none;color:inherit}
+.dtile:last-child{border-right:none}
+.dtile:hover{background:rgba(10,10,10,.45)}
+.dtile__kick{font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink2);margin-bottom:6px;display:block}
+.dtile h3{font-size:13px;font-weight:700;color:#fff;margin-bottom:4px}
+.dtile p{font-size:11px;color:var(--muted);line-height:1.5}
+@media(max-width:900px){.dtiles{display:none}}
+
+/* STATS */
+.stbar{background:rgba(35,35,35,0.9);border-bottom:1px solid var(--border)}
+.sti{display:flex}
+.stit{flex:1;padding:22px 36px;border-right:1px solid var(--border)}
+.stit:last-child{border-right:none}
+.stn{font-size:30px;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1;margin-bottom:3px}
+.stl{font-size:9px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(78,78,78,.5)}
+.sts{font-size:11px;color:rgba(255,255,255,.2);margin-top:1px}
+@media(max-width:768px){.sti{flex-wrap:wrap}.stit{flex:1 1 48%;border-bottom:1px solid var(--border);padding:20px 18px}}
+
+/* SECTION HELPERS */
+.ew{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.ewl{width:24px;height:1.5px;background:var(--teal);border-radius:2px;flex-shrink:0}
+.ew span{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--teal)}
+.aboutsec .ewl{background:var(--ink2)}
+.aboutsec .ew span{color:var(--ink2)}
+.st{font-size:clamp(24px,2.8vw,40px);font-weight:300;line-height:1.1;letter-spacing:-.02em;color:var(--ink);margin-bottom:12px}
+.st strong{font-weight:800}
+.sd{font-size:14px;color:var(--muted);line-height:1.75;max-width:460px}
+.aboutsec .st{color:#fff}
+.aboutsec .sd{color:var(--ink2)}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.rv.on{opacity:1;transform:translateY(0)}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+@media(prefers-reduced-motion:reduce){
+  .rv,.rv.on{opacity:1!important;transform:none!important;transition:none!important}
+  .hi{opacity:1!important;animation:none!important}
+  .cmap-right:hover .cmap-photo,.sp-bg,.hbg{transform:none!important}
+}
+
+/* SPLIT SECTIONS */
+.sp{position:relative;min-height:520px;overflow:hidden;display:flex;align-items:stretch}
+.sp-bg{position:absolute;inset:-16% 0;background-size:cover;background-position:center;will-change:transform}
+.sp-ov{position:absolute;inset:0;background:rgba(10,12,14,0)}
+.sp-panel{position:relative;z-index:2;width:50%;padding:72px 64px;
+  background:rgba(40,40,40,0.2);
+  backdrop-filter:blur(24px) saturate(105%) brightness(1.12);
+  -webkit-backdrop-filter:blur(24px) saturate(105%) brightness(1.12);
+  border-right:1px solid rgba(255,255,255,0.12);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.1);
+  border-radius:0 28px 28px 0;
+  display:flex;flex-direction:column;justify-content:center}
+.sp.flip{flex-direction:row-reverse}
+.sp.flip .sp-panel{border-right:none;border-left:1px solid var(--border);border-radius:28px 0 0 28px}
+.sp-feats{display:flex;flex-direction:column;gap:10px;margin:20px 0 28px}
+.sp-feat{display:flex;align-items:flex-start;gap:11px;font-size:13px;color:var(--muted);line-height:1.55}
+.fd{width:6px;height:6px;background:var(--teal);border-radius:50%;flex-shrink:0;margin-top:6px}
+.sp-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--teal);background:rgba(78,78,78,.1);padding:5px 12px;border-radius:6px;border:1px solid var(--border);margin-top:auto}
+.sl{display:inline-flex;align-items:center;gap:9px;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);transition:gap .2s,color .2s,opacity .65s ease,transform .65s ease}
+.sl:hover{gap:15px;color:var(--ink)}
+@media(max-width:900px){.sp,.sp.flip{flex-direction:column}
+.sp-panel{width:100%;border-right:none!important;border-left:none!important;padding:48px 28px}
+/* На мобильных панель во всю ширину — сильный blur(24px) полностью скрывал фото. Уменьшаем блюр и даём тёмный скрим-градиент для читаемости текста */
+.sp-panel{backdrop-filter:blur(2px) saturate(1.05);-webkit-backdrop-filter:blur(2px) saturate(1.05);background:linear-gradient(180deg,rgba(14,16,18,.34),rgba(14,16,18,.6))}
+.sp-bg{inset:-5%}}
+
+/* CARDS SECTION */
+.cardsec{background:var(--bg3);padding:80px 56px;border-top:1px solid rgba(255,255,255,.06)}
+#blog{position:relative;overflow:hidden;padding-top:56px}
+#blog::before{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background-image:var(--blogbg);background-size:cover;background-position:center;background-attachment:fixed;filter:brightness(0.6) saturate(1.08) contrast(1.02)}
+/* На мобильных background-attachment:fixed масштабирует фон под всю высоту документа → пикселизация; переключаем на scroll */
+@media(max-width:768px){#blog::before,#contacts::before{background-attachment:scroll}}
+#blog::after{content:"";position:absolute;inset:0;pointer-events:none;z-index:0;background:linear-gradient(rgba(43,44,46,1) 0%,rgba(43,44,46,.85) 7%,rgba(43,44,46,.4) 20%,rgba(43,44,46,0) 42%,rgba(43,44,46,0) 100%)}
+#blog>*{position:relative;z-index:1}
+#blog .st,#blog .meye{text-shadow:0 2px 18px rgba(0,0,0,.45)}
+@media(max-width:768px){.cardsec{padding:60px 20px}}
+.sh{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:44px;gap:20px;flex-wrap:wrap}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.cgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.cgrid{grid-template-columns:1fr}}
+.gc{border-radius:var(--rl);overflow:hidden;border:1px solid var(--border);
+  background:rgba(42,42,42,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  transition:border-color .28s,box-shadow .28s,transform .28s;cursor:pointer}
+.gc:hover{border-color:var(--border2);box-shadow:0 8px 40px rgba(0,0,0,.25);transform:translateY(-4px)}
+.gc-body{padding:28px 26px}
+.gc-body h3{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:7px;line-height:1.4}
+.gc-body p{font-size:12.5px;color:var(--muted);line-height:1.65}
+
+/* CASES */
+.casesec{background:var(--bg3);padding:80px 56px;border-top:1px solid rgba(255,255,255,.06)}
+@media(max-width:768px){.casesec{padding:60px 20px}}
+.ccgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.ccgrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.ccgrid{grid-template-columns:1fr}}
+.cc{border-radius:var(--rl);overflow:hidden;border:1px solid var(--border);background:var(--glass);transition:box-shadow .28s,transform .28s,border-color .28s;display:flex;flex-direction:column}
+.cc:hover{box-shadow:0 8px 40px rgba(78,78,78,.1);transform:translateY(-4px);border-color:var(--border2)}
+.cth{height:188px;position:relative;overflow:hidden}
+.cthi{position:absolute;inset:-8%;background-size:cover;background-position:center;transition:transform .55s ease}
+.cc:hover .cthi{transform:scale(1.05)}
+.ctho{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(9,9,9,.65) 100%)}
+.cgeo{position:absolute;top:12px;left:12px;background:rgba(98,98,98,.75);color:#fff;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:6px;backdrop-filter:blur(8px)}
+.cbody{padding:20px 22px 22px;flex:1;display:flex;flex-direction:column}
+.cbody h3{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:7px;line-height:1.4}
+.cbody p{font-size:12.5px;color:var(--muted);line-height:1.65;margin-bottom:13px}
+.cres{display:flex;align-items:flex-start;gap:8px;font-size:12px;font-weight:600;color:var(--teal);background:rgba(78,78,78,.07);padding:9px 12px;border-radius:8px;border:1px solid var(--border);margin-top:auto}
+.cres::before{content:'✓';width:16px;height:16px;background:var(--teal2);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;flex-shrink:0;margin-top:1px}
+
+/* ABOUT */
+.aboutsec{position:relative;padding:80px 56px;overflow:hidden;background:var(--bg);border-top:1px solid rgba(255,255,255,.06)}
+.about-bg{position:absolute;inset:-10%;background-size:cover;background-position:center;will-change:transform}
+.about-ov{position:absolute;inset:0;background:rgba(0,0,0,.52)}
+.about-inner{position:relative;z-index:2}
+@media(max-width:768px){.aboutsec{padding:60px 20px}}
+.egrid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:minmax(86px,1fr);gap:12px;margin-top:36px}
+.egrid>:first-child{grid-column:span 2;grid-row:span 2;background-position:center 35%!important}
+.egrid>:first-child b{font-size:17px}
+.egrid>:first-child span{font-size:12px}
+@media(max-width:900px){.egrid{grid-template-columns:repeat(2,1fr);grid-auto-rows:auto}.egrid>:first-child{grid-column:span 2;grid-row:auto;min-height:120px}}
+@media(max-width:580px){.egrid{grid-template-columns:1fr}.egrid>:first-child{grid-column:auto}}
+.entity{padding:20px 18px;border-radius:var(--r);border:1px solid var(--border);
+  background:rgba(42,42,42,.85);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.entity b{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.entity span{font-size:11px;color:var(--muted)}
+.entity span a{color:inherit;transition:color .2s}
+.entity span a:hover{color:var(--teal)}
+.aboutsec .entity{background:rgba(47,47,47,.7)}
+.aboutsec .entity{position:relative}
+a.entity{cursor:pointer;transition:transform .22s,border-color .22s,box-shadow .22s,background .22s}
+a.entity::after{content:"↗";position:absolute;top:14px;right:15px;font-size:14px;font-weight:700;line-height:1;color:var(--teal);opacity:.5;transition:opacity .22s,transform .22s}
+a.entity b{padding-right:18px}
+a.entity:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:0 10px 30px rgba(0,0,0,.45)}
+a.entity:hover::after{opacity:1;transform:translate(2px,-2px)}
+a.entity:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+.aboutsec .entity b{color:#fff}
+.aboutsec .entity span{color:rgba(255,255,255,.6)}
+
+/* CONTACTS GRID */
+.cgrid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:24px}
+@media(max-width:900px){.cgrid4{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.cgrid4{grid-template-columns:1fr}}
+.cgrid4 .entity{padding:22px 20px;transition:transform .22s,border-color .22s,box-shadow .22s}
+.cgrid4 .entity b{font-size:16px;margin-bottom:7px}
+.cgrid4 .entity span{font-size:13.5px;line-height:1.5}
+.cgrid4 .entity:hover{transform:translateY(-3px);border-color:var(--border2);box-shadow:0 10px 30px rgba(0,0,0,.35)}
+
+/* CTA */
+.ctaw{background:var(--bg3);padding:80px 56px;border-top:1px solid rgba(255,255,255,.06)}
+#order{background:var(--bg);border-top:none}
+#order .ctai.rv,#order .ctai.rv.on{transform:none}
+@media(max-width:768px){.ctaw{padding:60px 20px}}
+.ctai{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;
+  background:linear-gradient(rgba(14,14,14,.82),rgba(14,14,14,.82)), url('assets/img/bg-akstream.png') center/cover no-repeat;
+  border-radius:var(--rxl);padding:56px;border:1px solid var(--border)}
+@media(max-width:900px){.ctai{grid-template-columns:1fr;padding:36px 28px;gap:32px}}
+.ctaconts{display:flex;flex-direction:column;gap:9px;margin-top:26px}
+.ctac{display:flex;align-items:center;gap:11px;font-size:13px;color:var(--muted);transition:color .2s}
+.ctac:hover{color:var(--ink)}
+.ctaci{width:36px;height:36px;border:1px solid var(--border);border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:14px;transition:all .2s;flex-shrink:0}
+.ctac:hover .ctaci{border-color:var(--teal);background:rgba(78,78,78,.08)}
+.cform{display:flex;flex-direction:column;gap:10px}
+.clbl{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);margin-bottom:2px}
+.cinp{font-family:inherit;font-size:13px;background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:10px;padding:12px 16px;color:var(--ink);outline:none;transition:border-color .2s;width:100%}
+.cinp::placeholder{color:var(--muted2)}
+.cinp:focus{border-color:var(--teal)}
+.csel{cursor:pointer}
+.cbtn{font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:14px 28px;border-radius:10px;border:none;background:var(--teal2);color:#fff;cursor:pointer;transition:all .24s;display:flex;align-items:center;gap:8px}
+.cbtn:hover{background:var(--teal);transform:translateY(-2px);box-shadow:0 8px 28px rgba(98,98,98,.4)}
+.cfine{font-size:11px;color:var(--muted2);line-height:1.5}
+.fdone{display:none;text-align:center;padding:32px}
+.fdone .ico{font-size:36px;margin-bottom:12px}
+.fdone h4{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.fdone p{font-size:14px;color:var(--muted)}
+
+/* FOOTER */
+footer{background:var(--bg2);border-top:1px solid var(--border);padding:56px 56px 32px}
+@media(max-width:768px){footer{padding:48px 24px 28px}}
+.fg{display:grid;grid-template-columns:2fr 2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+@media(max-width:1100px){.fg{grid-template-columns:1fr 1fr;gap:28px}}
+@media(max-width:600px){.fg{grid-template-columns:1fr;gap:24px}}
+.flogo{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.flogo-name{font-size:17px;font-weight:800;color:var(--ink)}
+.flogo-name span{color:var(--teal)}
+.fcol h5{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(168,168,168,.5);margin-bottom:14px}
+.fcol p{font-size:12px;color:var(--muted);line-height:1.8}
+.fcol p a{color:var(--muted);transition:color .2s}
+.fcol p a:hover{color:var(--teal)}
+.fcol ul li{margin-bottom:8px}
+.fcol ul li a{font-size:12px;color:var(--muted);transition:color .2s}
+.fcol ul li a:hover{color:var(--teal)}
+.fbl{color:#cfcfcf;text-decoration:underline;text-underline-offset:2px;text-decoration-color:rgba(255,255,255,.3);transition:color .2s,text-decoration-color .2s}
+.fbl:hover{color:#fff;text-decoration-color:#fff}
+.fb{display:flex;justify-content:space-between;align-items:center;padding-top:24px;border-top:1px solid var(--border);flex-wrap:wrap;gap:12px}
+.fb p{font-size:11px;color:var(--muted2)}
+.fsoc{display:flex;gap:10px}
+.fsc{width:32px;height:32px;border:1px solid var(--border);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;transition:all .2s}
+.fsc:hover{border-color:var(--teal);color:var(--teal)}
+
+/* ===== MINIMAL REDESIGN (PROOF → footer) ===== */
+.msec{background:var(--bg);padding:120px 56px;border-top:1px solid rgba(255,255,255,.07);position:relative}
+@media(max-width:768px){.msec{padding:78px 22px}}
+.mhead{max-width:640px;margin-bottom:60px}
+.meye{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#d2d2d2;margin-bottom:18px}
+
+/* shared minimalist link-button */
+.mbtn{align-self:flex-start;font-family:inherit;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;background:none;border:none;color:var(--ink);cursor:pointer;padding:0;display:inline-flex;align-items:center;gap:14px;transition:gap .28s,opacity .65s ease,transform .65s ease;text-decoration:none}
+.mbtn:hover{gap:24px}
+.mbtn .ln{width:38px;height:1px;background:currentColor;display:inline-block;transition:width .28s}
+.mbtn:hover .ln{width:52px}
+#cases .mbtn{align-self:flex-end;margin-bottom:8px}
+
+/* Cases — editorial numbered list */
+.mlist{border-top:1px solid rgba(255,255,255,.09)}
+.mrow{position:relative;display:grid;grid-template-columns:60px 1fr minmax(140px,auto);gap:36px;align-items:baseline;padding:36px 40px;border-bottom:1px solid rgba(255,255,255,.09);transition:padding .3s ease,opacity .65s ease,transform .65s ease;background-size:cover;background-position:center;background-clip:padding-box;overflow:hidden}
+.mrow::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(rgba(43,44,46,1) 0%,rgba(43,44,46,0) 22%,rgba(43,44,46,0) 78%,rgba(43,44,46,1) 100%),linear-gradient(90deg,rgba(43,44,46,.97) 0%,rgba(43,44,46,.74) 30%,rgba(43,44,46,.5) 50%,rgba(43,44,46,.74) 70%,rgba(43,44,46,.97) 100%)}
+.mrow>*{position:relative;z-index:1}
+.mrow:hover{padding-left:56px}
+.mnum{font-size:14px;font-weight:600;color:var(--muted2);font-variant-numeric:tabular-nums;transition:color .3s}
+.mrow:hover .mnum{color:var(--ink)}
+.mtag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted2);margin-bottom:13px}
+.mrow h3{font-size:23px;font-weight:300;letter-spacing:-.01em;color:var(--ink);margin-bottom:11px;line-height:1.18}
+.mrow p{font-size:13.5px;color:var(--muted);line-height:1.6;max-width:520px}
+.mres{font-size:14px;font-weight:600;color:var(--ink);text-align:right;line-height:1.35}
+.mres small{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);margin-bottom:6px}
+@media(max-width:760px){.mrow{grid-template-columns:1fr;gap:6px}.mres{text-align:left;margin-top:10px}}
+
+/* About — two columns, entities as clean list */
+.mabout{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;align-items:start}
+@media(max-width:860px){.mabout{grid-template-columns:1fr;gap:34px}}
+.mpanel{position:relative;border-radius:var(--rxl);overflow:hidden;padding:56px;border:1px solid var(--border)}
+.mpanel::before{content:"";position:absolute;inset:0;z-index:0;background-image:var(--mbg);background-size:cover;background-position:center 18%;transform:scaleX(-1)}
+.mpanel::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(120deg,rgba(26,27,29,.72) 0%,rgba(26,27,29,.64) 55%,rgba(26,27,29,.58) 100%)}
+.mpanel>*{position:relative;z-index:2}
+@media(max-width:768px){.mpanel{padding:34px 24px}}
+.mbrands{margin-top:26px;font-size:12px;color:#d4dadd;line-height:1.9;max-width:none}
+#about .meye{color:#d4dadd}
+#about a.ment .arw{color:#92989b}
+
+.ment{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:19px 0;border-bottom:1px solid rgba(255,255,255,.09);color:inherit;text-decoration:none}
+.ment:first-child{border-top:1px solid rgba(255,255,255,.09)}
+.ment b{font-size:15px;font-weight:600;color:var(--ink)}
+.ment span{font-size:12px;color:#aab0b3;white-space:nowrap}
+a.ment{transition:padding .26s ease}
+a.ment:hover{padding-left:12px}
+a.ment .arw{display:inline-block;color:var(--muted2);transition:transform .26s,color .26s}
+a.ment:hover .arw{color:var(--ink);transform:translate(3px,-3px)}
+.abt-ents{margin:16px 0 6px}
+#about{min-height:auto}
+#about .sp-panel{padding-top:46px;padding-bottom:46px}
+#about .ment{padding:12px 0}
+#about .ment b{font-size:14px}
+#about .ment span{font-size:11.5px}
+#about .mbrands{text-align:right;margin-top:14px}
+#about .mbrands a{color:#eaf2fb;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3);padding-bottom:1px;transition:color .2s,border-color .2s}
+#about .mbrands a:hover{color:#fff;border-color:#fff}
+#about .sd{max-width:none;font-size:12.5px;line-height:1.6}
+#about .ment{transition:padding-left .26s ease,border-color .26s ease}
+#about .ment:hover{padding-left:14px;border-color:rgba(255,255,255,.32)}
+#about .ment:hover b{color:#fff}
+@media(max-width:900px){#about{padding-bottom:60px}}
+
+/* Blog — article list */
+.mflex{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:52px}
+.marts{display:flex;flex-direction:column;gap:14px}
+.mart{position:relative;z-index:1;display:grid;grid-template-columns:1fr minmax(130px,auto);gap:48px;align-items:center;padding:26px 30px;border-radius:16px;
+  background:rgba(18,20,22,.5);backdrop-filter:blur(16px) saturate(115%);-webkit-backdrop-filter:blur(16px) saturate(115%);
+  border:1px solid rgba(255,255,255,.12);text-decoration:none;transition:padding .3s ease,background .3s ease,border-color .3s ease,opacity .65s ease,transform .65s ease}
+.mart:hover{padding-left:44px;background:rgba(18,20,22,.66);border-color:rgba(255,255,255,.22)}
+.mart h3{font-size:21px;font-weight:300;color:var(--ink);margin-bottom:9px;letter-spacing:-.01em;line-height:1.2}
+.mart p{font-size:13px;color:var(--muted);max-width:560px;line-height:1.6}
+.mmeta{text-align:right;white-space:nowrap}
+.mcat{display:block;font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#92989b;margin-bottom:12px}
+.mmore{display:inline-block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted2);transition:color .3s}
+.mart:hover .mmore{color:var(--ink)}
+@media(max-width:640px){.mart{grid-template-columns:1fr;gap:14px}.mmeta{text-align:left}}
+
+/* Contacts — inline */
+.mcont{display:flex;flex-wrap:wrap;gap:34px 76px;margin-top:4px}
+.mci .k{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted2);margin-bottom:9px}
+.mci .v{font-size:19px;font-weight:300;color:var(--ink)}
+.mci .v a{color:inherit;text-decoration:none;border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:2px;transition:border-color .22s}
+.mci .v a:hover{border-color:var(--ink)}
+.msoc{display:flex;gap:12px;margin-top:40px;flex-wrap:wrap}
+.msc{display:inline-flex;align-items:center;gap:10px;height:46px;padding:0 20px;border:1px solid rgba(255,255,255,.22);border-radius:12px;color:var(--ink);background:rgba(255,255,255,.05);font-family:inherit;font-size:13px;font-weight:600;letter-spacing:.02em;transition:border-color .2s,color .2s,transform .2s,background .2s}
+.msc:hover{border-color:var(--teal2);background:var(--teal2);color:#fff;transform:translateY(-3px)}
+.msc svg{width:19px;height:19px;fill:currentColor;flex-shrink:0}
+
+/* Fixed vertical social rail (bottom-right) */
+.srail{position:fixed;right:16px;bottom:18px;top:auto;transform:none;z-index:500;display:flex;flex-direction:column;gap:8px}
+.srail a{width:32px;height:32px;border:none;background:transparent;display:flex;align-items:center;justify-content:center;color:var(--muted);transition:color .22s,transform .22s}
+.srail a:hover{color:var(--ink);transform:translateY(-3px)}
+.srail svg{width:18px;height:18px;fill:currentColor}
+@media(max-width:900px){.srail{display:none}}
+
+/* Contacts — glass cards */
+.cgridx{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
+@media(max-width:900px){.cgridx{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.cgridx{grid-template-columns:1fr}}
+.ccard{position:relative;display:block;padding:26px 24px;border-radius:16px;color:inherit;text-decoration:none;
+  background:rgba(18,20,22,.5);backdrop-filter:blur(16px) saturate(115%);-webkit-backdrop-filter:blur(16px) saturate(115%);
+  border:1px solid rgba(255,255,255,.12);transition:transform .26s ease,border-color .26s ease,box-shadow .26s ease,background .26s ease}
+.ccard:not(.static):hover{transform:translateY(-4px);border-color:rgba(255,255,255,.28);box-shadow:0 12px 34px rgba(0,0,0,.42);background:rgba(18,20,22,.64)}
+.ccard .ico{display:flex;align-items:center;gap:9px;margin-bottom:16px}
+.ccard .ico .em{font-size:17px;line-height:1}
+.ccard .lbl{font-size:10px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:#9aa0a3}
+.ccard .val{font-size:18px;font-weight:300;color:var(--ink);line-height:1.35;letter-spacing:-.01em;word-break:break-word}
+.ccard:not(.static)::after{content:"↗";position:absolute;top:22px;right:22px;font-size:14px;font-weight:700;color:#9aa0a3;opacity:.45;transition:opacity .26s,transform .26s}
+.ccard:not(.static):hover::after{opacity:1;transform:translate(2px,-2px)}
+
+/* Contacts — «туман» из фона предыдущего блока (блог) в верхней части */
+#contacts{position:relative;overflow:hidden}
+#contacts::before{content:"";position:absolute;left:0;right:0;top:0;height:380px;z-index:0;pointer-events:none;
+  background-image:url('assets/img/blog-streams.jpg');background-size:cover;background-position:center;background-attachment:fixed;
+  opacity:.32;filter:brightness(.7) saturate(1.05);
+  -webkit-mask-image:linear-gradient(180deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.55) 45%,transparent 100%);
+          mask-image:linear-gradient(180deg,rgba(0,0,0,.95) 0%,rgba(0,0,0,.55) 45%,transparent 100%)}
+#contacts>*{position:relative;z-index:1}
+/* Contacts — split + map */
+.cmap-wrap{display:grid;grid-template-columns:1.05fr 1fr;gap:52px;align-items:stretch}
+@media(max-width:900px){.cmap-wrap{grid-template-columns:1fr;gap:32px}}
+.clist{margin:28px 0 6px;border-top:1px solid rgba(255,255,255,.1)}
+.crow{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:15px 0;border-bottom:1px solid rgba(255,255,255,.1);color:inherit;text-decoration:none;transition:padding-left .24s ease,border-color .24s ease}
+.crow:hover{padding-left:10px;border-color:rgba(255,255,255,.28)}
+.crow .k{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#9aa0a3;white-space:nowrap}
+.crow .v{font-size:17px;font-weight:300;color:var(--ink);text-align:right}
+.crow:hover .v{color:#fff}
+.cmap-right{position:relative;border-radius:var(--rxl);overflow:hidden;border:1px solid var(--border);background:rgba(18,20,22,.5)}
+.cmap-photo{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.86) saturate(1.05);transition:transform .8s ease}
+.cmap-right:hover .cmap-photo{transform:scale(1.04)}
+.cmap-soc{position:absolute;left:18px;bottom:72px;z-index:3;display:flex;flex-direction:column;gap:10px}
+.cmap-soc a{display:inline-flex;align-items:center;gap:9px;height:40px;padding:0 15px;border-radius:11px;color:#fff;background:rgba(10,14,18,.5);border:1px solid rgba(255,255,255,.24);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);font-family:inherit;font-size:12.5px;font-weight:600;letter-spacing:.02em;white-space:nowrap;transition:background .2s,border-color .2s,transform .2s}
+.cmap-soc a:hover{background:var(--teal2);border-color:var(--teal2);transform:translateX(3px)}
+.cmap-soc svg{width:17px;height:17px;fill:currentColor;flex-shrink:0}
+.cmap-cap{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;align-items:center;gap:8px;padding:20px 22px;font-size:12.5px;font-weight:500;color:#fff;line-height:1.4;background:linear-gradient(transparent,rgba(6,10,14,.9))}
+.cmap-cap .pin{font-size:15px}
+@media(max-width:900px){.cmap-right{min-height:300px}}
+
+/* Order form — open, underline inputs */
+.morder{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+@media(max-width:860px){.morder{grid-template-columns:1fr;gap:36px}}
+.mform{display:flex;flex-direction:column;gap:24px}
+.minp{font-family:inherit;font-size:15px;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.18);padding:13px 2px;color:var(--ink);outline:none;transition:border-color .25s;width:100%}
+.minp::placeholder{color:var(--muted2)}
+.minp:focus{border-color:var(--ink)}
+select.minp{cursor:pointer}
+select.minp option{background:#1c1c1c;color:var(--ink)}
+</style>
+
+<style id="v2-css">
+/* ===== V2 — Concerto for Industry components ===== */
+/* Generic content section */
+.vsec{background:var(--bg);padding:104px 56px;border-top:1px solid rgba(255,255,255,.07);position:relative}
+.vsec.alt{background:var(--bg2)}
+@media(max-width:768px){.vsec{padding:70px 22px}}
+.vwrap{max-width:1180px;margin:0 auto}
+.vhead{max-width:720px;margin-bottom:52px}
+.vhead.center{margin-left:auto;margin-right:auto;text-align:center}
+.vlede{font-size:15px;color:var(--muted);line-height:1.8;margin-top:14px}
+
+/* Textured section background (visible photo, dimmed; cards float above) */
+.vsec.bgimg::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background-image:var(--secbg);background-size:cover;background-position:center;background-attachment:fixed;filter:brightness(.5) saturate(1.06) contrast(1.02)}
+.vsec.bgimg::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(rgba(43,44,46,.95) 0%,rgba(43,44,46,.7) 24%,rgba(43,44,46,.7) 76%,rgba(43,44,46,.95) 100%)}
+.vsec.bgimg .vwrap{position:relative;z-index:1}
+@media(max-width:768px){.vsec.bgimg::before{background-attachment:scroll}}
+/* Partners photo */
+.pimg{border-radius:var(--rxl);overflow:hidden;min-height:300px;background-size:cover;background-position:center;border:1px solid var(--border);position:relative}
+.pimg::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(26,27,29,.55),rgba(26,27,29,.12))}
+
+/* NUMBERS */
+.nums{display:grid;grid-template-columns:repeat(6,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--rl);overflow:hidden}
+.numi{background:var(--bg2);padding:30px 22px;display:flex;flex-direction:column;gap:8px}
+.numn{font-size:34px;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1}
+.numn span{font-size:17px;font-weight:700;color:var(--teal)}
+.numl{font-size:11.5px;color:var(--muted);line-height:1.5}
+@media(max-width:1000px){.nums{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:560px){.nums{grid-template-columns:repeat(2,1fr)}.numn{font-size:28px}}
+
+/* WHY grid */
+.whygrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@media(max-width:900px){.whygrid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:580px){.whygrid{grid-template-columns:1fr}}
+.whyc{padding:30px 28px;border-radius:var(--rl);border:1px solid var(--border);background:rgba(42,42,42,.6);transition:border-color .28s,transform .28s,background .28s}
+.whyc:hover{border-color:var(--border2);transform:translateY(-4px);background:rgba(48,48,48,.7)}
+.whyc h3{font-size:16px;font-weight:700;color:#fff;margin-bottom:10px}
+.whyc p{font-size:13px;color:var(--muted);line-height:1.72}
+
+/* MANIFESTO */
+.mani{max-width:860px;margin:0 auto;text-align:center}
+.mani .mline{font-size:clamp(19px,2.4vw,27px);font-weight:200;line-height:1.5;letter-spacing:-.01em;color:var(--ink);margin-bottom:22px}
+.mani .mline strong{font-weight:700;color:#fff}
+.mani .msig{font-size:13px;color:var(--muted);line-height:1.8;margin-top:8px}
+.mani .brands{color:var(--teal);font-weight:600}
+
+/* DOMAINS */
+.dmgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+@media(max-width:840px){.dmgrid{grid-template-columns:1fr}}
+.dmc{padding:30px 30px 26px;border-radius:var(--rl);border:1px solid var(--border);background:rgba(42,42,42,.55);display:flex;flex-direction:column;transition:border-color .28s,transform .28s}
+.dmc:hover{border-color:var(--border2);transform:translateY(-3px)}
+.dmc .dmn{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--muted2);margin-bottom:8px}
+.dmc h3{font-size:18px;font-weight:700;color:#fff;margin-bottom:11px;line-height:1.25}
+.dmc>p{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:14px}
+.dmc .eco{align-self:flex-start;display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--teal);border:1px solid var(--border);border-radius:7px;padding:6px 12px;margin-bottom:16px;transition:background .2s,color .2s}
+.dmc a.eco:hover{background:var(--teal);color:#fff}
+.pains{margin-top:auto;display:flex;flex-direction:column;gap:8px;border-top:1px solid rgba(255,255,255,.08);padding-top:14px}
+.pain{font-size:12.5px;font-style:italic;color:var(--ink2);line-height:1.55;padding-left:16px;position:relative}
+.pain::before{content:"\201C";position:absolute;left:0;top:-2px;color:var(--teal);font-size:18px;font-weight:700;font-style:normal}
+
+/* ECOSYSTEMS */
+.ecogrid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:8px}
+@media(max-width:840px){.ecogrid{grid-template-columns:1fr}}
+.ecoc{padding:28px 28px;border-radius:var(--rl);border:1px solid var(--border);background:rgba(42,42,42,.55);transition:border-color .28s,transform .28s}
+.ecoc:hover{border-color:var(--border2);transform:translateY(-3px)}
+.ecoh{display:flex;align-items:baseline;justify-content:space-between;gap:14px;margin-bottom:12px;flex-wrap:wrap}
+.econame{font-size:17px;font-weight:800;color:#fff;letter-spacing:.01em}
+.ecodom{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--teal);white-space:nowrap}
+.ecoc p{font-size:12.5px;color:var(--muted);line-height:1.72;margin-bottom:12px}
+.ecoentry{font-size:11.5px;color:var(--ink2);line-height:1.6;border-top:1px solid rgba(255,255,255,.08);padding-top:11px}
+.ecoentry b{color:var(--teal);font-weight:700}
+.whyeco{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:8px 0 44px}
+@media(max-width:1000px){.whyeco{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.whyeco{grid-template-columns:1fr}}
+.whyeco .we{padding:20px 18px;border-radius:var(--r);border:1px solid var(--border);background:rgba(42,42,42,.5)}
+.whyeco .we h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:7px;line-height:1.3}
+.whyeco .we p{font-size:11.5px;color:var(--muted);line-height:1.6}
+
+/* 4CO */
+.integ{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:48px}
+@media(max-width:900px){.integ{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.integ{grid-template-columns:1fr}}
+.integ .ii{padding:22px 20px;border-radius:var(--r);border:1px solid var(--border);background:rgba(42,42,42,.5)}
+.integ .ii h4{font-size:13px;font-weight:700;color:var(--teal);margin-bottom:8px}
+.integ .ii p{font-size:12px;color:var(--muted);line-height:1.65}
+.coflow{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+@media(max-width:900px){.coflow{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.coflow{grid-template-columns:1fr}}
+.costep{padding:28px 24px;border-radius:var(--rl);border:1px solid var(--border);background:rgba(42,42,42,.55);position:relative}
+.costep .con{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--muted2);margin-bottom:12px}
+.costep h3{font-size:19px;font-weight:800;color:#fff;margin-bottom:6px}
+.costep h3 b{color:var(--teal);font-weight:800}
+.costep .cosub{font-size:12px;color:var(--ink2);margin-bottom:14px;line-height:1.5}
+.costep ul{display:flex;flex-direction:column;gap:9px}
+.costep li{font-size:12px;color:var(--muted);line-height:1.6;padding-left:15px;position:relative}
+.costep li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;border-radius:50%;background:var(--teal)}
+
+/* PARTNERS */
+.partners{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center}
+@media(max-width:860px){.partners{grid-template-columns:1fr;gap:30px}}
+.ptypes{display:flex;flex-wrap:wrap;gap:10px}
+.ptypes span{font-size:12.5px;font-weight:600;color:var(--ink);border:1px solid var(--border);border-radius:8px;padding:9px 14px;background:rgba(42,42,42,.5)}
+
+/* FOUNDER quote */
+.founder{margin-top:44px;padding:36px 40px;border-radius:var(--rxl);border:1px solid var(--border);background:rgba(42,42,42,.55);border-left:3px solid var(--teal)}
+@media(max-width:768px){.founder{padding:28px 24px}}
+.founder blockquote{font-size:15px;font-weight:300;font-style:italic;color:var(--ink);line-height:1.75;margin:0 0 16px}
+.founder blockquote+blockquote{margin-top:16px}
+.founder .fname{font-size:13px;font-weight:700;color:#fff;letter-spacing:.02em}
+.founder .frole{font-size:11.5px;color:var(--muted);margin-top:2px}
+
+/* WHY — editorial divided list (no boxes) */
+.whylist{display:grid;grid-template-columns:1fr 1fr;gap:0 56px}
+@media(max-width:760px){.whylist{grid-template-columns:1fr}}
+.whyitem{display:grid;grid-template-columns:auto 1fr;gap:22px;padding:26px 0;border-top:1px solid rgba(255,255,255,.12)}
+.whyitem .wn{font-size:32px;font-weight:200;color:var(--teal);line-height:1;font-variant-numeric:tabular-nums}
+.whyitem h3{font-size:16px;font-weight:700;color:#fff;margin-bottom:9px}
+.whyitem p{font-size:13px;color:var(--muted);line-height:1.72}
+
+/* ECOSYSTEMS — directory rows (left name-rail) */
+.ecolist{border-top:1px solid rgba(255,255,255,.12)}
+.ecorow{display:grid;grid-template-columns:236px 1fr;gap:44px;padding:26px 6px;border-bottom:1px solid rgba(255,255,255,.12);transition:padding-left .26s ease,border-color .26s ease}
+.ecorow:hover{padding-left:16px;border-color:rgba(255,255,255,.3)}
+@media(max-width:760px){.ecorow{grid-template-columns:1fr;gap:10px}}
+.ecorow .el-name{font-size:20px;font-weight:800;color:#fff;letter-spacing:.01em}
+.ecorow .el-dom{display:block;font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--teal);margin-top:7px}
+.ecorow p{font-size:13px;color:var(--muted);line-height:1.72;margin-bottom:9px}
+.ecorow .el-entry{font-size:11.5px;color:var(--ink2);line-height:1.6}
+.ecorow .el-entry b{color:var(--teal);font-weight:700}
+/* Why-ecosystems — borderless feature strip with top accent */
+.whyeco .we{border:none;background:none;border-radius:0;padding:16px 0 0;border-top:2px solid var(--teal)}
+
+/* METHOD — integrity as inline definition list */
+.integlist{display:grid;grid-template-columns:1fr 1fr;gap:0 48px;margin-bottom:56px}
+@media(max-width:760px){.integlist{grid-template-columns:1fr}}
+.integlist .il{padding:18px 0;border-top:1px solid rgba(255,255,255,.12)}
+.integlist .il h4{font-size:14px;font-weight:700;color:#fff;margin-bottom:6px}
+.integlist .il p{font-size:12.5px;color:var(--muted);line-height:1.65}
+/* 4CO horizontal stepper */
+.costeps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative}
+.costeps::before{content:"";position:absolute;top:21px;left:9%;right:9%;height:1px;background:rgba(255,255,255,.2)}
+@media(max-width:760px){.costeps{grid-template-columns:1fr;gap:30px}.costeps::before{display:none}}
+.costp{position:relative;padding:0 26px}
+.costp:first-child{padding-left:0}.costp:last-child{padding-right:0}
+.cnode{width:44px;height:44px;border-radius:50%;border:1px solid var(--border2);background:var(--bg);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:var(--teal);position:relative;z-index:1;margin-bottom:20px}
+.costp h3{font-size:19px;font-weight:800;color:#fff;margin-bottom:5px}
+.costp h3 b{color:var(--teal);font-weight:800}
+.costp .cosub{font-size:12px;color:var(--ink2);margin-bottom:16px;line-height:1.5}
+.costp ul{display:flex;flex-direction:column;gap:9px}
+.costp li{font-size:12px;color:var(--muted);line-height:1.6;padding-left:15px;position:relative}
+.costp li::before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--teal)}
+
+/* ===== Varied per-block image treatments ===== */
+/* Numbers — framed panel with a contained photo (distinct from the hero) */
+.numpanel{position:relative;border-radius:var(--rxl);overflow:hidden;border:1px solid var(--border2)}
+.numpanel .np-bg{position:absolute;inset:0;background-image:var(--numbg);background-size:cover;background-position:center;filter:saturate(1.05)}
+.numpanel::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(16,17,19,.9),rgba(16,17,19,.66))}
+.numpanel>.nums{position:relative;z-index:1}
+.nums.onphoto{background:rgba(255,255,255,.1);border:none;border-radius:0}
+.nums.onphoto .numi{background:rgba(16,18,20,.32);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);padding:34px 24px}
+.nums.onphoto .numn{font-size:40px}
+@media(max-width:560px){.nums.onphoto .numn{font-size:30px}}
+/* Why — vertical photo panel beside the list */
+.whysplit{display:grid;grid-template-columns:.82fr 1.18fr;gap:52px;align-items:stretch}
+@media(max-width:860px){.whysplit{grid-template-columns:1fr;gap:30px}}
+.whyphoto{border-radius:var(--rxl);min-height:480px;background-size:cover;background-position:center;border:1px solid var(--border);position:relative}
+@media(max-width:860px){.whyphoto{min-height:230px}}
+.whyphoto::after{content:"";position:absolute;inset:0;border-radius:var(--rxl);background:linear-gradient(180deg,rgba(26,27,29,.2),rgba(26,27,29,.58))}
+.whysplit .whylist{grid-template-columns:1fr}
+/* Domains — photo banner behind the header only */
+.vbanner{position:relative;border-radius:var(--rxl);overflow:hidden;padding:60px 54px;margin-bottom:44px;background-size:cover;background-position:center;max-width:none}
+@media(max-width:768px){.vbanner{padding:40px 26px}}
+.vbanner::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(26,27,29,.86),rgba(26,27,29,.5))}
+.vbanner>*{position:relative;z-index:1}
+.vbanner .vlede{max-width:640px}
+/* Method — photo band behind the 4CO stepper only */
+.stepband{position:relative;border-radius:var(--rxl);overflow:hidden;padding:48px 40px;background-size:cover;background-position:center}
+@media(max-width:768px){.stepband{padding:34px 22px}}
+.stepband::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(30,31,33,.9),rgba(30,31,33,.8))}
+.stepband>*{position:relative;z-index:1}
+.stepband .cnode{background:#242527}
+</style>
+
+<style id="pmodal-css">
+.pmodal{position:fixed;inset:0;z-index:2000;display:none;align-items:center;justify-content:center;padding:24px}
+.pmodal.open{display:flex}
+.pmodal__bg{position:absolute;inset:0;background:rgba(0,0,0,.72);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
+.pmodal__panel{position:relative;z-index:1;width:100%;max-width:720px;max-height:85vh;overflow-y:auto;background:#1c1c1c;border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:38px 42px;box-shadow:0 30px 80px rgba(0,0,0,.55);animation:pmIn .28s ease}
+@keyframes pmIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.pmodal__close{position:absolute;top:14px;right:16px;background:none;border:none;color:#bbb;font-size:28px;line-height:1;cursor:pointer;padding:4px 8px}
+.pmodal__close:hover{color:#fff}
+.pmodal .pm-title{font-size:22px;font-weight:700;margin:0 0 4px;color:#fff}
+.pmodal .pm-meta{font-size:12.5px;opacity:.6;margin:0 0 22px}
+.pmodal h3{font-size:15.5px;font-weight:700;margin:22px 0 8px;color:#fff}
+.pmodal p,.pmodal li{font-size:13.5px;line-height:1.75;color:#cfcfcf}
+.pmodal p{margin:0 0 12px}
+.pmodal ul{margin:0 0 14px;padding-left:20px}
+.pmodal li{margin:0 0 6px}
+.pmodal a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+.pmodal strong{color:#fff;font-weight:600}
+body.pmodal-lock{overflow:hidden}
+@media(max-width:600px){.pmodal__panel{padding:30px 22px}}
+</style>
+</head>
+<body>
+
+<!-- Cursor -->
+<div class="cur" id="cur"></div>
+<div class="ring" id="ring"></div>
+
+<!-- Mobile menu -->
+<div class="mob" id="mob">
+  <a href="#why" onclick="cm()">Concern</a>
+  <a href="#domains" onclick="cm()">Domains</a>
+  <a href="#ecosystems" onclick="cm()">Ecosystems</a>
+  <a href="#method" onclick="cm()">Method</a>
+  <a href="#cases" onclick="cm()">Proof</a>
+  <a href="#blog" onclick="cm()">Blog</a>
+  <a href="#about" onclick="cm()">About</a>
+  <a href="#contacts" onclick="cm()">Contacts</a>
+  <a href="#order" onclick="cm()">Get in touch</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#hero" style="display:flex;align-items:center;gap:10px">
+    <img src="assets/logos/akco-logo-white.svg" alt="AKCO" height="48" style="width:auto">
+  </a>
+  <div class="nl">
+    <a href="#why">Concern</a>
+    <a href="#domains">Domains</a>
+    <a href="#ecosystems">Ecosystems</a>
+    <a href="#method">Method</a>
+    <a href="#cases">Proof</a>
+    <a href="#blog">Blog</a>
+    <a href="#about">About</a>
+    <a href="#contacts">Contacts</a>
+  </div>
+  <button class="nbtn" onclick="gs('order')">Get in touch</button>
+  <button class="burger" onclick="document.getElementById('mob').classList.toggle('open')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Fixed vertical social rail -->
+<div class="srail">
+  <a href="https://t.me/infoAKCO" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3l-3.3 15.6c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-4.9 9-8.1c.4-.3-.1-.5-.6-.2L6.1 13.9 1.3 12.4c-1-.3-1-1 .2-1.5L20.2 3.7c.9-.3 1.7.2 1.7.6z"/></svg></a>
+  <a href="https://wa.me/971586007782" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg></a>
+  <a href="https://www.linkedin.com/company/aksystemsco/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.8H3.6V21h3.3V8.8zM5.3 3.4C4.2 3.4 3.4 4.2 3.4 5.2s.8 1.8 1.8 1.8 1.9-.8 1.9-1.8-.8-1.8-1.8-1.8zM20.6 21v-6.7c0-3.2-1.7-4.7-4-4.7-1.8 0-2.6 1-3.1 1.7V8.8H10.2v12.2h3.3v-6.8c0-.3 0-.6.1-.8.3-.6.8-1.3 1.8-1.3 1.3 0 1.8 1 1.8 2.4V21h3.4z"/></svg></a>
+</div>
+
+<!-- HERO -->
+<section id="hero" class="hero">
+  <!-- Фон: статичное изображение -->
+  <div class="hbg" id="hbg">
+    <div class="hbg-vid" style="opacity:1;background-image:url('assets/img/hero-streams.jpg');background-size:cover;background-position:center 30%"></div>
+  </div>
+  <div class="hov"></div>
+  <!-- Морфинг-логотип справа -->
+  <div class="hlogo"><svg id="heroLogo" viewBox="0 0 590 590" xmlns="http://www.w3.org/2000/svg"></svg></div>
+  <!-- Контент поверх фото -->
+  <div class="hc">
+    <div class="ey hi d1"><div class="eyl"></div><span>AKCO™ · Concerto for Industry</span></div>
+    <h1 class="ht hi d2">The Concern that works<br><strong>with you, not instead of you</strong></h1>
+    <p class="hd hi d3">A full-cycle international engineering concern: deployment-ready AI-powered ecosystems, one integrated team, and a single scope of accountability across the Middle East, North Africa and China — drawing on professional engineering talent from the CIS.</p>
+    <div class="hbtns hi d4">
+      <a href="#order" class="btn btn-p">Get in touch</a>
+      <a href="#ecosystems" class="btn btn-g">Explore ecosystems →</a>
+    </div>
+  </div>
+  <!-- Scroll indicator -->
+  <div class="schi">
+    <div class="schl"></div>
+    <span>Scroll</span>
+  </div>
+  <!-- 4 плитки направлений -->
+  <div class="dtiles">
+    <a href="#domains" class="dtile hi d1">
+      <span class="dtile__kick">8 domains</span>
+      <h3>Pains we eliminate</h3>
+      <p>We center on the pain, not the technology</p>
+    </a>
+    <a href="#ecosystems" class="dtile hi d2">
+      <span class="dtile__kick">AK.Family</span>
+      <h3>13 AI ecosystems</h3>
+      <p>Deployment-ready, proven inside first</p>
+    </a>
+    <a href="#method" class="dtile hi d3">
+      <span class="dtile__kick">4CO method</span>
+      <h3>Co-engineering</h3>
+      <p>One team, one scope of accountability</p>
+    </a>
+    <a href="#cases" class="dtile hi d4">
+      <span class="dtile__kick">Live Proof</span>
+      <h3>Proven inside</h3>
+      <p>A working system, not a render</p>
+    </a>
+  </div>
+</section>
+
+<!-- OUR NUMBERS -->
+<section id="numbers" class="vsec">
+  <div class="vwrap">
+    <div class="vhead rv">
+      <div class="ew"><div class="ewl"></div><span>Our numbers</span></div>
+      <h2 class="st">A track record,<br><strong>not a pitch</strong></h2>
+    </div>
+    <div class="numpanel rv d1" style="--numbg:url('assets/img/streams-electric.PNG')">
+      <div class="np-bg"></div>
+      <div class="nums onphoto">
+        <div class="numi"><div class="numn">18 <span>years</span></div><div class="numl">The core team's average professional experience: plant operations, engineering, capital projects.</div></div>
+        <div class="numi"><div class="numn">$17 <span>bn</span></div><div class="numl">The largest completed project in a 40+ billion USD greenfield oil &amp; gas portfolio.</div></div>
+        <div class="numi"><div class="numn">23<span>%</span></div><div class="numl">Refinery productivity gain delivered through combined technical and organizational measures.</div></div>
+        <div class="numi"><div class="numn">100<span>+</span></div><div class="numl">Vetted professionals united in the AK.COmm community, mobilized per task or project.</div></div>
+        <div class="numi"><div class="numn">13</div><div class="numl">Deployment-ready agentic-AI ecosystems in the AK.Family portfolio.</div></div>
+        <div class="numi"><div class="numn">3</div><div class="numl">Proprietary methodologies that govern how we launch, deliver, and assure quality.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY AKCO -->
+<section id="why" class="vsec alt">
+  <div class="vwrap">
+    <div class="vhead rv">
+      <div class="ew"><div class="ewl"></div><span>Why AKCO</span></div>
+      <h2 class="st">We came from control rooms,<br><strong>not showrooms</strong></h2>
+    </div>
+    <div class="whysplit">
+      <div class="whyphoto rv" style="background-image:url('assets/img/basalt.PNG')"></div>
+      <div class="whylist">
+      <div class="whyitem rv"><div class="wn">01</div><div><h3>Background</h3><p>Twenty-plus years of operating industrial automation taught us to analyze the asset, find the real sources of trouble and of efficiency gains, and pick the right solutions from a crowded field. Analyze first, understand the root cause, then propose.</p></div></div>
+      <div class="whyitem rv"><div class="wn">02</div><div><h3>Understanding</h3><p>We know the recurring problems of the areas we serve — we call them domain pains — from minor daily glitches to failures that stop entire plants, because we spent years steeped in them as operators. Every ecosystem grew out of a pain we know by name.</p></div></div>
+      <div class="whyitem rv"><div class="wn">03</div><div><h3>Co-engineering</h3><p>Our way is to become part of your team, work on one site and in one information space, and earn our bonuses on results we achieve together. Terms and incentives are written into the contract, not left in the slide deck.</p></div></div>
+      <div class="whyitem rv"><div class="wn">04</div><div><h3>Accountable scope</h3><p>A systems approach means we own the full circuit of pain removal — from the feasibility study through implementation to keeping the solution healthy across its whole lifecycle. &ldquo;Not our department&rdquo; is not spoken here.</p></div></div>
+      <div class="whyitem rv"><div class="wn">05</div><div><h3>Proven inside</h3><p>Nearly every ecosystem runs its full lifecycle inside the Concern before we offer it to the market. The AI agents that answer calls, draft proposals, and write code are the very ones our own people use today. We offer a working system, not a render.</p></div></div>
+      <div class="whyitem rv"><div class="wn">06</div><div><h3>Openness</h3><p>We actively use third-party technology and welcome the integration of external solutions into our ecosystems. Our principle: the best tool for removing the pain should win the job — even an outside one.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section id="manifesto" class="vsec bgimg" style="--secbg:url('assets/img/blog-whitewater.jpg')">
+  <div class="vwrap">
+    <div class="vhead center rv">
+      <div class="ew" style="justify-content:center"><div class="ewl"></div><span>Manifesto</span></div>
+      <h2 class="st">Concerto for Industry</h2>
+    </div>
+    <div class="mani rv d1">
+      <p class="mline">Every project is a score. Sensors, control loops, users, engineers, economics, ecology — everything must play in tune, or the false note is heard: downtime, an incident, lost profit, a regulator's citation, wasted investment.</p>
+      <p class="mline">Most suppliers play their own part. One sells sensors, another pumps, a third software, a fourth knowledge. Each part may be excellent on its own. But <strong>no one answers for how it all sounds together</strong> — and the client is left holding a conductor's baton nobody asked for.</p>
+      <p class="mline">AKCO is a Concern. From the Latin <em>concernere</em> — &ldquo;to share one matter.&rdquo; From the Italian <em>concerto</em> — &ldquo;to play in concert.&rdquo; We are not a vendor of goods. <strong>We are a co-performer.</strong></p>
+      <p class="mline">We join your team from the inside. We work on your sites. We earn our bonuses on your achieved KPIs, not on sales. We leave when your pain leaves — and we stay until it does.</p>
+      <p class="mline">From our own practice we assembled a full ensemble of intelligent instruments: <span class="brands">AKSense™</span> detects the signals, <span class="brands">AKFlow™</span> manages the flows, <span class="brands">AKCore™</span> thinks through the execution, <span class="brands">AK.COmm</span> teams deliver the projects, and <span class="brands">AKNeuro™</span> looks into humanity's future. Each can play solo. Together they sound like <em>concernere</em> — one language, one score.</p>
+      <p class="msig">We are an engineering school raised on problems that are not in the textbooks. We are the Concern that works with you, not instead of you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS DOMAINS -->
+<section id="domains" class="vsec alt">
+  <div class="vwrap">
+    <div class="vbanner rv" style="background-image:url('assets/img/streams2.png')">
+      <div class="ew"><div class="ewl"></div><span>Business domains</span></div>
+      <h2 class="st">Pains we eliminate</h2>
+      <p class="vlede">We work in eight domains — the term centers on the pain, not the technology. We do not confine ourselves to industries: the problems different industries face share common roots. If one of these sounds like your Monday, that domain is yours.</p>
+    </div>
+    <div class="dmgrid">
+      <div class="dmc rv">
+        <div class="dmn">01</div><h3>Asset Reliability &amp; Performance</h3>
+        <p>Dependable operation of critical machinery, managed through OEE and MTBF: predictive diagnostics, condition monitoring, risk-based maintenance.</p>
+        <a class="eco" href="#ecosystems">AKSense.Guard →</a>
+        <div class="pains">
+          <div class="pain">The syngas compressor died mid-shift — we count the outage in hundreds of millions.</div>
+          <div class="pain">We learned about the urea pump's vibration only when the bearing was already coming apart.</div>
+        </div>
+      </div>
+      <div class="dmc rv d1">
+        <div class="dmn">02</div><h3>Process Control &amp; Quality</h3>
+        <p>Automated production management, real-time monitoring, quality control of feedstock and product, deviation management on continuous plants.</p>
+        <a class="eco" href="#ecosystems">AKCore.MES →</a>
+        <div class="pains">
+          <div class="pain">We close material balances in Excel — the data arrives a day late.</div>
+          <div class="pain">NPK granule quality drifts from shift to shift, and nobody can say why.</div>
+        </div>
+      </div>
+      <div class="dmc rv">
+        <div class="dmn">03</div><h3>Power &amp; Efficiency</h3>
+        <p>Guaranteed power for remote sites and energy-intensive consumers where connecting to the grid is impractical or uneconomical.</p>
+        <a class="eco" href="#ecosystems">AKFlow.Power →</a>
+        <div class="pains">
+          <div class="pain">Diesel generation eats the budget, and a grid connection means years and millions.</div>
+          <div class="pain">Grid sags and outages stop the unit right in the middle of a shift.</div>
+        </div>
+      </div>
+      <div class="dmc rv d1">
+        <div class="dmn">04</div><h3>Life Support</h3>
+        <p>Life-support systems for buildings, special-purpose rooms, and autonomous climate zones — intelligent, energy-efficient, unmanned.</p>
+        <a class="eco" href="#ecosystems">AKSense.Climate →</a>
+        <div class="pains">
+          <div class="pain">The air is stale — dry, musty — yet on paper the system is working fine.</div>
+          <div class="pain">One wing is roasting, the other is freezing.</div>
+        </div>
+      </div>
+      <div class="dmc rv">
+        <div class="dmn">05</div><h3>Ecology &amp; Recycling</h3>
+        <p>Closed water loops, waste processing, water treatment, and sustainable greening of territories — with unmanned automatic operation.</p>
+        <a class="eco" href="#ecosystems">AKFlow.Cycle · AKFlow.Harvest →</a>
+        <div class="pains">
+          <div class="pain">Waste disposal fees climb every year, and the landfills keep closing.</div>
+          <div class="pain">Old greenhouses' energy bills kill the margin, and agronomists are not on the market.</div>
+        </div>
+      </div>
+      <div class="dmc rv d1">
+        <div class="dmn">06</div><h3>Business Services &amp; Finance</h3>
+        <p>A wide range of business-support needs, including the launch of new cross-border ventures — without hiring, with lower overhead.</p>
+        <a class="eco" href="#ecosystems">AK.Desk →</a>
+        <div class="pains">
+          <div class="pain">Bank compliance eats months — the account does not open by itself.</div>
+          <div class="pain">We picked the wrong free zone — now we overpay for licenses and taxes.</div>
+        </div>
+      </div>
+      <div class="dmc rv">
+        <div class="dmn">07</div><h3>Business Operations &amp; Digital Transformation</h3>
+        <p>Automation of internal business processes and better traceability — ERP, analytics, CRM, proposal preparation, intelligent RPA.</p>
+        <a class="eco" href="#ecosystems">AKCore.Boost →</a>
+        <div class="pains">
+          <div class="pain">A proposal takes days of our best engineers' time — and a competitor files in two.</div>
+          <div class="pain">Knowledge walks out with the people, and AI pilots never make it to production.</div>
+        </div>
+      </div>
+      <div class="dmc rv d1">
+        <div class="dmn">08</div><h3>Research &amp; Development</h3>
+        <p>Where no ready solution exists yet, the AKCO team researches, prototypes, and implements the missing solution — then adds it to the AK.Store catalog.</p>
+        <a class="eco" href="#ecosystems">AK.Store →</a>
+        <div class="pains">
+          <div class="pain">Domains 1–7 are covered by ready ecosystems; R&amp;D takes on the problems that are not solved yet.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AK.FAMILY ECOSYSTEMS -->
+<section id="ecosystems" class="vsec bgimg" style="--secbg:url('assets/img/hero-expansive.jpg')">
+  <div class="vwrap">
+    <div class="vhead rv">
+      <div class="ew"><div class="ewl"></div><span>AK.Family ecosystems</span></div>
+      <h2 class="st">Deployment-ready,<br><strong>not stand-alone products</strong></h2>
+      <p class="vlede">AK.Family is AKCO's portfolio of pre-integrated, AI-powered ecosystems — complete Live Proof solutions. Each brings hardware, software, technology, services, and people together around one business outcome, built on the shared brands AKCore™, AKSense™, AKFlow™ and AKNeuro™, so components work together out of the box. Thirteen ecosystems in the portfolio.</p>
+    </div>
+    <div class="whyeco">
+      <div class="we rv"><h4>Built to purpose</h4><p>A ready, integrated stack against a specific pain — plug-and-play, not a kit that needs a year of integration glue.</p></div>
+      <div class="we rv d1"><h4>Not a demo — production</h4><p>Every ecosystem first runs in the Concern's own live environment, then ships. A system under real load, with real mileage.</p></div>
+      <div class="we rv d2"><h4>Live Proof</h4><p>The showcase streams our internal systems as they are — the agent, the bot, CRM, MES — on live, anonymized dashboards.</p></div>
+      <div class="we rv d3"><h4>Upgrades without teardown</h4><p>Layers are versioned independently: new sensors, models, and agents go in hot — hot-swap instead of rip-and-replace.</p></div>
+      <div class="we rv d4"><h4>Scalability</h4><p>A modular, seven-layer architecture that grows and updates without stopping the whole. New technology strengthens it.</p></div>
+    </div>
+    <div class="ecolist">
+      <div class="ecorow rv"><div><span class="el-name">AKSense.Guard</span><span class="el-dom">Asset reliability</span></div><div><p>Wireless AKSense™ sensors instrument critical machines on the run — no shutdown; AI agents track remaining useful life against a reference, so failures are predicted weeks ahead and repairs follow the schedule.</p><div class="el-entry"><b>Entry:</b> a survey of the critical fleet and a pilot on the most troublesome machines; roll-out follows the pilot's numbers.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKCore.MES</span><span class="el-dom">Process control</span></div><div><p>A real-time nervous system for any operating plant: gray zones filled by wireless sensors or digital twins, deviations caught as they emerge, material balances closing daily — design performance without new capital equipment.</p><div class="el-entry"><b>Entry:</b> a pilot in weeks on the plant's own data; roll-out follows the pilot's numbers.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKCore.Trading</span><span class="el-dom">Digital transformation</span></div><div><p>AI agents scan tender platforms, review documentation, match product ranges, and prepare the technical proposal and quotation, integrated into the client's CRM. Every processed tender enriches the range model.</p><div class="el-entry"><b>Pairs with</b> AK.COwork — sourcing manufacturers in China and delivering DAP worldwide.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKCore.Boost</span><span class="el-dom">Digital transformation</span></div><div><p>Business-process automation with AI: a pilot agent runs in about two weeks — with safety rules, quality metrics, and traceable context. Routine cycles shrink from days to minutes; each agent reports to its process owner weekly.</p><div class="el-entry"><b>Method:</b> AK.PRISM adapted for AI, with BPMN process mapping and concept design.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKSense.Climate</span><span class="el-dom">Life support</span></div><div><p>A compact module that holds temperature, humidity, and air quality within set limits via the AKSense.ACC control panel and AI agents. One control system owns the entire climate envelope; consumption measurably drops.</p><div class="el-entry"><b>For:</b> server rooms and data centers, production halls, commercial and premium spaces.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKFlow.Cycle</span><span class="el-dom">Ecology &amp; recycling</span></div><div><p>A mobile continuous plant converting solid waste into energy products and secondary raw materials via AKFlow™ smokeless pyrolysis, re-tuning as the feed composition changes; emissions tracked by AK.GRID analyzers.</p><div class="el-entry"><b>Entry:</b> a waste-stream analysis with a processing-cost estimate before any commitment.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKFlow.Power</span><span class="el-dom">Power &amp; efficiency</span></div><div><p>A mobile continuous plant generating electricity from available fuel — most often LNG — via AKFlow™ gas-turbine technology, re-tuning flexibly as fuel composition changes. Built for remote sites and edge data centers.</p><div class="el-entry"><b>Entry:</b> an energy audit with a cost-per-kWh estimate before any commitment.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AK.Desk</span><span class="el-dom">Business services</span></div><div><p>A service package for every stage of growth: banking, payroll, licensing, accounting, taxes, cross-border settlements — plus agency services, marketing, certification and investment-project development under AK.COwork.</p><div class="el-entry"><b>For:</b> new ventures and exporters entering MENA markets.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AK.Talent</span><span class="el-dom">Business services</span></div><div><p>An outsourcing package to rapidly mobilize individual experts or functional teams from the AK.COmm community, trained in the Concern's procedures. Hybrid &ldquo;engineer + machine&rdquo; units with built-in mentoring.</p><div class="el-entry"><b>For:</b> EPC contractors and industrial companies whose schedules cannot wait for hiring cycles.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AK.Prime</span><span class="el-dom">Business services</span></div><div><p>A ready-made project office — specialists and discipline leads — acting as the single center of accountability across the full scope: feasibility and bank due diligence, design, procurement, construction, startup and trial operation.</p><div class="el-entry"><b>For:</b> major clients in chemicals, refining, LNG and fertilizers who need one accountable partner.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKNeuro.Bionic</span><span class="el-dom">Medicine · R&amp;D</span></div><div><p>Rehabilitation technology: AKNeuro™ neuromorphic EMG processing translates human intent into natural, real-time control of a bionic device, adapting to the person via AKCore™ AI. Runs as medical R&amp;D and a philanthropic initiative.</p><div class="el-entry"><b>Aim:</b> human-machine interfaces for exoskeletons and assistive devices.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 4CO METHOD -->
+<section id="method" class="vsec alt">
+  <div class="vwrap">
+    <div class="vhead rv">
+      <div class="ew"><div class="ewl"></div><span>Project discipline</span></div>
+      <h2 class="st">The 4CO method &amp;<br><strong>an integrity approach</strong></h2>
+      <p class="vlede">One Concern answers for the whole circuit. Integrity — of the lifecycle, the team, the portfolio, and accountability — is not a slogan but the way projects are run.</p>
+    </div>
+    <div class="integlist">
+      <div class="il rv"><h4>Lifecycle integrity</h4><p>From the feasibility study to service across the full operating life, in one scope. The team that designed the solution answers for how it runs in year five.</p></div>
+      <div class="il rv"><h4>Team integrity</h4><p>Client and AKCO are one organism: shared dashboards, shared data, a shared definition of &ldquo;done.&rdquo;</p></div>
+      <div class="il rv"><h4>Portfolio integrity</h4><p>AK.Family delivers a finished solution. Integration is our work before the contract, not the client's after it.</p></div>
+      <div class="il rv"><h4>Integrity over time</h4><p>We do not leave at handover. The most valuable data about any system starts arriving the day it is commissioned.</p></div>
+      <div class="il rv"><h4>Integrity of accountability</h4><p>There is the outcome — and everything that affects it. &ldquo;Not our department&rdquo; is not spoken here.</p></div>
+      <div class="il rv"><h4>Integrity has a price</h4><p>It takes a concern, not a vendor. Fragmented suppliers can quote lower on any single layer; none can guarantee the whole.</p></div>
+    </div>
+    <div class="stepband" style="background-image:url('assets/img/streams1.png')">
+    <div class="costeps">
+      <div class="costp rv"><div class="cnode">01</div><h3>CO<b>mpose</b></h3><div class="cosub">Compose the proposed solution</div><ul><li>Define the problems and the potential; fix the baseline — current costs, losses, output.</li><li>Follow the method: a structured site survey and a detailed statement of work before signature.</li><li>Deploy an ecosystem, not a set of products — integrated, single scope of accountability.</li></ul></div>
+      <div class="costp rv d1"><div class="cnode">02</div><h3>CO<b>nsolidate</b></h3><div class="cosub">Consolidate project resources</div><ul><li>Build an integrated team from client staff, the AKCO project office, and subcontractors.</li><li>Everyone in one information space, incentives resting on the project's KPIs.</li><li>Engage proven resources through the AK.Grid partner network.</li></ul></div>
+      <div class="costp rv d2"><div class="cnode">03</div><h3>CO<b>ncert</b></h3><div class="cosub">Coordinate participants intelligently</div><ul><li>Run on AK.PRISM — the operating system of every project office, reinforced by digital assistants.</li><li>Assure quality with AK.CANON: strategic QA, process QC, and continuous operational QC in one loop.</li><li>Prevent nonconformities, not merely correct them — on data, not opinions.</li></ul></div>
+      <div class="costp rv d3"><div class="cnode">04</div><h3>CO<b>ntribute</b></h3><div class="cosub">Cooperate with the world</div><ul><li>Measure the result in the client's categories, against the SOW and contract.</li><li>Create value beyond the contract; draw lessons from every project into a register.</li><li>Grow the AK.Grid network and the portfolio — solutions return to the catalog.</li></ul></div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="cases" class="msec">
+  <div class="mflex">
+    <div>
+      <span class="meye rv">Proof</span>
+      <h2 class="st rv d1" style="margin-bottom:0">Cases &amp; references</h2>
+    </div>
+    <button class="mbtn rv d1" onclick="gs('order')"><span class="ln"></span>Discuss a project</button>
+  </div>
+  <div class="mlist">
+    <div class="mrow rv" style="background-image:url('assets/img/cases-mountain.png');background-position:center 32%">
+      <div class="mnum">01</div>
+      <div>
+        <div class="mtag">EPC · Industry · AK.Talent</div>
+        <h3>Contract won, no crew</h3>
+        <p>A signed contract and no specialists to deliver it; hiring estimated at three to six months against a schedule already running. Leased teams from the AK.Staff pool and the AK.COmm community, mobilized under the Concern's procedures.</p>
+      </div>
+      <div class="mres"><small>Result</small>A working team in days — scaled back when the peak passed</div>
+    </div>
+    <div class="mrow rv d1" style="background-image:url('assets/img/cases-whitewater.png');background-position:center 30%">
+      <div class="mnum">02</div>
+      <div>
+        <div class="mtag">Reference · Greenfield O&amp;G</div>
+        <h3>TANECO greenfield complex</h3>
+        <p>Flagship capital-project contracts at anchor refining and petrochemical complexes in the CIS. Reference visits offered wherever the client is willing to host them.</p>
+      </div>
+      <div class="mres"><small>Track record</small>Anchor refining &amp; petrochemicals</div>
+    </div>
+    <div class="mrow rv d2" style="background-image:url('assets/img/cases-streams.png')">
+      <div class="mnum">03</div>
+      <div>
+        <div class="mtag">Reference · Petrochemicals</div>
+        <h3>Work within the TAIF perimeter</h3>
+        <p>Every published case names the companies and community units that delivered it: the group's structure explains itself through its work — and that is how it should be read.</p>
+      </div>
+      <div class="mres"><small>Track record</small>Named reference projects</div>
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section id="partners" class="vsec">
+  <div class="vwrap">
+    <div class="partners">
+      <div class="rv">
+        <div class="ew"><div class="ewl"></div><span>Partners &amp; cooperation</span></div>
+        <h2 class="st" style="margin-bottom:14px">1 + 1 = 3</h2>
+        <p class="sd" style="max-width:none;margin-bottom:20px">AKCO is an open Concern looking to the future. We believe in synergy between intelligent people and professional companies, whatever badge they wear. At a time when the world drifts toward separation, we call for joining forces. Partnership to us is also a shared development agenda.</p>
+        <p class="vlede" style="margin-top:0;margin-bottom:16px">We welcome as AK.Grid partners — integration, joint development, project delivery, trading, investment, startups:</p>
+        <div class="ptypes">
+          <span>Freelancers</span><span>Manufacturers &amp; suppliers</span><span>Specialized contractors</span><span>Integrators</span><span>Technology partners</span>
+        </div>
+      </div>
+      <div class="pimg rv d1" style="background-image:url('assets/img/streams-electric.PNG')"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / STRUCTURE -->
+<section id="about" class="sp">
+  <div class="sp-bg" style="background-image:url('assets/img/blog-whitewater.jpg');background-position:center 35%"></div>
+  <div class="sp-ov"></div>
+  <div class="sp-panel">
+    <div class="ew rv"><div class="ewl"></div><span>About the Concern</span></div>
+    <h2 class="st rv d1">One structure,<br><strong>one value chain</strong></h2>
+    <p class="sd rv d2">AKCO unites interconnected legal entities, reinforced by a professional community, under a single parent brand. Each participant's role in the shared value chain is clearly defined; the results come together in a single cross-border operations center.</p>
+    <div class="abt-ents rv d2">
+      <a class="ment" href="https://www.aksystems.co" target="_blank" rel="noopener"><b><span class="arw">↗</span> Smart Systems Industrial Plant Equipment FZCO</b><span>Dubai, UAE — HQ</span></a>
+      <a class="ment" href="https://akfinance.ae" target="_blank" rel="noopener"><b><span class="arw">↗</span> AKFinance Advisory Services FZCO</b><span>Dubai, UAE</span></a>
+      <a class="ment" href="https://www.aksense.org" target="_blank" rel="noopener"><b><span class="arw">↗</span> Shanghai AKSENSE Technology</b><span>Shanghai, China</span></a>
+      <a class="ment" href="https://www.aksystems.org" target="_blank" rel="noopener"><b><span class="arw">↗</span> AK.COmm</b><span>CIS — 100+ engineers</span></a>
+    </div>
+    <p class="mbrands rv d3">Corporate HQ &amp; flagship — Smart Systems FZCO: brand, trademarks, patents, strategy &amp; R&amp;D · finance — AKFinance · manufacturing hub — AKSENSE · expert engineering pool — AK.COmm</p>
+    <div class="founder rv d3">
+      <blockquote>&ldquo;We never stop learning — moving from project to project, mastering new technologies, honing methodologies. We do not limit ourselves to in-house expertise: we are an open group, collaborating with dozens of companies. Every one of them makes the Concern smarter. Which, in the end, is exactly what our name obliges us to be.&rdquo;</blockquote>
+      <blockquote>&ldquo;People sometimes ask me what an engineer counts as success. My answer has not changed in twenty years: a plant that runs without you; a team that outgrows you; and a client who becomes your partner.&rdquo;</blockquote>
+      <div class="fname">Marat Basharov</div>
+      <div class="frole">Founder, AKCO™</div>
+    </div>
+  </div>
+</section>
+
+<!-- БЛОГ -->
+<section id="blog" class="msec" style="--blogbg:url('assets/img/blog-streams.jpg')">
+  <div class="mflex">
+    <div>
+      <span class="meye rv">Expertise</span>
+      <h2 class="st rv d1" style="margin-bottom:0">Blog &amp; expert articles</h2>
+    </div>
+    <a href="pages/blog/index.html" class="mbtn rv"><span class="ln"></span>All articles</a>
+  </div>
+  <div class="marts">
+    <div class="mart rv"><div class="mtxt"><h3>Proven inside: why we are our own first client</h3><p>How every AK.Family ecosystem runs its full lifecycle inside the Concern before it ships.</p></div><div class="mmeta"><span class="mcat">Method</span></div></div>
+    <div class="mart rv d1"><div class="mtxt"><h3>From domain pain to deployment-ready ecosystem</h3><p>How a recurring pain on a plant site becomes a pre-integrated, AI-powered stack.</p></div><div class="mmeta"><span class="mcat">Ecosystems</span></div></div>
+    <div class="mart rv d2"><div class="mtxt"><h3>Co-engineering: earning bonuses on your KPIs</h3><p>Why we join your team from the inside — and leave when your pain leaves.</p></div><div class="mmeta"><span class="mcat">Culture</span></div></div>
+  </div>
+</section>
+
+<!-- КОНТАКТЫ -->
+<div class="msec" id="contacts">
+  <div class="cmap-wrap">
+    <div class="cmap-left">
+      <span class="meye rv">Contacts · AK.MEDIA</span>
+      <h2 class="st rv d1">Always open to dialogue</h2>
+      <p class="sd rv d2" style="max-width:none">Headquarters — Dubai, UAE. Every inquiry is read by our digital assistant, which routes it to the accountable owner — and hands you to a named person the moment your question needs one.</p>
+      <div class="clist rv d2">
+        <a class="crow" href="mailto:info@aksystems.co"><span class="k">✉️ E-mail</span><span class="v">info@aksystems.co</span></a>
+        <a class="crow" href="tel:+971581625132"><span class="k">🇦🇪 Phone · UAE</span><span class="v">+971 58 162 51 32</span></a>
+        <a class="crow" href="tel:+971586007782"><span class="k">🇦🇪 UAE · WhatsApp</span><span class="v">+971 58 600 77 82</span></a>
+        <a class="crow" href="tel:+78437177717"><span class="k">🌍 CIS office</span><span class="v">+7 843 717 77 17</span></a>
+        <a class="crow" href="https://t.me/infoAKCO" target="_blank" rel="noopener"><span class="k">✈️ Telegram</span><span class="v">@infoAKCO</span></a>
+        <a class="crow" href="https://www.linkedin.com/company/aksystemsco/" target="_blank" rel="noopener"><span class="k">in LinkedIn</span><span class="v">/company/aksystemsco</span></a>
+        <div class="crow"><span class="k">💬 WeChat</span><span class="v">AKCO</span></div>
+      </div>
+    </div>
+    <div class="cmap-right rv d2">
+      <div class="cmap-photo" style="background-image:url('assets/img/contacts-nature.jpg')"></div>
+      <div class="cmap-soc">
+        <a href="https://t.me/infoAKCO" target="_blank" rel="noopener" aria-label="Telegram"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.9 4.3l-3.3 15.6c-.2 1-.9 1.3-1.8.8l-4.9-3.6-2.4 2.3c-.3.3-.5.5-1 .5l.3-4.9 9-8.1c.4-.3-.1-.5-.6-.2L6.1 13.9 1.3 12.4c-1-.3-1-1 .2-1.5L20.2 3.7c.9-.3 1.7.2 1.7.6z"/></svg><span>Telegram</span></a>
+        <a href="https://wa.me/971586007782" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg><span>WhatsApp</span></a>
+        <a href="https://www.linkedin.com/company/aksystemsco/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.8H3.6V21h3.3V8.8zM5.3 3.4C4.2 3.4 3.4 4.2 3.4 5.2s.8 1.8 1.8 1.8 1.9-.8 1.9-1.8-.8-1.8-1.8-1.8zM20.6 21v-6.7c0-3.2-1.7-4.7-4-4.7-1.8 0-2.6 1-3.1 1.7V8.8H10.2v12.2h3.3v-6.8c0-.3 0-.6.1-.8.3-.6.8-1.3 1.8-1.3 1.3 0 1.8 1 1.8 2.4V21h3.4z"/></svg><span>LinkedIn</span></a>
+      </div>
+      <div class="cmap-cap"><span class="pin">📍</span>Smart Systems FZCO · Office 105, Building B4, IFZA Business Park, Dubai Digital Park, Dubai, UAE</div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div class="ctaw" id="order">
+  <div class="ctai rv">
+    <div>
+      <div class="ew rv"><div class="ewl"></div><span>Enquiry</span></div>
+      <h2 class="st rv d1"><span>Ready to discuss</span><br><strong>your task?</strong></h2>
+      <p class="sd rv d2">Choose a direction — your enquiry reaches the right manager. We reply within 4 business hours.</p>
+    </div>
+    <div class="rv d2">
+      <div id="ctaFlds">
+        <p class="clbl">Submit an enquiry</p>
+        <div class="cform">
+          <input class="cinp" type="text" placeholder="Your name" id="cn">
+          <input class="cinp" type="tel" placeholder="Phone / Telegram" id="cp">
+          <select class="cinp csel" id="cs">
+            <option value="">Your interest</option>
+            <option>Asset reliability &amp; performance</option>
+            <option>Process control &amp; quality</option>
+            <option>Power &amp; efficiency</option>
+            <option>Life support</option>
+            <option>Ecology &amp; recycling</option>
+            <option>Business services &amp; finance</option>
+            <option>Business operations &amp; digital transformation</option>
+            <option>Partnership / AK.Grid</option>
+            <option>Other / consultation</option>
+          </select>
+          <button class="cbtn" onclick="sub()">Send enquiry <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <p class="cfine">By clicking the button, you agree to the <a href="#" class="privacy-open">privacy policy</a></p>
+        </div>
+      </div>
+      <div class="fdone" id="ctaDone"><div class="ico">✅</div><h4>Enquiry received!</h4><p>We'll be in touch within 4 business hours.<br>Or email us at <a href="mailto:info@aksystems.co" style="color:var(--teal)">info@aksystems.co</a>.</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fg rv">
+    <div>
+      <div class="flogo">
+        <img src="assets/logos/akco-logo-white.svg" alt="AKCO™" height="48" style="width:auto">
+      </div>
+      <p class="fcol" style="font-size:12px;color:var(--muted);line-height:1.8">A full-cycle international engineering concern.<br>Concerto for Industry.<br>AKCore™ · AKSense™ · AKFlow™ · AKNeuro™ · AK.COwork</p>
+    </div>
+    <div class="fcol">
+      <h5>Legal details</h5>
+      <p><b style="color:var(--ink)">Smart Systems Industrial Plant Equipment — FZCO</b><br>Office 105, Building B4, IFZA Business Park<br>Dubai Digital Park, Dubai, United Arab Emirates</p>
+    </div>
+    <div class="fcol">
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="#domains">Domains</a></li>
+        <li><a href="#ecosystems">Ecosystems</a></li>
+        <li><a href="#method">4CO Method</a></li>
+        <li><a href="#cases">Proof</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Concern</h5>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#partners">Partners</a></li>
+        <li><a href="pages/blog/index.html">Blog</a></li>
+        <li><a href="#" class="privacy-open">Privacy policy</a></li>
+      </ul>
+    </div>
+    <div class="fcol">
+      <h5>Contacts</h5>
+      <ul>
+        <li><a href="mailto:info@aksystems.co">info@aksystems.co</a></li>
+        <li><a href="tel:+971581625132">+971 58 162 51 32</a></li>
+        <li><a href="https://t.me/infoAKCO">@infoAKCO</a></li>
+        <li><a href="#contacts">All contacts</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="fb rv d1">
+    <p>© 2026 AKCO™ · AKCore™ — active Russian registration · Other trademarks — registration in progress</p>
+    <div class="fsoc">
+      <a href="https://t.me/infoAKCO" class="fsc">✈</a>
+      <a href="mailto:info@aksystems.co" class="fsc">✉</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Cursor
+var cur=document.getElementById('cur'),ring=document.getElementById('ring'),mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(a);})();
+document.querySelectorAll('a,button').forEach(function(el){
+  el.addEventListener('mouseenter',function(){cur.style.width='16px';cur.style.height='16px';});
+  el.addEventListener('mouseleave',function(){cur.style.width='9px';cur.style.height='9px';});
+});
+
+// Nav scroll
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){nav.classList.toggle('sc',window.scrollY>40);},{ passive:true });
+
+// Parallax
+var hbg=document.getElementById('hbg');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY;
+  if(hbg) hbg.style.transform='translateY('+(y*0.12)+'px)';
+  document.querySelectorAll('.sp-bg').forEach(function(el){
+    var r=el.parentElement.getBoundingClientRect();
+    el.style.transform='translateY('+(r.top*0.1)+'px)';
+  });
+  var abg=document.querySelector('.about-bg');
+  if(abg){var r=abg.parentElement.getBoundingClientRect();abg.style.transform='translateY('+(r.top*0.08)+'px)';}
+},{ passive:true });
+
+// Reveal
+document.querySelectorAll('.rv').forEach(function(el){
+  new IntersectionObserver(function(entries){
+    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on');});
+  },{threshold:.08}).observe(el);
+});
+
+// Scroll to
+function gs(id){document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'});}
+function cm(){document.getElementById('mob').classList.remove('open');}
+
+// Form
+function sub(){
+  var n=document.getElementById('cn').value.trim();
+  var p=document.getElementById('cp').value.trim();
+  var s=document.getElementById('cs').value;
+  if(!n){document.getElementById('cn').focus();return;}
+  if(!p){document.getElementById('cp').focus();return;}
+  document.getElementById('ctaFlds').style.display='none';
+  document.getElementById('ctaDone').style.display='block';
+  // FormSubmit
+  if(window.FORM_EMAIL){
+    fetch('https://formsubmit.co/ajax/'+encodeURIComponent(FORM_EMAIL),{
+      method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify({_subject:'AKCO™ enquiry',Name:n,Contact:p,Direction:(s||'consultation'),Page:location.href})
+    }).catch(function(){});
+  }
+}
+</script>
+<!-- js/config.js — вставить FORM_EMAIL или BITRIX_WEBHOOK -->
+<script src="js/config.js"></script>
+
+<!-- Морфинг-логотип справа в hero: рассыпается → собирается, цикл 7→1→…→6→7 -->
+<script src="assets/video/data.js"></script>
+<script>
+(function(){
+  var svg = document.getElementById('heroLogo');
+  if (!svg || typeof FRAMES === 'undefined') return;
+  var N = FRAMES.length;
+  var segDuration = 3600; // мс на переход (замедлено)
+  var paths = [];
+  for (var i = 0; i < TOTAL_SLOTS; i++) {
+    var p = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    p.setAttribute('fill', '#ffffff');
+    p.style.transformBox = 'fill-box';
+    p.style.transformOrigin = 'center';
+    svg.appendChild(p);
+    paths.push(p);
+  }
+  var START = N - 1; // логотип 7 стартовый
+  function rnd(seed){ var x = Math.sin(seed * 12.9898) * 43758.5453; return x - Math.floor(x); }
+  var scatterOut = [], scatterIn = [];
+  for (var i = 0; i < TOTAL_SLOTS; i++) {
+    var a1 = rnd(i + 1) * Math.PI * 2, d1 = 240 + rnd(i + 7) * 300;
+    scatterOut.push({ dx: Math.cos(a1) * d1, dy: Math.sin(a1) * d1, rot: (rnd(i + 3) - 0.5) * 200 });
+    var a2 = rnd(i + 41) * Math.PI * 2, d2 = 240 + rnd(i + 53) * 300;
+    scatterIn.push({ dx: Math.cos(a2) * d2, dy: Math.sin(a2) * d2, rot: (rnd(i + 67) - 0.5) * 200 });
+  }
+  function eIn(t){ return t * t * t; }
+  function eOut(t){ return 1 - Math.pow(1 - t, 3); }
+  for (var i = 0; i < TOTAL_SLOTS; i++) {
+    paths[i].setAttribute('d', FRAMES[START][i].d);
+    paths[i].style.opacity = FRAMES[START][i].v ? 1 : 0;
+  }
+  var HOLD = 5000; // мс: первый логотип держится и медленно крутится (один оборот), потом морфинг
+  svg.style.transformOrigin = 'center';
+  var segIndex = START, elapsed = 0, lastTs = null, holdStart = null, morphing = false;
+  function tick(ts){
+    // Фаза удержания: логотип 7 просто крутится на месте (один полный оборот за HOLD)
+    if (!morphing) {
+      if (holdStart === null) holdStart = ts;
+      var held = ts - holdStart;
+      if (held < HOLD) {
+        svg.style.transform = 'rotate(' + ((held / HOLD) * 360) + 'deg)';
+        requestAnimationFrame(tick);
+        return;
+      }
+      svg.style.transform = 'rotate(0deg)'; // оборот завершён ровно на 0 — бесшовно
+      morphing = true;
+      lastTs = ts;
+    }
+    var dt = ts - lastTs; lastTs = ts;
+    elapsed += dt;
+    while (elapsed >= segDuration) { elapsed -= segDuration; segIndex = (segIndex + 1) % N; }
+    var frac = elapsed / segDuration;
+    var from = FRAMES[segIndex], to = FRAMES[(segIndex + 1) % N];
+    if (frac < 0.5) {
+      var p = eIn(frac / 0.5);
+      for (var i = 0; i < TOTAL_SLOTS; i++) {
+        paths[i].setAttribute('d', from[i].d);
+        var s = scatterOut[i];
+        paths[i].style.transform = 'translate(' + (s.dx * p) + 'px,' + (s.dy * p) + 'px) rotate(' + (s.rot * p) + 'deg)';
+        paths[i].style.opacity = (from[i].v ? 1 : 0) * (1 - p);
+      }
+    } else {
+      var p = eOut((frac - 0.5) / 0.5), inv = 1 - p;
+      for (var i = 0; i < TOTAL_SLOTS; i++) {
+        paths[i].setAttribute('d', to[i].d);
+        var s = scatterIn[i];
+        paths[i].style.transform = 'translate(' + (s.dx * inv) + 'px,' + (s.dy * inv) + 'px) rotate(' + (s.rot * inv) + 'deg)';
+        paths[i].style.opacity = (to[i].v ? 1 : 0) * p;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+})();
+</script>
+
+<div class="pmodal" id="privacyModal" role="dialog" aria-modal="true" aria-labelledby="pmTitle">
+  <div class="pmodal__bg"></div>
+  <div class="pmodal__panel">
+    <button class="pmodal__close" type="button" aria-label="Close">&times;</button>
+    <div class="pm-title" id="pmTitle">Privacy Policy</div>
+    <p class="pm-meta">Effective 10 July 2026.</p>
+    <h3>1. General provisions</h3>
+    <p>This Policy sets out how personal data of users of the website <strong>aksystems.co</strong> is collected, processed and protected.</p>
+    <p><strong>Data controller:</strong> Smart Systems FZCO, IFZA Business Park, Dubai Digital Park, Dubai, UAE. Contact: <a href="mailto:info@aksystems.co">info@aksystems.co</a>.</p>
+    <p>By using the website and submitting the enquiry form you consent to this Policy.</p>
+    <h3>2. Data we collect</h3>
+    <p>Data you provide via the form, and technical data sent by your browser:</p>
+    <ul><li>name;</li><li>phone and/or Telegram, WhatsApp;</li><li>email address;</li><li>your message;</li><li>anonymised technical data: IP, browser and device type, cookies, referral source (UTM).</li></ul>
+    <h3>3. Purposes</h3>
+    <ul><li>handling and responding to your enquiry;</li><li>preparing commercial proposals on request;</li><li>improving the website, web analytics;</li><li>complying with applicable law.</li></ul>
+    <h3>4. Legal basis</h3>
+    <p>Processing is based on your consent (form submission) and our legitimate interest in responding to your request.</p>
+    <h3>5. Sharing with third parties</h3>
+    <p>We do not sell your data. The form is delivered via <strong>FormSubmit.co</strong> (a processor for message delivery). Analytics services process anonymised data.</p>
+    <h3>6. Retention</h3>
+    <p>Data is kept no longer than necessary, or until you withdraw consent.</p>
+    <h3>7. Your rights</h3>
+    <p>You may request information, correction, restriction or deletion of your data and withdraw consent at <a href="mailto:info@aksystems.co">info@aksystems.co</a>.</p>
+    <h3>8. Cookies and analytics</h3>
+    <p>The website uses cookies to function and analyse traffic. You can disable them in your browser.</p>
+    <h3>9. Changes</h3>
+    <p>We may update this Policy; the current version is always available on the website.</p>
+  </div>
+</div>
+
+<script>
+(function(){
+  var m=document.getElementById('privacyModal'); if(!m) return;
+  function open(e){ if(e){e.preventDefault();} m.classList.add('open'); document.body.classList.add('pmodal-lock'); }
+  function close(){ m.classList.remove('open'); document.body.classList.remove('pmodal-lock'); }
+  var i,els=document.querySelectorAll('.privacy-open');
+  for(i=0;i<els.length;i++){ els[i].addEventListener('click',open); }
+  m.querySelector('.pmodal__bg').addEventListener('click',close);
+  m.querySelector('.pmodal__close').addEventListener('click',close);
+  document.addEventListener('keydown',function(e){ if(e.key==='Escape'||e.keyCode===27) close(); });
+})();
+</script>
+
+<!-- GEO service data for AI assistants (Schema.org Organization) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AKCO",
+  "legalName": "Smart Systems Industrial Plant Equipment — FZCO",
+  "description": "A full-cycle international engineering concern (co-engineering). Deployment-ready AI-powered ecosystems across eight industrial domains, with one integrated team and a single scope of accountability across MENA, China and the CIS.",
+  "slogan": "Concerto for Industry",
+  "url": "https://www.aksystems.co",
+  "email": "info@aksystems.co",
+  "telephone": ["+971581625132", "+971586007782", "+78437177717"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Office 105, Building B4, IFZA Business Park, Dubai Digital Park",
+    "addressLocality": "Dubai",
+    "addressCountry": "AE"
+  },
+  "areaServed": ["MENA", "China", "CIS"],
+  "sameAs": [
+    "https://www.linkedin.com/company/aksystemsco/",
+    "https://t.me/infoAKCO",
+    "https://wa.me/971586007782"
+  ],
+  "brand": [
+    {"@type": "Brand", "name": "AKCore™", "description": "software"},
+    {"@type": "Brand", "name": "AKSense™", "description": "industrial instruments"},
+    {"@type": "Brand", "name": "AKFlow™", "description": "process technologies"},
+    {"@type": "Brand", "name": "AKNeuro™", "description": "neuromorphic R&D"}
+  ],
+  "subOrganization": [
+    {"@type": "Organization", "name": "Smart Systems Industrial Plant Equipment FZCO", "location": "Dubai, UAE", "url": "https://www.aksystems.co"},
+    {"@type": "Organization", "name": "AKFinance Advisory Services FZCO", "location": "Dubai, UAE", "url": "https://akfinance.ae"},
+    {"@type": "Organization", "name": "Shanghai AKSENSE Technology Co., Ltd.", "location": "Shanghai, China", "url": "https://www.aksense.org"},
+    {"@type": "Organization", "name": "AK.COmm", "location": "CIS", "url": "https://www.aksystems.org"}
+  ],
+  "knowsAbout": [
+    "AKSense.Guard", "AKCore.MES", "AKSense.Climate", "AKFlow.Power", "AKFlow.Cycle", "AKFlow.Harvest", "AKCore.Boost", "AKCore.Trading", "AK.Desk", "AK.Talent", "AK.Prime", "AK.Retail", "AKNeuro.Bionic",
+    "AK.SPRINT methodology", "AK.PRISM methodology", "AK.CANON methodology", "4CO method",
+    "Asset reliability and performance", "Process control and quality", "Power and efficiency", "Ecology and recycling", "Life support", "Business services and finance", "Business operations and digital transformation", "Research and development"
+  ]
+}
+</script>
+</body>
+</html>

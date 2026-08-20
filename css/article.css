@@ -1,0 +1,39 @@
+/* article.css — листинги блога/кейсов (pages/blog, pages/cases). Светлая тема. */
+
+.page-hero {
+  padding-block: clamp(40px, 7vw, 80px);
+  background:
+    radial-gradient(60% 70% at 85% 0%, rgba(127, 186, 180, 0.14), transparent 60%),
+    var(--color-bg);
+}
+.page-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 800; letter-spacing: -0.01em; margin-bottom: 0.75rem; }
+.page-hero p { color: var(--color-text-muted); max-width: 60ch; }
+.breadcrumbs { font-size: 0.85rem; color: var(--color-text-muted); margin-bottom: 1rem; }
+.breadcrumbs a:hover { color: var(--color-accent); }
+
+/* Сетка карточек-постов */
+.post-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.post-card {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: transform 0.22s var(--ease), box-shadow 0.22s var(--ease);
+}
+.post-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+.post-card__tag { font-family: var(--font-display); font-weight: 700; font-size: 0.75rem; letter-spacing: 0.08em; color: var(--color-accent); }
+.post-card h3 { font-size: 1.12rem; }
+.post-card p { color: var(--color-text-muted); font-size: 0.92rem; flex: 1; }
+.post-card__meta { font-size: 0.8rem; color: var(--color-text-muted); }
+
+.empty-state {
+  border: 1px dashed var(--color-line);
+  border-radius: var(--radius);
+  padding: 48px;
+  text-align: center;
+  color: var(--color-text-muted);
+  background: var(--color-bg-2);
+}
+
+@media (max-width: 900px) { .post-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .post-grid { grid-template-columns: 1fr; } }
