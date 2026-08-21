@@ -96,11 +96,15 @@ nav.sc{background:rgba(24,24,24,.92);backdrop-filter:blur(20px);box-shadow:0 1px
 @media(max-width:900px){
   .hero{min-height:600px}
   /* логотип: размер зависит и от ширины, и от высоты экрана — на низких ужимается, чтобы не наезжать */
-  .hlogo{top:auto;bottom:34px;right:auto;left:50%;transform:translateX(-50%);width:min(44vw,16vh,185px);max-width:185px;height:auto;z-index:1}
-  .hlogo svg{height:auto;opacity:.5}
+  .hlogo{top:auto;bottom:26px;right:auto;left:50%;transform:translateX(-50%);width:min(50vw,18vh,210px);max-width:210px;height:auto;z-index:1}
+  .hlogo svg{height:auto;opacity:.55}
   /* обе кнопки в один ряд — вторая плашка поднимается к первой, не заходит на логотип */
   .hbtns{flex-wrap:nowrap;gap:8px}
   .hbtns .btn{font-size:10px;padding:11px 13px;letter-spacing:.04em;white-space:nowrap}
+}
+/* Высокие телефоны — места внизу достаточно, возвращаем логотипу крупный размер (почти как было) */
+@media(max-width:900px) and (min-height:780px){
+  .hlogo{width:min(62vw,27vh,290px);max-width:290px;bottom:30px}
 }
 /* На низких экранах (старые/маленькие телефоны) контент занимает почти всю высоту —
    декоративный логотип скрываем, чтобы он не наезжал на кнопки */
