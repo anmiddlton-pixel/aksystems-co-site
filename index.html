@@ -192,6 +192,9 @@ nav.sc{background:rgba(24,24,24,.92);backdrop-filter:blur(20px);box-shadow:0 1px
 .rv{opacity:0;transform:translateY(22px);transition:opacity .95s cubic-bezier(.22,.61,.36,1),transform .95s cubic-bezier(.22,.61,.36,1);will-change:opacity,transform}
 .rv.on{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
+/* Domain cards — modern 3D "focus-in": card stands up from a slight tilt + scale, with a soft blur */
+.dmc.rv{opacity:0;transform:perspective(1200px) rotateX(9deg) translateY(34px) scale(.975);transform-origin:50% 100%;filter:blur(6px);transition:opacity 1.05s cubic-bezier(.2,.6,.24,1),transform 1.05s cubic-bezier(.2,.6,.24,1),filter 1.05s cubic-bezier(.2,.6,.24,1)}
+.dmc.rv.on{opacity:1;transform:none;filter:none}
 @media(prefers-reduced-motion:reduce){
   .rv,.rv.on{opacity:1!important;transform:none!important;transition:none!important}
   .hi{opacity:1!important;animation:none!important}
@@ -1290,7 +1293,11 @@ window.addEventListener('scroll',function(){
 
 // Reveal — smooth, auto-staggered by order among .rv siblings
 var _revObs=new IntersectionObserver(function(entries){
-  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');_revObs.unobserve(e.target);}});
+  entries.forEach(function(e){if(e.isIntersecting){
+    var t=e.target;t.classList.add('on');_revObs.unobserve(t);
+    var wait=(parseFloat(t.style.transitionDelay)||0)*1000+1400;
+    setTimeout(function(){t.classList.remove('rv');t.classList.remove('on');t.style.transitionDelay='';t.style.willChange='';},wait);
+  }});
 },{threshold:.03,rootMargin:'0px 0px -3% 0px'});
 document.querySelectorAll('.rv').forEach(function(el){
   var p=el.parentElement,idx=0;
