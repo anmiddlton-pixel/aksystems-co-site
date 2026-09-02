@@ -189,7 +189,7 @@ nav.sc{background:rgba(24,24,24,.92);backdrop-filter:blur(20px);box-shadow:0 1px
 .sd{font-size:14px;color:var(--muted);line-height:1.75;max-width:460px}
 .aboutsec .st{color:#fff}
 .aboutsec .sd{color:var(--ink2)}
-.rv{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.16,.7,.3,1),transform .8s cubic-bezier(.16,.7,.3,1);will-change:opacity,transform}
 .rv.on{opacity:1;transform:translateY(0)}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}
 @media(prefers-reduced-motion:reduce){
@@ -831,10 +831,10 @@ body.pmodal-lock{overflow:hidden}
       <h2 class="st">Not a single company —<br><strong>a concern built on synergy</strong></h2>
     </div>
     <div class="posgrid">
-      <div class="posprose rv">
-        <p>A group of high-tech businesses joined by <strong>one value chain</strong>, where each company reinforces the others and every project can draw on the support of all. Today the group is three international companies and two engineering centers in the CIS, under one home brand — and it stays open: new partners slot into the existing value chain with ease.</p>
-        <p>Thirty years of team expertise in designing, building, and operating large-scale industrial facilities — and adjacent businesses — has taken shape as flexible, scalable, AI-powered ecosystems that give clients' businesses fresh momentum.</p>
-        <p>Our difference fits in one word: <strong>co-engineering</strong>. Suppliers sell a product and disappear; contractors finish and leave. AKCO stays — inside your team, on your sites, measured by your KPIs. We diagnose the pain before we propose, then assemble the right ecosystem to remove it. And our ecosystems don't grow in a lab — most are embedded in AKCO's own operations and learn from live situations every day. We call it <strong>Proven Inside</strong>.</p>
+      <div class="posprose">
+        <p class="rv">A group of high-tech businesses joined by <strong>one value chain</strong>, where each company reinforces the others and every project can draw on the support of all. Today the group is three international companies and two engineering centers in the CIS, under one home brand — and it stays open: new partners slot into the existing value chain with ease.</p>
+        <p class="rv">Thirty years of team expertise in designing, building, and operating large-scale industrial facilities — and adjacent businesses — has taken shape as flexible, scalable, AI-powered ecosystems that give clients' businesses fresh momentum.</p>
+        <p class="rv">Our difference fits in one word: <strong>co-engineering</strong>. Suppliers sell a product and disappear; contractors finish and leave. AKCO stays — inside your team, on your sites, measured by your KPIs. We diagnose the pain before we propose, then assemble the right ecosystem to remove it. And our ecosystems don't grow in a lab — most are embedded in AKCO's own operations and learn from live situations every day. We call it <strong>Proven Inside</strong>.</p>
       </div>
       <div class="poscard rv d1">
         <div class="etym">AK<span>·</span>CO = <span>smart</span></div>
@@ -856,15 +856,15 @@ body.pmodal-lock{overflow:hidden}
       <div class="ew"><div class="ewl"></div><span>Our numbers</span></div>
       <h2 class="st">A track record,<br><strong>not a pitch</strong></h2>
     </div>
-    <div class="numpanel rv d1" style="--numbg:url('assets/img/streams-electric.PNG')">
+    <div class="numpanel" style="--numbg:url('assets/img/streams-electric.PNG')">
       <div class="np-bg"></div>
       <div class="nums onphoto">
-        <div class="numi"><div class="numn">18 <span>years</span></div><div class="numl">The core team's average professional experience: plant operations, engineering, capital projects, and adjacent-business launches.</div></div>
-        <div class="numi"><div class="numn">$17 <span>bn</span></div><div class="numl">The largest completed project in a 40+ billion USD greenfield oil &amp; gas portfolio.</div></div>
-        <div class="numi"><div class="numn">23<span>%</span></div><div class="numl">Refinery productivity gain delivered through combined technical and organizational measures.</div></div>
-        <div class="numi"><div class="numn">100<span>+</span></div><div class="numl">Vetted professionals united in the AK.COmm community, mobilized per task or project.</div></div>
-        <div class="numi"><div class="numn">13</div><div class="numl">Deployment-ready agentic-AI ecosystems in the AK.Family portfolio.</div></div>
-        <div class="numi"><div class="numn">3</div><div class="numl">Proprietary methodologies that govern how we launch, deliver, and assure quality.</div></div>
+        <div class="numi rv"><div class="numn">18 <span>years</span></div><div class="numl">The core team's average professional experience: plant operations, engineering, capital projects, and adjacent-business launches.</div></div>
+        <div class="numi rv"><div class="numn">$17 <span>bn</span></div><div class="numl">The largest completed project in a 40+ billion USD greenfield oil &amp; gas portfolio.</div></div>
+        <div class="numi rv"><div class="numn">23<span>%</span></div><div class="numl">Refinery productivity gain delivered through combined technical and organizational measures.</div></div>
+        <div class="numi rv"><div class="numn">100<span>+</span></div><div class="numl">Vetted professionals united in the AK.COmm community, mobilized per task or project.</div></div>
+        <div class="numi rv"><div class="numn">13</div><div class="numl">Deployment-ready agentic-AI ecosystems in the AK.Family portfolio.</div></div>
+        <div class="numi rv"><div class="numn">3</div><div class="numl">Proprietary methodologies that govern how we launch, deliver, and assure quality.</div></div>
       </div>
     </div>
   </div>
@@ -898,13 +898,13 @@ body.pmodal-lock{overflow:hidden}
       <div class="ew" style="justify-content:center"><div class="ewl"></div><span>Manifesto</span></div>
       <h2 class="st">Concerto for Industry</h2>
     </div>
-    <div class="mani rv d1">
-      <p class="mline">Every project is a score. Sensors, control loops, users, engineers, economics, ecology — everything must play in tune, or a false note rings out: downtime, an incident, lost profit, a regulator's citation, wasted investment.</p>
-      <p class="mline">Most suppliers play their own part. One sells sensors, another pumps, a third software, a fourth knowledge. Each part may be excellent on its own. But <strong>no one owns how it all sounds together</strong> — and the client is left holding a conductor's baton nobody asked for.</p>
-      <p class="mline">AKCO is a Concern. From the Latin <em>concernere</em> — &ldquo;to share one matter.&rdquo; From the Italian <em>concerto</em> — &ldquo;to play in concert.&rdquo; We are not a vendor of goods. <strong>We are a co-performer.</strong></p>
-      <p class="mline">We work from inside your team. We work on your sites. We earn our bonuses on your achieved KPIs, not on our sales. We leave when your pain leaves — and we stay until it does.</p>
-      <p class="mline">From our own practice we assembled a full ensemble of intelligent instruments: <span class="brands">AKSense™</span> detects the signals, <span class="brands">AKFlow™</span> manages the flows, <span class="brands">AKCore™</span> thinks through the execution, <span class="brands">AK.COmm</span> teams deliver the projects, and <span class="brands">AKNeuro™</span> looks into humanity's future. Each can play solo. Together they sound like <em>concernere</em> — one language, one score.</p>
-      <p class="msig">We are an engineering school raised on problems the textbooks don't cover. We are the Concern that plays on your side of the score.</p>
+    <div class="mani">
+      <p class="mline rv">Every project is a score. Sensors, control loops, users, engineers, economics, ecology — everything must play in tune, or a false note rings out: downtime, an incident, lost profit, a regulator's citation, wasted investment.</p>
+      <p class="mline rv">Most suppliers play their own part. One sells sensors, another pumps, a third software, a fourth knowledge. Each part may be excellent on its own. But <strong>no one owns how it all sounds together</strong> — and the client is left holding a conductor's baton nobody asked for.</p>
+      <p class="mline rv">AKCO is a Concern. From the Latin <em>concernere</em> — &ldquo;to share one matter.&rdquo; From the Italian <em>concerto</em> — &ldquo;to play in concert.&rdquo; We are not a vendor of goods. <strong>We are a co-performer.</strong></p>
+      <p class="mline rv">We work from inside your team. We work on your sites. We earn our bonuses on your achieved KPIs, not on our sales. We leave when your pain leaves — and we stay until it does.</p>
+      <p class="mline rv">From our own practice we assembled a full ensemble of intelligent instruments: <span class="brands">AKSense™</span> detects the signals, <span class="brands">AKFlow™</span> manages the flows, <span class="brands">AKCore™</span> thinks through the execution, <span class="brands">AK.COmm</span> teams deliver the projects, and <span class="brands">AKNeuro™</span> looks into humanity's future. Each can play solo. Together they sound like <em>concernere</em> — one language, one score.</p>
+      <p class="msig rv">We are an engineering school raised on problems the textbooks don't cover. We are the Concern that plays on your side of the score.</p>
     </div>
   </div>
 </section>
@@ -1288,11 +1288,15 @@ window.addEventListener('scroll',function(){
   if(abg){var r=abg.parentElement.getBoundingClientRect();abg.style.transform='translateY('+(r.top*0.08)+'px)';}
 },{ passive:true });
 
-// Reveal
+// Reveal — smooth, auto-staggered by order among .rv siblings
+var _revObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');_revObs.unobserve(e.target);}});
+},{threshold:.06,rootMargin:'0px 0px -6% 0px'});
 document.querySelectorAll('.rv').forEach(function(el){
-  new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting)e.target.classList.add('on');});
-  },{threshold:.08}).observe(el);
+  var p=el.parentElement,idx=0;
+  if(p){var sibs=[].slice.call(p.children).filter(function(c){return c.classList&&c.classList.contains('rv');});idx=sibs.indexOf(el);}
+  el.style.transitionDelay=(Math.min(idx<0?0:idx,5)*0.07).toFixed(2)+'s';
+  _revObs.observe(el);
 });
 
 // Scroll to
