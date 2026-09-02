@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
 <title>AKCO™ — Concerto for Industry | aksystems.co</title>
-<meta name="description" content="AKCO — a full-cycle international engineering concern (co-engineering). Deployment-ready AI-powered AK.Family ecosystems across 8 industrial domains, one integrated team and a single scope of accountability across MENA, China and the CIS.">
+<meta name="description" content="AKCO — a full-cycle international engineering concern (co-engineering). Deployment-ready AI-powered AK.Family ecosystems across 9 industrial domains, one integrated team and a single scope of accountability across MENA, China and the CIS.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
 <style>
@@ -686,6 +686,24 @@ select.minp option{background:#1c1c1c;color:var(--ink)}
 .stepband::after{content:"";position:absolute;inset:0;background:linear-gradient(rgba(30,31,33,.9),rgba(30,31,33,.8))}
 .stepband>*{position:relative;z-index:1}
 .stepband .cnode{background:#242527}
+
+/* AKCO Positioning — prose + etymology card */
+.posgrid{display:grid;grid-template-columns:1.25fr .75fr;gap:52px;align-items:start}
+@media(max-width:860px){.posgrid{grid-template-columns:1fr;gap:30px}}
+.posprose p{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:16px}
+.posprose p:last-child{margin-bottom:0}
+.posprose strong{color:var(--ink);font-weight:600}
+.poscard{border:1px solid var(--border);border-radius:var(--rxl);background:rgba(42,42,42,.55);padding:32px 30px}
+.poscard .etym{font-size:26px;font-weight:800;color:#fff;letter-spacing:.01em;margin-bottom:10px}
+.poscard .etym span{color:var(--teal)}
+.poscard .etsub{font-size:12.5px;color:var(--muted);line-height:1.72;margin-bottom:22px}
+.poscard .etsub strong{color:var(--ink);font-weight:600}
+.posfacts{display:flex;flex-direction:column;gap:14px;border-top:1px solid rgba(255,255,255,.1);padding-top:18px}
+.posfact{display:flex;gap:14px;align-items:baseline}
+.posfact b{font-size:24px;font-weight:800;color:var(--teal);min-width:26px;line-height:1}
+.posfact span{font-size:12.5px;color:var(--muted);line-height:1.45}
+/* R&D — full-width domain card */
+.dmc.dmc-wide{grid-column:1/-1}
 </style>
 
 <style id="pmodal-css">
@@ -717,7 +735,7 @@ body.pmodal-lock{overflow:hidden}
 
 <!-- Mobile menu -->
 <div class="mob" id="mob">
-  <a href="#why" onclick="cm()">Concern</a>
+  <a href="#positioning" onclick="cm()">Concern</a>
   <a href="#domains" onclick="cm()">Domains</a>
   <a href="#ecosystems" onclick="cm()">Ecosystems</a>
   <a href="#method" onclick="cm()">Method</a>
@@ -734,7 +752,7 @@ body.pmodal-lock{overflow:hidden}
     <img src="assets/logos/akco-logo-white.svg" alt="AKCO" height="48" style="width:auto">
   </a>
   <div class="nl">
-    <a href="#why">Concern</a>
+    <a href="#positioning">Concern</a>
     <a href="#domains">Domains</a>
     <a href="#ecosystems">Ecosystems</a>
     <a href="#method">Method</a>
@@ -769,7 +787,7 @@ body.pmodal-lock{overflow:hidden}
   <div class="hc">
     <div class="ey hi d1"><div class="eyl"></div><span>AKCO™ · Concerto for Industry</span></div>
     <h1 class="ht hi d2">The Concern that works<br><strong>with you, not instead of you</strong></h1>
-    <p class="hd hi d3">A full-cycle international engineering concern: deployment-ready AI-powered ecosystems, one integrated team, and a single scope of accountability across the Middle East, North Africa and China — drawing on professional engineering talent from the CIS.</p>
+    <p class="hd hi d3">A full-cycle international engineering concern that applies intelligence the engineering way — diagnose the pain, assemble the ecosystem that removes it, and answer for the result across its whole operating life. One integrated team inside yours; a single scope of accountability across MENA, China and the CIS.</p>
     <div class="hbtns hi d4">
       <a href="#order" class="btn btn-p">Get in touch</a>
       <a href="#ecosystems" class="btn btn-g">Explore ecosystems →</a>
@@ -783,7 +801,7 @@ body.pmodal-lock{overflow:hidden}
   <!-- 4 плитки направлений -->
   <div class="dtiles">
     <a href="#domains" class="dtile hi d1">
-      <span class="dtile__kick">8 domains</span>
+      <span class="dtile__kick">9 domains</span>
       <h3>Pains we eliminate</h3>
       <p>We center on the pain, not the technology</p>
     </a>
@@ -805,6 +823,32 @@ body.pmodal-lock{overflow:hidden}
   </div>
 </section>
 
+<!-- AKCO POSITIONING -->
+<section id="positioning" class="vsec">
+  <div class="vwrap">
+    <div class="vhead rv">
+      <div class="ew"><div class="ewl"></div><span>The Concern</span></div>
+      <h2 class="st">Not a single company —<br><strong>a concern built on synergy</strong></h2>
+    </div>
+    <div class="posgrid">
+      <div class="posprose rv">
+        <p>A group of high-tech businesses joined by <strong>one value chain</strong>, where each company reinforces the others and every project can draw on the support of all. Today the group is three international companies and two engineering centers in the CIS, under one home brand — and it stays open: new partners slot into the existing value chain with ease.</p>
+        <p>Thirty years of team expertise in designing, building, and operating large-scale industrial facilities — and adjacent businesses — has taken shape as flexible, scalable, AI-powered ecosystems that give clients' businesses fresh momentum.</p>
+        <p>Our difference fits in one word: <strong>co-engineering</strong>. Suppliers sell a product and disappear; contractors finish and leave. AKCO stays — inside your team, on your sites, measured by your KPIs. We diagnose the pain before we propose, then assemble the right ecosystem to remove it. And our ecosystems don't grow in a lab — most are embedded in AKCO's own operations and learn from live situations every day. We call it <strong>Proven Inside</strong>.</p>
+      </div>
+      <div class="poscard rv d1">
+        <div class="etym">AK<span>·</span>CO = <span>smart</span></div>
+        <div class="etsub">The prefix comes from <em>akıllı</em> (Turkic) and <em>أكيس · akyas</em> (Arabic) — &ldquo;smart, intelligent.&rdquo; Our HQ carries it in its name: <strong>Smart Systems</strong>.</div>
+        <div class="posfacts">
+          <div class="posfact"><b>3</b><span>international companies (UAE, China)</span></div>
+          <div class="posfact"><b>2</b><span>engineering centers in the CIS</span></div>
+          <div class="posfact"><b>1</b><span>home brand · one value chain</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- OUR NUMBERS -->
 <section id="numbers" class="vsec">
   <div class="vwrap">
@@ -815,7 +859,7 @@ body.pmodal-lock{overflow:hidden}
     <div class="numpanel rv d1" style="--numbg:url('assets/img/streams-electric.PNG')">
       <div class="np-bg"></div>
       <div class="nums onphoto">
-        <div class="numi"><div class="numn">18 <span>years</span></div><div class="numl">The core team's average professional experience: plant operations, engineering, capital projects.</div></div>
+        <div class="numi"><div class="numn">18 <span>years</span></div><div class="numl">The core team's average professional experience: plant operations, engineering, capital projects, and adjacent-business launches.</div></div>
         <div class="numi"><div class="numn">$17 <span>bn</span></div><div class="numl">The largest completed project in a 40+ billion USD greenfield oil &amp; gas portfolio.</div></div>
         <div class="numi"><div class="numn">23<span>%</span></div><div class="numl">Refinery productivity gain delivered through combined technical and organizational measures.</div></div>
         <div class="numi"><div class="numn">100<span>+</span></div><div class="numl">Vetted professionals united in the AK.COmm community, mobilized per task or project.</div></div>
@@ -855,12 +899,12 @@ body.pmodal-lock{overflow:hidden}
       <h2 class="st">Concerto for Industry</h2>
     </div>
     <div class="mani rv d1">
-      <p class="mline">Every project is a score. Sensors, control loops, users, engineers, economics, ecology — everything must play in tune, or the false note is heard: downtime, an incident, lost profit, a regulator's citation, wasted investment.</p>
-      <p class="mline">Most suppliers play their own part. One sells sensors, another pumps, a third software, a fourth knowledge. Each part may be excellent on its own. But <strong>no one answers for how it all sounds together</strong> — and the client is left holding a conductor's baton nobody asked for.</p>
+      <p class="mline">Every project is a score. Sensors, control loops, users, engineers, economics, ecology — everything must play in tune, or a false note rings out: downtime, an incident, lost profit, a regulator's citation, wasted investment.</p>
+      <p class="mline">Most suppliers play their own part. One sells sensors, another pumps, a third software, a fourth knowledge. Each part may be excellent on its own. But <strong>no one owns how it all sounds together</strong> — and the client is left holding a conductor's baton nobody asked for.</p>
       <p class="mline">AKCO is a Concern. From the Latin <em>concernere</em> — &ldquo;to share one matter.&rdquo; From the Italian <em>concerto</em> — &ldquo;to play in concert.&rdquo; We are not a vendor of goods. <strong>We are a co-performer.</strong></p>
-      <p class="mline">We join your team from the inside. We work on your sites. We earn our bonuses on your achieved KPIs, not on sales. We leave when your pain leaves — and we stay until it does.</p>
+      <p class="mline">We work from inside your team. We work on your sites. We earn our bonuses on your achieved KPIs, not on our sales. We leave when your pain leaves — and we stay until it does.</p>
       <p class="mline">From our own practice we assembled a full ensemble of intelligent instruments: <span class="brands">AKSense™</span> detects the signals, <span class="brands">AKFlow™</span> manages the flows, <span class="brands">AKCore™</span> thinks through the execution, <span class="brands">AK.COmm</span> teams deliver the projects, and <span class="brands">AKNeuro™</span> looks into humanity's future. Each can play solo. Together they sound like <em>concernere</em> — one language, one score.</p>
-      <p class="msig">We are an engineering school raised on problems that are not in the textbooks. We are the Concern that works with you, not instead of you.</p>
+      <p class="msig">We are an engineering school raised on problems the textbooks don't cover. We are the Concern that plays on your side of the score.</p>
     </div>
   </div>
 </section>
@@ -871,7 +915,7 @@ body.pmodal-lock{overflow:hidden}
     <div class="vbanner rv" style="background-image:url('assets/img/streams2.png')">
       <div class="ew"><div class="ewl"></div><span>Business domains</span></div>
       <h2 class="st">Pains we eliminate</h2>
-      <p class="vlede">We work in eight domains — the term centers on the pain, not the technology. We do not confine ourselves to industries: the problems different industries face share common roots. If one of these sounds like your Monday, that domain is yours.</p>
+      <p class="vlede">AKCO works in eight core areas — and grows in every one. We call them domains, because the term centers on the pain, not the technology. The eXtra is R&amp;D — the domain for solutions that don't exist yet. Problems across industries share common roots, so knowledge earned in one solves problems in another. If one of these sounds like your Monday, that domain is yours.</p>
     </div>
     <div class="dmgrid">
       <div class="dmc rv">
@@ -920,16 +964,7 @@ body.pmodal-lock{overflow:hidden}
         </div>
       </div>
       <div class="dmc rv d1">
-        <div class="dmn">06</div><h3>Business Services &amp; Finance</h3>
-        <p>A wide range of business-support needs, including the launch of new cross-border ventures — without hiring, with lower overhead.</p>
-        <a class="eco" href="#ecosystems">AK.Desk →</a>
-        <div class="pains">
-          <div class="pain">Bank compliance eats months — the account does not open by itself.</div>
-          <div class="pain">We picked the wrong free zone — now we overpay for licenses and taxes.</div>
-        </div>
-      </div>
-      <div class="dmc rv">
-        <div class="dmn">07</div><h3>Business Operations &amp; Digital Transformation</h3>
+        <div class="dmn">06</div><h3>Business Operations &amp; Digital Transformation</h3>
         <p>Automation of internal business processes and better traceability — ERP, analytics, CRM, proposal preparation, intelligent RPA.</p>
         <a class="eco" href="#ecosystems">AKCore.Boost →</a>
         <div class="pains">
@@ -937,13 +972,28 @@ body.pmodal-lock{overflow:hidden}
           <div class="pain">Knowledge walks out with the people, and AI pilots never make it to production.</div>
         </div>
       </div>
-      <div class="dmc rv d1">
-        <div class="dmn">08</div><h3>Research &amp; Development</h3>
-        <p>Where no ready solution exists yet, the AKCO team researches, prototypes, and implements the missing solution — then adds it to the AK.Store catalog.</p>
-        <a class="eco" href="#ecosystems">AK.Store →</a>
+      <div class="dmc rv">
+        <div class="dmn">07</div><h3>Business Services &amp; Finance</h3>
+        <p>A wide range of business-support needs, including the launch of new cross-border ventures — without hiring, with lower overhead.</p>
+        <a class="eco" href="#ecosystems">AK.Desk →</a>
         <div class="pains">
-          <div class="pain">Domains 1–7 are covered by ready ecosystems; R&amp;D takes on the problems that are not solved yet.</div>
+          <div class="pain">Bank compliance eats months — the account does not open by itself.</div>
+          <div class="pain">We picked the wrong free zone — now we overpay for licenses and taxes.</div>
         </div>
+      </div>
+      <div class="dmc rv d1">
+        <div class="dmn">08</div><h3>Capital Projects</h3>
+        <p>Initiation, launch and delivery of large capital-investment projects: feasibility and bankability, project-office setup, EPC management, through commissioning and trial operation.</p>
+        <a class="eco" href="#ecosystems">AK.Prime →</a>
+        <div class="pains">
+          <div class="pain">The investment decision is signed — and there is no one to execute it.</div>
+          <div class="pain">Every contractor blames the next one, and the overrun always lands on us.</div>
+        </div>
+      </div>
+      <div class="dmc dmc-wide rv">
+        <div class="dmn">X</div><h3>Research &amp; Development — the eXtra</h3>
+        <p>The eight domains run on ready ecosystems that solve known problems; the eXtra exists for everything else — tasks with no ready solution yet. The AKCO team researches the problem, models the object, prototypes the missing solution, and deploys it in real conditions. What proves itself becomes a product and joins the AK.Store catalog.</p>
+        <a class="eco" href="#ecosystems">AK.Store →</a>
       </div>
     </div>
   </div>
@@ -955,14 +1005,14 @@ body.pmodal-lock{overflow:hidden}
     <div class="vhead rv">
       <div class="ew"><div class="ewl"></div><span>AK.Family ecosystems</span></div>
       <h2 class="st">Deployment-ready,<br><strong>not stand-alone products</strong></h2>
-      <p class="vlede">AK.Family is AKCO's portfolio of pre-integrated, AI-powered ecosystems — complete Live Proof solutions. Each brings hardware, software, technology, services, and people together around one business outcome, built on the shared brands AKCore™, AKSense™, AKFlow™ and AKNeuro™, so components work together out of the box. Thirteen ecosystems in the portfolio.</p>
+      <p class="vlede">AK.Family is AKCO's portfolio of pre-integrated, AI-powered ecosystems — complete, deployment-ready solutions, each Proven Inside. An ecosystem is not a fixed bundle: components are selected, added, or swapped to fit the client's object and existing systems. What you see below are reference configurations — assembled, run, and proven in live operation. All are built on the shared brands AKCore™, AKSense™, AKFlow™ and AKNeuro™, so components work together out of the box. Thirteen ecosystems in the portfolio.</p>
     </div>
     <div class="whyeco">
-      <div class="we rv"><h4>Built to purpose</h4><p>A ready, integrated stack against a specific pain — plug-and-play, not a kit that needs a year of integration glue.</p></div>
+      <div class="we rv"><h4>Purpose-built</h4><p>A ready, integrated stack against a specific pain — plug-and-play, not a kit that needs a year of integration glue.</p></div>
       <div class="we rv d1"><h4>Not a demo — production</h4><p>Every ecosystem first runs in the Concern's own live environment, then ships. A system under real load, with real mileage.</p></div>
-      <div class="we rv d2"><h4>Live Proof</h4><p>The showcase streams our internal systems as they are — the agent, the bot, CRM, MES — on live, anonymized dashboards.</p></div>
+      <div class="we rv d2"><h4>Proven Inside</h4><p>The showcase streams our internal systems as they are — the agent, the bot, CRM, MES — on live, anonymized dashboards.</p></div>
       <div class="we rv d3"><h4>Upgrades without teardown</h4><p>Layers are versioned independently: new sensors, models, and agents go in hot — hot-swap instead of rip-and-replace.</p></div>
-      <div class="we rv d4"><h4>Scalability</h4><p>A modular, seven-layer architecture that grows and updates without stopping the whole. New technology strengthens it.</p></div>
+      <div class="we rv d4"><h4>Adaptive</h4><p>A modular, seven-layer architecture that grows and updates without stopping the whole. New technology strengthens it.</p></div>
     </div>
     <div class="ecolist">
       <div class="ecorow rv"><div><span class="el-name">AKSense.Guard</span><span class="el-dom">Asset reliability</span></div><div><p>Wireless AKSense™ sensors instrument critical machines on the run — no shutdown; AI agents track remaining useful life against a reference, so failures are predicted weeks ahead and repairs follow the schedule.</p><div class="el-entry"><b>Entry:</b> a survey of the critical fleet and a pilot on the most troublesome machines; roll-out follows the pilot's numbers.</div></div></div>
@@ -974,7 +1024,7 @@ body.pmodal-lock{overflow:hidden}
       <div class="ecorow rv"><div><span class="el-name">AKFlow.Power</span><span class="el-dom">Power &amp; efficiency</span></div><div><p>A mobile continuous plant generating electricity from available fuel — most often LNG — via AKFlow™ gas-turbine technology, re-tuning flexibly as fuel composition changes. Built for remote sites and edge data centers.</p><div class="el-entry"><b>Entry:</b> an energy audit with a cost-per-kWh estimate before any commitment.</div></div></div>
       <div class="ecorow rv"><div><span class="el-name">AK.Desk</span><span class="el-dom">Business services</span></div><div><p>A service package for every stage of growth: banking, payroll, licensing, accounting, taxes, cross-border settlements — plus agency services, marketing, certification and investment-project development under AK.COwork.</p><div class="el-entry"><b>For:</b> new ventures and exporters entering MENA markets.</div></div></div>
       <div class="ecorow rv"><div><span class="el-name">AK.Talent</span><span class="el-dom">Business services</span></div><div><p>An outsourcing package to rapidly mobilize individual experts or functional teams from the AK.COmm community, trained in the Concern's procedures. Hybrid &ldquo;engineer + machine&rdquo; units with built-in mentoring.</p><div class="el-entry"><b>For:</b> EPC contractors and industrial companies whose schedules cannot wait for hiring cycles.</div></div></div>
-      <div class="ecorow rv"><div><span class="el-name">AK.Prime</span><span class="el-dom">Business services</span></div><div><p>A ready-made project office — specialists and discipline leads — acting as the single center of accountability across the full scope: feasibility and bank due diligence, design, procurement, construction, startup and trial operation.</p><div class="el-entry"><b>For:</b> major clients in chemicals, refining, LNG and fertilizers who need one accountable partner.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AK.Prime</span><span class="el-dom">Capital projects</span></div><div><p>A ready-made project office — specialists and discipline leads — acting as the single center of accountability across the full scope: feasibility and bank due diligence, design, procurement, construction, startup and trial operation.</p><div class="el-entry"><b>For:</b> major clients in chemicals, refining, LNG and fertilizers who need one accountable partner.</div></div></div>
       <div class="ecorow rv"><div><span class="el-name">AKNeuro.Bionic</span><span class="el-dom">Medicine · R&amp;D</span></div><div><p>Rehabilitation technology: AKNeuro™ neuromorphic EMG processing translates human intent into natural, real-time control of a bionic device, adapting to the person via AKCore™ AI. Runs as medical R&amp;D and a philanthropic initiative.</p><div class="el-entry"><b>Aim:</b> human-machine interfaces for exoskeletons and assistive devices.</div></div></div>
     </div>
   </div>
@@ -984,23 +1034,24 @@ body.pmodal-lock{overflow:hidden}
 <section id="method" class="vsec alt">
   <div class="vwrap">
     <div class="vhead rv">
-      <div class="ew"><div class="ewl"></div><span>Project discipline</span></div>
-      <h2 class="st">The 4CO method &amp;<br><strong>an integrity approach</strong></h2>
-      <p class="vlede">One Concern answers for the whole circuit. Integrity — of the lifecycle, the team, the portfolio, and accountability — is not a slogan but the way projects are run.</p>
+      <div class="ew"><div class="ewl"></div><span>Art of Engineering</span></div>
+      <h2 class="st">The 4CO method &amp;<br><strong>ecosystem integrity</strong></h2>
+      <p class="vlede">AKCO builds its ecosystems as closed-loop systems: maximum efficiency and sustainability hold only when integrity holds across six dimensions. One Concern answers for the whole loop.</p>
     </div>
     <div class="integlist">
-      <div class="il rv"><h4>Lifecycle integrity</h4><p>From the feasibility study to service across the full operating life, in one scope. The team that designed the solution answers for how it runs in year five.</p></div>
+      <div class="il rv"><h4>Portfolio integrity</h4><p>AK.Family delivers a finished solution, not a scatter of components. Integration is our work before the contract, not the client's after it.</p></div>
+      <div class="il rv"><h4>Deployment integrity</h4><p>The assembled ecosystem starts its life at an AKCO facility and arrives in the client's environment already tuned and ready to run.</p></div>
       <div class="il rv"><h4>Team integrity</h4><p>Client and AKCO are one organism: shared dashboards, shared data, a shared definition of &ldquo;done.&rdquo;</p></div>
-      <div class="il rv"><h4>Portfolio integrity</h4><p>AK.Family delivers a finished solution. Integration is our work before the contract, not the client's after it.</p></div>
       <div class="il rv"><h4>Integrity over time</h4><p>We do not leave at handover. The most valuable data about any system starts arriving the day it is commissioned.</p></div>
-      <div class="il rv"><h4>Integrity of accountability</h4><p>There is the outcome — and everything that affects it. &ldquo;Not our department&rdquo; is not spoken here.</p></div>
+      <div class="il rv"><h4>Integrity of accountability</h4><p>One Concern answers for the whole loop. &ldquo;Not our department&rdquo; is not spoken here — there is the outcome, and everything that affects it.</p></div>
+      <div class="il rv"><h4>Lifecycle integrity</h4><p>From the feasibility study to service across the full operating life, in one scope. The team that designed the ecosystem answers for how it runs in year five.</p></div>
       <div class="il rv"><h4>Integrity has a price</h4><p>It takes a concern, not a vendor. Fragmented suppliers can quote lower on any single layer; none can guarantee the whole.</p></div>
     </div>
     <div class="stepband" style="background-image:url('assets/img/streams1.png')">
     <div class="costeps">
       <div class="costp rv"><div class="cnode">01</div><h3>CO<b>mpose</b></h3><div class="cosub">Compose the proposed solution</div><ul><li>Define the problems and the potential; fix the baseline — current costs, losses, output.</li><li>Follow the method: a structured site survey and a detailed statement of work before signature.</li><li>Deploy an ecosystem, not a set of products — integrated, single scope of accountability.</li></ul></div>
-      <div class="costp rv d1"><div class="cnode">02</div><h3>CO<b>nsolidate</b></h3><div class="cosub">Consolidate project resources</div><ul><li>Build an integrated team from client staff, the AKCO project office, and subcontractors.</li><li>Everyone in one information space, incentives resting on the project's KPIs.</li><li>Engage proven resources through the AK.Grid partner network.</li></ul></div>
-      <div class="costp rv d2"><div class="cnode">03</div><h3>CO<b>ncert</b></h3><div class="cosub">Coordinate participants intelligently</div><ul><li>Run on AK.PRISM — the operating system of every project office, reinforced by digital assistants.</li><li>Assure quality with AK.CANON: strategic QA, process QC, and continuous operational QC in one loop.</li><li>Prevent nonconformities, not merely correct them — on data, not opinions.</li></ul></div>
+      <div class="costp rv d1"><div class="cnode">02</div><h3>CO<b>nsolidate</b></h3><div class="cosub">Consolidate project resources</div><ul><li>Build an integrated team from client staff, the AKCO project office, and subcontractors.</li><li>Everyone in one information space, incentives resting on the project's KPIs.</li><li>Engage proven resources through the AK.Grid partner network.</li><li>Plug in the Concern's internal services — AK.Office back-office and the AK.Staff pool.</li></ul></div>
+      <div class="costp rv d2"><div class="cnode">03</div><h3>CO<b>ncert</b></h3><div class="cosub">Coordinate participants intelligently</div><ul><li>Model the object — a digital model kept current through delivery; decisions are checked against it, not against recollections.</li><li>Run on AK.PRISM — the operating system of every project office, reinforced by digital assistants.</li><li>Assure quality with AK.CANON: strategic QA, process QC, and continuous operational QC in one loop.</li><li>Prevent nonconformities, not merely correct them — on data, not opinions.</li></ul></div>
       <div class="costp rv d3"><div class="cnode">04</div><h3>CO<b>ntribute</b></h3><div class="cosub">Cooperate with the world</div><ul><li>Measure the result in the client's categories, against the SOW and contract.</li><li>Create value beyond the contract; draw lessons from every project into a register.</li><li>Grow the AK.Grid network and the portfolio — solutions return to the catalog.</li></ul></div>
     </div>
     </div>
@@ -1020,29 +1071,20 @@ body.pmodal-lock{overflow:hidden}
     <div class="mrow rv" style="background-image:url('assets/img/cases-mountain.png');background-position:center 32%">
       <div class="mnum">01</div>
       <div>
-        <div class="mtag">EPC · Industry · AK.Talent</div>
-        <h3>Contract won, no crew</h3>
-        <p>A signed contract and no specialists to deliver it; hiring estimated at three to six months against a schedule already running. Leased teams from the AK.Staff pool and the AK.COmm community, mobilized under the Concern's procedures.</p>
+        <div class="mtag">Capital Projects · Reference</div>
+        <h3>Project launched, no team to run it</h3>
+        <p>Baltic Chemical Complex, Ust-Luga — one of the world's largest polyethylene projects (~3 Mt PE/yr, ~€10 bn capex) moved into execution with no project office to run it. Marat Basharov assembled it through direct engagement of proven specialists — the machinery now packaged as AK.Talent, drawing on the AK.Staff pool and AK.COmm community.</p>
       </div>
-      <div class="mres"><small>Result</small>A working team in days — scaled back when the peak passed</div>
+      <div class="mres"><small>Result</small>A working project office three months after initiation</div>
     </div>
     <div class="mrow rv d1" style="background-image:url('assets/img/cases-whitewater.png');background-position:center 30%">
       <div class="mnum">02</div>
       <div>
-        <div class="mtag">Reference · Greenfield O&amp;G</div>
-        <h3>TANECO greenfield complex</h3>
-        <p>Flagship capital-project contracts at anchor refining and petrochemical complexes in the CIS. Reference visits offered wherever the client is willing to host them.</p>
+        <div class="mtag">Capital Projects · Reference</div>
+        <h3>A refinery from bare field in four years</h3>
+        <p>TANECO, Nizhnekamsk — a greenfield refining complex (Phase 1 ~7 Mt/yr, ~$5.8 bn). Basharov and the core of today's AKCO team delivered it with Fluor as project-management contractor and 12+ international licensors (UOP, Axens, Shell, Haldor Topsøe, LyondellBasell) under one project discipline — now codified in 4CO and AK.PRISM.</p>
       </div>
-      <div class="mres"><small>Track record</small>Anchor refining &amp; petrochemicals</div>
-    </div>
-    <div class="mrow rv d2" style="background-image:url('assets/img/cases-streams.png')">
-      <div class="mnum">03</div>
-      <div>
-        <div class="mtag">Reference · Petrochemicals</div>
-        <h3>Work within the TAIF perimeter</h3>
-        <p>Every published case names the companies and community units that delivered it: the group's structure explains itself through its work — and that is how it should be read.</p>
-      </div>
-      <div class="mres"><small>Track record</small>Named reference projects</div>
+      <div class="mres"><small>Result</small>Company formed 2006 → first-phase startup Oct 2010</div>
     </div>
   </div>
 </section>
@@ -1052,10 +1094,10 @@ body.pmodal-lock{overflow:hidden}
   <div class="vwrap">
     <div class="partners">
       <div class="rv">
-        <div class="ew"><div class="ewl"></div><span>Partners &amp; cooperation</span></div>
+        <div class="ew"><div class="ewl"></div><span>Partnership &amp; cooperation</span></div>
         <h2 class="st" style="margin-bottom:14px">1 + 1 = 3</h2>
-        <p class="sd" style="max-width:none;margin-bottom:20px">AKCO is an open Concern looking to the future. We believe in synergy between intelligent people and professional companies, whatever badge they wear. At a time when the world drifts toward separation, we call for joining forces. Partnership to us is also a shared development agenda.</p>
-        <p class="vlede" style="margin-top:0;margin-bottom:16px">We welcome as AK.Grid partners — integration, joint development, project delivery, trading, investment, startups:</p>
+        <p class="sd" style="max-width:none;margin-bottom:20px">AKCO is an open Concern looking to the future. We believe in synergy between intelligent people and professional companies, whatever badge they wear. At a time when the world drifts toward separation, we call for joining forces. Partnership, as we understand it, is more than contracts — it is a shared road of growth, where management, quality, and sustainability practices travel freely between our teams and yours.</p>
+        <p class="vlede" style="margin-top:0;margin-bottom:16px">The doors of AK.Grid are open to everyone who builds — any form of cooperation: integration, joint development, project delivery, trading, investment, startups:</p>
         <div class="ptypes">
           <span>Freelancers</span><span>Manufacturers &amp; suppliers</span><span>Specialized contractors</span><span>Integrators</span><span>Technology partners</span>
         </div>
@@ -1119,7 +1161,7 @@ body.pmodal-lock{overflow:hidden}
         <a class="crow" href="tel:+78437177717"><span class="k">🌍 CIS office</span><span class="v">+7 843 717 77 17</span></a>
         <a class="crow" href="https://t.me/infoAKCO" target="_blank" rel="noopener"><span class="k">✈️ Telegram</span><span class="v">@infoAKCO</span></a>
         <a class="crow" href="https://www.linkedin.com/company/aksystemsco/" target="_blank" rel="noopener"><span class="k">in LinkedIn</span><span class="v">/company/aksystemsco</span></a>
-        <div class="crow"><span class="k">💬 WeChat</span><span class="v">AKCO</span></div>
+        <div class="crow"><span class="k">💬 WeChat</span><span class="v">Ak_Systems</span></div>
       </div>
     </div>
     <div class="cmap-right rv d2">
@@ -1437,7 +1479,7 @@ function sub(){
   "knowsAbout": [
     "AKSense.Guard", "AKCore.MES", "AKSense.Climate", "AKFlow.Power", "AKFlow.Cycle", "AKFlow.Harvest", "AKCore.Boost", "AKCore.Trading", "AK.Desk", "AK.Talent", "AK.Prime", "AK.Retail", "AKNeuro.Bionic",
     "AK.SPRINT methodology", "AK.PRISM methodology", "AK.CANON methodology", "4CO method",
-    "Asset reliability and performance", "Process control and quality", "Power and efficiency", "Ecology and recycling", "Life support", "Business services and finance", "Business operations and digital transformation", "Research and development"
+    "Asset reliability and performance", "Process control and quality", "Power and efficiency", "Life support", "Ecology and recycling", "Business operations and digital transformation", "Business services and finance", "Capital projects", "Research and development"
   ]
 }
 </script>
