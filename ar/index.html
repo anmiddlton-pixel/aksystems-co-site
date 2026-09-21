@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" href="../assets/icons/favicon.svg" type="image/svg+xml">
-<title>AKCO™ · 全周期国际工程集团 | Concerto for Industry</title>
-<meta name="description" content="AKCO —— 全周期国际工程集团（协同工程）。面向 9 大工业领域、可直接落地的 AI 驱动 AK.Family 生态体系；一个整合团队、一个统一责任主体，覆盖中东北非、中国与独联体。">
+<title>AKCO™ · مجموعة هندسية دولية متكاملة الدورة | Concerto for Industry</title>
+<meta name="description" content="AKCO — مجموعة هندسية دولية متكاملة الدورة (الهندسة التشاركية). منظومات AK.Family جاهزة للتطبيق ومدعومة بالذكاء الاصطناعي عبر 9 مجالات صناعية؛ فريق واحد متكامل ونطاق مسؤولية واحد في الشرق الأوسط وشمال أفريقيا والصين ورابطة الدول المستقلة.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -738,6 +739,44 @@ select.minp option{background:#1c1c1c;color:var(--ink)}
 body.pmodal-lock{overflow:hidden}
 @media(max-width:600px){.pmodal__panel{padding:30px 22px}}
 </style>
+
+<style id="rtl">
+/* ===== RTL / Arabic ===== */
+body{font-family:'Montserrat','Noto Sans Arabic',sans-serif}
+body *{letter-spacing:normal!important}
+/* language switcher */
+nav .lang{margin-left:0;margin-right:16px}
+.mob .lang{margin-right:0}
+/* HERO */
+.hc{left:auto;right:72px}
+@media(max-width:900px){.hc{right:24px;left:24px}}
+.htitle{left:auto;right:40%}
+.hwm{right:auto;left:2%}
+.hlogo{right:auto;left:3%}
+@media(max-width:900px){.hlogo{left:50%;right:auto}}
+.schi{right:auto;left:80px}
+.srail{right:auto;left:16px}
+/* direction tiles borders mirror */
+.dtile{border-right:none;border-left:1px solid rgba(78,78,78,.12)}
+.dtile:last-child{border-left:none}
+/* split panel (About) mirror */
+.sp-panel{border-right:none;border-left:1px solid rgba(255,255,255,.12);border-radius:28px 0 0 28px}
+@media(max-width:900px){.sp-panel{border-left:none!important}}
+/* pain quote mark to the right */
+.pain{padding-left:0;padding-right:16px}
+.pain::before{left:auto;right:0}
+/* founder accent border to the right */
+.founder{border-left:none;border-right:3px solid var(--teal)}
+/* proof result hugs the (left) column edge */
+.mres{text-align:left}
+@media(max-width:760px){.mres{text-align:right}}
+/* contacts value align */
+.crow .v{text-align:left}
+/* cases header button to start */
+#cases .mbtn{align-self:flex-start}
+/* SVG arrows point left in RTL */
+.cbtn svg{transform:scaleX(-1)}
+</style>
 </head>
 <body>
 
@@ -747,19 +786,19 @@ body.pmodal-lock{overflow:hidden}
 
 <!-- Mobile menu -->
 <div class="mob" id="mob">
-  <a href="#positioning" onclick="cm()">集团</a>
-  <a href="#domains" onclick="cm()">领域</a>
-  <a href="#ecosystems" onclick="cm()">生态体系</a>
-  <a href="#method" onclick="cm()">方法</a>
-  <a href="#cases" onclick="cm()">实证</a>
-  <a href="#blog" onclick="cm()">博客</a>
-  <a href="#about" onclick="cm()">架构</a>
-  <a href="#contacts" onclick="cm()">联系</a>
-  <a href="#order" onclick="cm()">联系我们</a>
+  <a href="#positioning" onclick="cm()">المجموعة</a>
+  <a href="#domains" onclick="cm()">المجالات</a>
+  <a href="#ecosystems" onclick="cm()">المنظومات</a>
+  <a href="#method" onclick="cm()">المنهج</a>
+  <a href="#cases" onclick="cm()">الأدلّة</a>
+  <a href="#blog" onclick="cm()">المدوّنة</a>
+  <a href="#about" onclick="cm()">الهيكل</a>
+  <a href="#contacts" onclick="cm()">تواصل</a>
+  <a href="#order" onclick="cm()">تواصل معنا</a>
   <div class="lang">
     <a href="../index.html" hreflang="en">EN</a>
-    <a class="is-cur" aria-current="true">中文</a>
-    <a href="../ar/index.html" hreflang="ar">العربية</a>
+    <a href="../zh/index.html" hreflang="zh">中文</a>
+    <a class="is-cur" aria-current="true">العربية</a>
   </div>
 </div>
 
@@ -769,21 +808,21 @@ body.pmodal-lock{overflow:hidden}
     <img src="../assets/logos/akco-logo-white.svg" alt="AKCO" height="48" style="width:auto">
   </a>
   <div class="nl">
-    <a href="#positioning">集团</a>
-    <a href="#domains">领域</a>
-    <a href="#ecosystems">生态体系</a>
-    <a href="#method">方法</a>
-    <a href="#cases">实证</a>
-    <a href="#blog">博客</a>
-    <a href="#about">架构</a>
-    <a href="#contacts">联系</a>
+    <a href="#positioning">المجموعة</a>
+    <a href="#domains">المجالات</a>
+    <a href="#ecosystems">المنظومات</a>
+    <a href="#method">المنهج</a>
+    <a href="#cases">الأدلّة</a>
+    <a href="#blog">المدوّنة</a>
+    <a href="#about">الهيكل</a>
+    <a href="#contacts">تواصل</a>
   </div>
   <div class="lang">
     <a href="../index.html" hreflang="en">EN</a>
-    <a class="is-cur" aria-current="true">中文</a>
-    <a href="../ar/index.html" hreflang="ar">العربية</a>
+    <a href="../zh/index.html" hreflang="zh">中文</a>
+    <a class="is-cur" aria-current="true">العربية</a>
   </div>
-  <button class="nbtn" onclick="gs('order')">联系我们</button>
+  <button class="nbtn" onclick="gs('order')">تواصل معنا</button>
   <button class="burger" onclick="document.getElementById('mob').classList.toggle('open')">
     <span></span><span></span><span></span>
   </button>
@@ -808,39 +847,39 @@ body.pmodal-lock{overflow:hidden}
   <!-- Контент поверх фото -->
   <div class="hc">
     <div class="ey hi d1"><div class="eyl"></div><span>AKCO™ · Concerto for Industry</span></div>
-    <h1 class="ht hi d2">与你并肩<br><strong>同奏一部总谱的集团</strong></h1>
-    <p class="hd hi d3">一家以工程之道运用智慧的全周期国际工程集团——先诊断痛点，再组合出消除它的生态体系，并对其全生命周期的结果负责。一个融入你内部的整合团队；一个统一责任主体，覆盖中东北非、中国与独联体。</p>
+    <h1 class="ht hi d2">المجموعة التي تعزف<br><strong>إلى جانبك من النوتة نفسها</strong></h1>
+    <p class="hd hi d3">مجموعة هندسية دولية متكاملة الدورة توظّف الذكاء بأسلوب هندسي — نشخّص الألم، ونجمّع المنظومة التي تزيله، ونتحمّل مسؤولية النتيجة طوال عمرها التشغيلي. فريق واحد متكامل داخل فريقك؛ ونطاق مسؤولية واحد في الشرق الأوسط وشمال أفريقيا والصين ورابطة الدول المستقلة.</p>
     <div class="hbtns hi d4">
-      <a href="#order" class="btn btn-p">联系我们</a>
-      <a href="#ecosystems" class="btn btn-g">了解生态体系 →</a>
+      <a href="#order" class="btn btn-p">تواصل معنا</a>
+      <a href="#ecosystems" class="btn btn-g">استكشف المنظومات ←</a>
     </div>
   </div>
   <!-- Scroll indicator -->
   <div class="schi">
     <div class="schl"></div>
-    <span>滚动</span>
+    <span>مرّر</span>
   </div>
   <!-- 4 плитки направлений -->
   <div class="dtiles">
     <a href="#domains" class="dtile hi d1">
-      <span class="dtile__kick">9 个领域</span>
-      <h3>我们消除的痛点</h3>
-      <p>围绕痛点，而非技术</p>
+      <span class="dtile__kick">9 مجالات</span>
+      <h3>الآلام التي نزيلها</h3>
+      <p>نتمحور حول الألم، لا حول التقنية</p>
     </a>
     <a href="#ecosystems" class="dtile hi d2">
       <span class="dtile__kick">AK.Family</span>
-      <h3>13 套 AI 生态体系</h3>
-      <p>可直接落地，先在内部跑通</p>
+      <h3>13 منظومة ذكاء اصطناعي</h3>
+      <p>جاهزة للتطبيق، مجرَّبة في الداخل أولاً</p>
     </a>
     <a href="#method" class="dtile hi d3">
-      <span class="dtile__kick">4CO 方法</span>
-      <h3>协同工程</h3>
-      <p>一支团队，一个责任范围</p>
+      <span class="dtile__kick">طريقة 4CO</span>
+      <h3>الهندسة التشاركية</h3>
+      <p>فريق واحد، نطاق مسؤولية واحد</p>
     </a>
     <a href="#cases" class="dtile hi d4">
       <span class="dtile__kick">Live Proof</span>
-      <h3>内部先跑通</h3>
-      <p>交付能运转的系统，而非效果图</p>
+      <h3>مجرَّب في الداخل</h3>
+      <p>نظام يعمل، لا صورة تصميمية</p>
     </a>
   </div>
 </section>
@@ -849,22 +888,22 @@ body.pmodal-lock{overflow:hidden}
 <section id="positioning" class="vsec">
   <div class="vwrap">
     <div class="vhead rv">
-      <div class="ew"><div class="ewl"></div><span>集团</span></div>
-      <h2 class="st">不是一家孤立的公司 ——<br><strong>而是建立在协同之上的集团</strong></h2>
+      <div class="ew"><div class="ewl"></div><span>المجموعة</span></div>
+      <h2 class="st">ليست شركة قائمة بذاتها ——<br><strong>بل مجموعة مبنيّة على التكامل</strong></h2>
     </div>
     <div class="posgrid">
       <div class="posprose">
-        <p class="rv">由多家高技术企业构成、共享<strong>同一条价值链</strong>的集团：每家公司都增强其他成员，每个项目都能获得全体支持。目前集团旗下有三家国际公司和两个位于独联体的工程中心，统一使用同一品牌——并始终保持开放：新伙伴可顺畅接入既有价值链。</p>
-        <p class="rv">团队在大型工业设施及配套业务的设计、建设与运行方面积累了三十年经验，最终凝结为灵活、可扩展、自适应、并由现代人工智能加持的业务生态体系，为客户的业务注入新的动能。</p>
-        <p class="rv">我们的差异可以概括为一个词：<strong>协同工程</strong>。供应商卖完产品就消失，承包商干完就走；而 AKCO 会留下——在你的团队之中、在你的现场，并按你的 KPI 接受考核。我们在提出方案之前先诊断痛点，然后组合出消除它的生态体系。我们的生态体系不诞生于实验室——多数已嵌入 AKCO 自身运营，每天在真实场景中学习。我们称之为<strong>“内部先跑通”</strong>。</p>
+        <p class="rv">منظومة من الأعمال عالية التقنية تجمعها <strong>سلسلة قيمة واحدة</strong>، تعزّز فيها كل شركة الأخرى، ويستند كل مشروع إلى إمكانات الجميع. تضم المجموعة اليوم ثلاث شركات دولية ومركزين هندسيين في رابطة الدول المستقلة تحت علامة واحدة — وتبقى منفتحة: يندمج الشركاء الجدد بيسر في سلسلة القيمة القائمة.</p>
+        <p class="rv">تبلورت ثلاثون عاماً من خبرة الفريق في تصميم المنشآت الصناعية الكبرى وبنائها وتشغيلها — وفي إطلاق أعمال مساندة — في منظومات أعمال مرنة وقابلة للتوسّع والتكيّف، معزَّزة بالذكاء الاصطناعي، تمنح أعمال العملاء دفعة جديدة.</p>
+        <p class="rv">يتلخّص فرقنا في كلمة واحدة: <strong>الهندسة التشاركية</strong>. الموردون يبيعون ثم يختفون؛ والمقاولون ينجزون ثم يرحلون. أما AKCO فتبقى — داخل فريقك، في مواقعك، ويُقاس أداؤها بمؤشراتك. نشخّص الألم قبل أن نقترح، ثم نجمّع المنظومة التي تزيله. ومنظوماتنا لا تولد في المختبر — معظمها مدمج في عمليات AKCO نفسها ويتعلّم من مواقف حيّة كل يوم. نسمّي ذلك <strong>«مجرَّب في الداخل»</strong>.</p>
       </div>
       <div class="poscard rv d1">
-        <div class="etym">AK<span>·</span>CO = <span>智慧</span></div>
-        <div class="etsub">词头源自突厥语 <em>akıllı</em> 与阿拉伯语 <em>أكيس · akyas</em> ——“明智、有智慧”。我们的总部在名称中延续了同一理念：<strong>Smart Systems</strong>。</div>
+        <div class="etym">AK<span>·</span>CO = <span>ذكاء</span></div>
+        <div class="etsub">البادئة مشتقّة من <em>akıllı</em> (التركية) و<em>أَكْيَس</em> (العربية) — «عاقل، ذكي». ويحمل مقرّنا الفكرة نفسها في اسمه: <strong>Smart Systems</strong>.</div>
         <div class="posfacts">
-          <div class="posfact"><b>3</b><span>家国际公司（阿联酋、中国）</span></div>
-          <div class="posfact"><b>2</b><span>个位于独联体的工程中心</span></div>
-          <div class="posfact"><b>1</b><span>个母品牌 · 一条价值链</span></div>
+          <div class="posfact"><b>3</b><span>شركات دولية (الإمارات، الصين)</span></div>
+          <div class="posfact"><b>2</b><span>مركزان هندسيان في رابطة الدول المستقلة</span></div>
+          <div class="posfact"><b>1</b><span>علامة رئيسية · سلسلة قيمة واحدة</span></div>
         </div>
       </div>
     </div>
@@ -875,18 +914,18 @@ body.pmodal-lock{overflow:hidden}
 <section id="numbers" class="vsec">
   <div class="vwrap">
     <div class="vhead rv">
-      <div class="ew"><div class="ewl"></div><span>关于我们的数字</span></div>
-      <h2 class="st">是业绩，<br><strong>不是说辞</strong></h2>
+      <div class="ew"><div class="ewl"></div><span>أرقام عنّا</span></div>
+      <h2 class="st">سجلّ إنجازات،<br><strong>لا كلام تسويقي</strong></h2>
     </div>
     <div class="numpanel rv" style="--numbg:url('../assets/img/streams-electric.PNG')">
       <div class="np-bg"></div>
       <div class="nums onphoto">
-        <div class="numi rv"><div class="numn">18 <span>年</span></div><div class="numl">核心团队的平均从业年限：生产运行、工程、资本项目与配套业务孵化。</div></div>
-        <div class="numi rv"><div class="numn">170 <span>亿$</span></div><div class="numl">油气行业逾 400 亿美元绿地项目组合中，已交付的最大单体项目金额。</div></div>
-        <div class="numi rv"><div class="numn">23<span>%</span></div><div class="numl">依靠技术与组织综合方案，为某炼油厂实现的产能提升。</div></div>
-        <div class="numi rv"><div class="numn">100<span>+</span></div><div class="numl">汇聚于 AK.COmm 专业社群、可按任务或项目随时调集的经验证专业人士。</div></div>
-        <div class="numi rv"><div class="numn">13</div><div class="numl">AK.Family 组合中基于智能体 AI 的成熟生态体系。</div></div>
-        <div class="numi rv"><div class="numn">3</div><div class="numl">集团自研的专有方法论，界定我们如何孵化业务、交付项目、保障质量。</div></div>
+        <div class="numi rv"><div class="numn">18 <span>عاماً</span></div><div class="numl">متوسط الخبرة المهنية لنواة الفريق: تشغيل المنشآت، والهندسة، والمشاريع الرأسمالية، وإطلاق أعمال مساندة.</div></div>
+        <div class="numi rv"><div class="numn">17 <span>مليار$</span></div><div class="numl">قيمة أكبر مشروع منجز ضمن محفظة حقول جديدة تتجاوز 40 مليار دولار في النفط والغاز.</div></div>
+        <div class="numi rv"><div class="numn">23<span>%</span></div><div class="numl">نسبة ارتفاع إنتاجية مصفاة نفط بفضل حلول تقنية وتنظيمية متكاملة طبّقها فريقنا.</div></div>
+        <div class="numi rv"><div class="numn">100<span>+</span></div><div class="numl">محترف مُتحقَّق من كفاءته ضمن مجتمع AK.COmm، يُحشدون حسب المهمة أو المشروع.</div></div>
+        <div class="numi rv"><div class="numn">13</div><div class="numl">منظومة جاهزة قائمة على الذكاء الاصطناعي الوكيلي ضمن محفظة AK.Family.</div></div>
+        <div class="numi rv"><div class="numn">3</div><div class="numl">منهجيات مملوكة تحدّد كيف نطلق الأعمال، وننفّذ المشاريع، ونضمن الجودة.</div></div>
       </div>
     </div>
   </div>
@@ -896,18 +935,18 @@ body.pmodal-lock{overflow:hidden}
 <section id="why" class="vsec alt">
   <div class="vwrap">
     <div class="vhead rv">
-      <div class="ew"><div class="ewl"></div><span>为什么选择 AKCO</span></div>
-      <h2 class="st">我们来自中控室，<br><strong>不是展厅</strong></h2>
+      <div class="ew"><div class="ewl"></div><span>لماذا AKCO</span></div>
+      <h2 class="st">جئنا من غرف التحكّم،<br><strong>لا من صالات العرض</strong></h2>
     </div>
     <div class="whysplit">
       <div class="whyphoto rv" style="background-image:url('../assets/img/basalt.PNG')"></div>
       <div class="whylist">
-      <div class="whyitem rv"><div class="wn">01</div><div><h3>出身</h3><p>20 余年工业自动化系统的运行经验，让我们学会分析自动化对象、找出问题的真实根源与效率提升空间，并从海量选项中挑出合适的方案与技术。先分析、弄清痛点成因，再提方案。</p></div></div>
-      <div class="whyitem rv"><div class="wn">02</div><div><h3>理解</h3><p>我们所服务的各业务领域中的典型问题，我们都亲身经历过——我们称之为领域痛点：小到设备日常小故障，大到导致工厂停产的失效或选型错误。我们组合中的每一套生态体系，都源自一个我们叫得出名字的痛点。</p></div></div>
-      <div class="whyitem rv"><div class="wn">03</div><div><h3>协同工程</h3><p>我们的做法是融入你的团队，在同一现场、同一信息场中工作，凭共同达成的结果与你一同获得回报。条件与激励机制我们写进合同，而不是写进演示文稿。</p></div></div>
-      <div class="whyitem rv"><div class="wn">04</div><div><h3>负责到底的覆盖范围</h3><p>系统性方法意味着我们对消除痛点的完整闭环负责——从可行性研究，到所选方案的落地实施，再到全生命周期内维持其可用性。这里没有“这不归我们管”。</p></div></div>
-      <div class="whyitem rv"><div class="wn">05</div><div><h3>内部先跑通</h3><p>几乎每一套生态体系在推向市场之前，都已在集团内部走完完整生命周期。那些接听来电、编制商务报价、编写代码的 AI 智能体，正是我们员工当下在用的同一批。我们交付的是能运转的系统，不是效果图。</p></div></div>
-      <div class="whyitem rv"><div class="wn">06</div><div><h3>开放性</h3><p>我们积极采用第三方技术，也欢迎把外部方案集成进我们的生态体系。我们的原则是：消除痛点的最佳工具，最终应当按任务本身来选——哪怕它来自外部。</p></div></div>
+      <div class="whyitem rv"><div class="wn">01</div><div><h3>الخلفية</h3><p>أكثر من 20 عاماً في تشغيل أنظمة الأتمتة الصناعية علّمتنا كيف نحلّل المنشأة، ونحدّد المصادر الحقيقية للمشكلات واحتياطيات الكفاءة، ونختار الحلول المناسبة من بين بدائل هائلة. حلّل وافهم السبب أولاً، ثم اقترح.</p></div></div>
+      <div class="whyitem rv"><div class="wn">02</div><div><h3>الفهم</h3><p>نعرف عن قرب المشكلات النمطية في المجالات التي نخدمها — نسمّيها آلام المجال — من الأعطال اليومية الصغيرة إلى ما يُوقف المصانع، لأننا عشناها سنوات في التشغيل. وكل منظومة لدينا نشأت من ألم نعرفه بالاسم.</p></div></div>
+      <div class="whyitem rv"><div class="wn">03</div><div><h3>الهندسة التشاركية</h3><p>نهجنا أن نندمج في فريقك، ونعمل في موقع واحد وحقل معلوماتي واحد، ونكسب مكافآتنا من النتائج المشتركة. الشروط والحوافز تُكتب في العقد، لا في العرض التقديمي.</p></div></div>
+      <div class="whyitem rv"><div class="wn">04</div><div><h3>نطاق مسؤول</h3><p>النهج المنظومي يعني أننا مسؤولون عن الدائرة الكاملة لإزالة الألم — من دراسة الجدوى إلى التطبيق، وصولاً إلى صون الجاهزية طوال دورة الحياة. لا مجال هنا لعبارة «هذا ليس اختصاصنا».</p></div></div>
+      <div class="whyitem rv"><div class="wn">05</div><div><h3>مجرَّب في الداخل</h3><p>تمرّ كل منظومة تقريباً بدورة حياة كاملة داخل المجموعة قبل طرحها. فوكلاء الذكاء الاصطناعي الذين يردّون على المكالمات ويعدّون العروض ويكتبون الشيفرة هم أنفسهم من يستخدمهم موظفونا اليوم. نعرض نظاماً يعمل، لا صورة تصميمية.</p></div></div>
+      <div class="whyitem rv"><div class="wn">06</div><div><h3>الانفتاح</h3><p>نستخدم تقنيات الغير على نطاق واسع، ونرحّب بدمج الحلول الخارجية في منظوماتنا. مبدؤنا: الأداة الأفضل لتجاوز الألم تُختار وفق المهمة — ولو كانت من طرف آخر.</p></div></div>
       </div>
     </div>
   </div>
@@ -917,16 +956,16 @@ body.pmodal-lock{overflow:hidden}
 <section id="manifesto" class="vsec bgimg" style="--secbg:url('../assets/img/blog-whitewater.jpg')">
   <div class="vwrap">
     <div class="vhead center rv">
-      <div class="ew" style="justify-content:center"><div class="ewl"></div><span>宣言</span></div>
+      <div class="ew" style="justify-content:center"><div class="ewl"></div><span>البيان</span></div>
       <h2 class="st">Concerto for Industry</h2>
     </div>
     <div class="mani">
-      <p class="mline rv">每一个项目都是一部总谱。传感器、控制回路、使用者、工程师、经济性、环保——所有声部都必须合拍，否则就会出现走音：停机、事故、利润流失、监管处罚、投资打水漂。</p>
-      <p class="mline rv">行业里大多数供应商各奏各的声部。一家卖传感器，一家卖泵，一家卖软件，还有一家卖知识。单独听，每个声部都可能相当出色。但<strong>没有人对“合在一起是什么效果”负责</strong>——客户只能独自面对问题，手里还被塞了一根他并没有要过的指挥棒。</p>
-      <p class="mline rv">AKCO 是一个 Concern（集团）。源自拉丁语 <em>concernere</em>——“共担一件事”；源自意大利语 <em>concerto</em>——“合奏”。我们不是货物供应商。<strong>我们是共同执行者。</strong></p>
-      <p class="mline rv">我们走进你的团队内部。我们在你的现场工作。我们的奖金来自你达成的 KPI，而不是来自销售额。你的痛点消失，我们才离开；痛点还在，我们就还在。</p>
-      <p class="mline rv">从自身实践出发，我们组建了一支完整的智能工具“乐队”：<span class="brands">AKSense™</span> 捕捉信号，<span class="brands">AKFlow™</span> 管理流程，<span class="brands">AKCore™</span> 谋划执行，<span class="brands">AK.COmm</span> 工程团队落地项目，<span class="brands">AKNeuro™</span> 眺望人类的未来。每一件都可以单独演奏。合在一起，它们奏出的正是 <em>concernere</em>——同一种语言、同一部总谱：<span class="brands">AK System</span>。</p>
-      <p class="msig rv">我们是一所工程学校，习惯解决教科书上没有的题目。我们是与你并肩、同奏一部总谱的集团。</p>
+      <p class="mline rv">كل مشروع هو نوتة موسيقية كاملة. المستشعرات وحلقات التحكّم والمستخدمون والمهندسون والاقتصاد والبيئة — كل ذلك يجب أن يعزف متناغماً، وإلا ظهر النشاز: توقّف، أو حادث، أو ربح ضائع، أو مخالفة رقابية، أو استثمار مهدور.</p>
+      <p class="mline rv">معظم الموردين يعزف كل منهم مقطوعته وحده. هذا يبيع المستشعرات، وذاك المضخات، وثالث البرمجيات، ورابع المعرفة. وقد يكون كل مقطع ممتازاً وحده. لكن <strong>لا أحد يملك مسؤولية النتيجة حين تُعزف معاً</strong> — فيبقى العميل وحده مع المشكلة، وفي يده عصا قيادة لم يطلبها.</p>
+      <p class="mline rv">AKCO مجموعة — Concern. من اللاتينية <em>concernere</em>: «أن نتقاسم عملاً واحداً»؛ ومن الإيطالية <em>concerto</em>: «أن نعزف متناغمين». نحن لسنا مورّد بضائع. <strong>نحن شريك في التنفيذ.</strong></p>
+      <p class="mline rv">ندخل إلى داخل فريقكم. نعمل في مواقعكم. نكسب مكافآتنا من مؤشرات الأداء التي تحقّقونها، لا من مبيعاتنا. نغادر حين يغادر ألمكم — ونبقى ما دام باقياً.</p>
+      <p class="mline rv">من ممارستنا جمّعنا طاقماً كاملاً من الأدوات الذكية: <span class="brands">AKSense™</span> يلتقط الإشارات، و<span class="brands">AKFlow™</span> يدير التدفقات، و<span class="brands">AKCore™</span> يخطّط التنفيذ، وفرق <span class="brands">AK.COmm</span> الهندسية تنفّذ المشاريع، و<span class="brands">AKNeuro™</span> ينظر إلى مستقبل الإنسان. كل أداة تُعزف منفردة. ومعاً تُصدر صوت <em>concernere</em> — لغة واحدة ونوتة واحدة: <span class="brands">AK System</span>.</p>
+      <p class="msig rv">نحن مدرسة هندسية اعتادت حلّ مسائل لا توجد في الكتب. نحن المجموعة التي تعزف إلى جانبك من النوتة نفسها.</p>
     </div>
   </div>
 </section>
@@ -935,87 +974,87 @@ body.pmodal-lock{overflow:hidden}
 <section id="domains" class="vsec alt">
   <div class="vwrap">
     <div class="vbanner rv" style="background-image:url('../assets/img/streams2.png')">
-      <div class="ew"><div class="ewl"></div><span>业务领域</span></div>
-      <h2 class="st">我们消除的痛点</h2>
-      <p class="vlede">AKCO 在八个主要方向上持续发展并开展经营，我们称之为领域——这一术语最能体现“围绕痛点，而非围绕技术”的方法内核。此外还有一个附加领域——研究与开发（R&amp;D）。不同行业面临的问题往往同根同源，在某一行业积累的知识可用于解决另一行业的同类课题。如果其中某一条听起来像你的星期一——那这个领域就是为你准备的。</p>
+      <div class="ew"><div class="ewl"></div><span>مجالات الأعمال</span></div>
+      <h2 class="st">الآلام التي نزيلها</h2>
+      <p class="vlede">تعمل AKCO في ثمانية اتجاهات رئيسية وتنمو فيها جميعاً — نسمّيها المجالات، لأن المصطلح يتمحور حول الألم لا حول التقنية. وإلى جانبها مجال إضافي هو البحث والتطوير — لحلول لا وجود لها بعد. مشكلات القطاعات المختلفة لها جذور مشتركة، والمعرفة المكتسبة في قطاع تحلّ نظائرها في آخر. فإذا بدا لك أحدها كأنه يوم الاثنين في شركتك — فهذا مجالك.</p>
     </div>
     <div class="dmgrid">
       <div class="dmc rv">
-        <div class="dmn">01</div><h3>资产可靠性与绩效</h3>
-        <p>关键机组与设备的运行可靠性保障，以 OEE 与 MTBF 管理：旋转设备预测性诊断、部件状态监测、以风险为导向的检维修。</p>
-        <a class="eco" href="#ecosystems">AKSense.Guard →</a>
+        <div class="dmn">01</div><h3>موثوقية الأصول وأداؤها</h3>
+        <p>ضمان موثوقية تشغيل الوحدات والآلات الحرجة، وإدارة OEE وMTBF: التشخيص التنبّئي للمعدات الدوّارة، ومراقبة حالة المكوّنات، والصيانة على أساس المخاطر.</p>
+        <a class="eco" href="#ecosystems">AKSense.Guard ←</a>
         <div class="pains">
-          <div class="pain">合成气压缩机在班中停了——整条链条趴窝，停机损失按亿计。</div>
-          <div class="pain">尿素泵的振动，是等到轴承已经碎裂时才知道的。</div>
+          <div class="pain">ضاغط الغاز الاصطناعي توقّف في منتصف الوردية — تعطّلت السلسلة كلها، والتوقّف نحسبه بمئات الملايين.</div>
+          <div class="pain">لم نعلم باهتزاز مضخة اليوريا إلا بعد أن تفتّت المحمل.</div>
         </div>
       </div>
       <div class="dmc rv d1">
-        <div class="dmn">02</div><h3>工艺与质量管理</h3>
-        <p>生产的自动化管理、工艺与生产参数实时监控、原料与产品质量控制，以及连续生产中的偏差管理。</p>
-        <a class="eco" href="#ecosystems">AKCore.MES →</a>
+        <div class="dmn">02</div><h3>إدارة العمليات والجودة</h3>
+        <p>الإدارة المؤتمتة للإنتاج، والمراقبة اللحظية للعمليات والإنتاج، وضبط جودة المواد الخام والمنتجات، وإدارة الانحرافات في الإنتاج المستمر.</p>
+        <a class="eco" href="#ecosystems">AKCore.MES ←</a>
         <div class="pains">
-          <div class="pain">物料平衡还在用 Excel 汇总——数据晚一整天才到。</div>
-          <div class="pain">NPK 颗粒质量一个班一个样，没人说得清为什么。</div>
+          <div class="pain">نُجري الموازين المادية في Excel — والبيانات تصل متأخرة يوماً كاملاً.</div>
+          <div class="pain">جودة حبيبات NPK تتأرجح من وردية إلى أخرى، ولا أحد يفسّر السبب.</div>
         </div>
       </div>
       <div class="dmc rv">
-        <div class="dmn">03</div><h3>能源与能效</h3>
-        <p>为偏远设施与高能耗用户提供可靠电力——在这些场景下并网要么困难，要么在经济上不划算。</p>
-        <a class="eco" href="#ecosystems">AKFlow.Power →</a>
+        <div class="dmn">03</div><h3>الطاقة والكفاءة</h3>
+        <p>ضمان الإمداد بالكهرباء للمنشآت البعيدة والمستهلكين ذوي الاستهلاك الكثيف، حيث يكون الربط بالشبكة صعباً أو غير مجدٍ اقتصادياً.</p>
+        <a class="eco" href="#ecosystems">AKFlow.Power ←</a>
         <div class="pains">
-          <div class="pain">柴油发电吃光预算，而并网接入意味着好几年和好几百万。</div>
-          <div class="pain">电压跌落和停电会让装置在班中直接停下来。</div>
+          <div class="pain">التوليد بالديزل يلتهم الميزانية، والربط بالشبكة يعني سنوات وملايين.</div>
+          <div class="pain">هبوط الجهد وانقطاعات الشبكة توقف الوحدة في منتصف الوردية.</div>
         </div>
       </div>
       <div class="dmc rv d1">
-        <div class="dmn">04</div><h3>生命保障系统</h3>
-        <p>面向建筑物、专用房间及独立气候区的生命保障系统——智能、高能效、无人值守。</p>
-        <a class="eco" href="#ecosystems">AKSense.Climate →</a>
+        <div class="dmn">04</div><h3>أنظمة دعم الحياة</h3>
+        <p>أنظمة دعم الحياة للمباني والغرف الخاصة والمناطق المناخية المستقلة — ذكية، موفّرة للطاقة، بلا تدخل بشري.</p>
+        <a class="eco" href="#ecosystems">AKSense.Climate ←</a>
         <div class="pains">
-          <div class="pain">空气不新鲜：干燥、有闷味——可系统按铭牌参数是正常的。</div>
-          <div class="pain">一边热得不行，另一边冻得发抖。</div>
+          <div class="pain">الهواء غير منعش: جفاف ورائحة راكدة — والنظام سليم حسب المواصفات.</div>
+          <div class="pain">جناح يغلي وآخر يتجمّد.</div>
         </div>
       </div>
       <div class="dmc rv">
-        <div class="dmn">05</div><h3>环保与再生利用</h3>
-        <p>闭式水循环、废弃物再生利用、水处理，以及场地可持续绿化——无人值守自动运行。</p>
-        <a class="eco" href="#ecosystems">AKFlow.Cycle · AKFlow.Harvest →</a>
+        <div class="dmn">05</div><h3>البيئة وإعادة التدوير</h3>
+        <p>دورات مائية مغلقة، وإعادة تدوير النفايات، ومعالجة المياه، واستعادة التشجير المستدام للمواقع — بإدارة آلية بلا تدخل بشري.</p>
+        <a class="eco" href="#ecosystems">AKFlow.Cycle · AKFlow.Harvest ←</a>
         <div class="pains">
-          <div class="pain">废弃物填埋费年年上涨，填埋场却在关停。</div>
-          <div class="pain">老温室的能耗把利润吃掉了，市场上又根本招不到农艺师。</div>
+          <div class="pain">رسوم دفن النفايات ترتفع كل عام، والمرادم تُغلق.</div>
+          <div class="pain">استهلاك الطاقة في البيوت المحمية القديمة يقضي على الهامش، والمهندسون الزراعيون غير متوفّرين.</div>
         </div>
       </div>
       <div class="dmc rv d1">
-        <div class="dmn">06</div><h3>业务运营与数字化转型</h3>
-        <p>内部业务流程自动化，以及运营质量与可追溯性的提升——ERP、商业分析、CRM、报价编制、RPA 智能自动化。</p>
-        <a class="eco" href="#ecosystems">AKCore.Boost →</a>
+        <div class="dmn">06</div><h3>عمليات الأعمال والتحوّل الرقمي</h3>
+        <p>أتمتة العمليات الداخلية ورفع جودتها وقابلية تتبّعها — ERP، وتحليلات الأعمال، وCRM، وإعداد العروض، وأتمتة RPA الذكية.</p>
+        <a class="eco" href="#ecosystems">AKCore.Boost ←</a>
         <div class="pains">
-          <div class="pain">一份报价要占用最好的工程师好几天——竞争对手两天就交了。</div>
-          <div class="pain">知识随人走，AI 试点撑不到上生产。</div>
+          <div class="pain">العرض التجاري يستغرق أياماً من أفضل مهندسينا — والمنافس يقدّمه خلال يومين.</div>
+          <div class="pain">المعرفة ترحل مع الموظفين، وتجارب الذكاء الاصطناعي لا تصمد حتى الإنتاج.</div>
         </div>
       </div>
       <div class="dmc rv">
-        <div class="dmn">07</div><h3>商务服务与金融</h3>
-        <p>企业经营支持的广泛课题，包括跨境新业务的启动——无需自行招聘，运营费用更低。</p>
-        <a class="eco" href="#ecosystems">AK.Desk →</a>
+        <div class="dmn">07</div><h3>خدمات الأعمال والتمويل</h3>
+        <p>طيف واسع من مسائل إسناد الأعمال، بما فيها إطلاق أعمال جديدة عابرة للحدود — دون توظيف، وبنفقات أقل.</p>
+        <a class="eco" href="#ecosystems">AK.Desk ←</a>
         <div class="pains">
-          <div class="pain">银行合规审查耗掉几个月——账户不会自己开出来。</div>
-          <div class="pain">自由区选错了——牌照和税费一直在多付。</div>
+          <div class="pain">الامتثال المصرفي يلتهم شهوراً — الحساب لا يُفتح من تلقاء نفسه.</div>
+          <div class="pain">اخترنا المنطقة الحرة الخطأ — وندفع زيادة على الرخص والضرائب.</div>
         </div>
       </div>
       <div class="dmc rv d1">
-        <div class="dmn">08</div><h3>资本项目</h3>
-        <p>大型投资项目的发起、启动与实施：可行性研究与银行审查、项目办公室组建、设计采购施工管理，直至调试与试运行。</p>
-        <a class="eco" href="#ecosystems">AK.Prime →</a>
+        <div class="dmn">08</div><h3>المشاريع الرأسمالية</h3>
+        <p>إطلاق المشاريع الاستثمارية الكبرى وتنفيذها: دراسة الجدوى والفحص المصرفي، وتكوين مكتب المشروع، وإدارة التصميم والمشتريات والإنشاء، وصولاً إلى بدء التشغيل والتشغيل التجريبي.</p>
+        <a class="eco" href="#ecosystems">AK.Prime ←</a>
         <div class="pains">
-          <div class="pain">投资决策签了——却没有人来执行。</div>
-          <div class="pain">每个承包商都指向隔壁那家，超支最后总是落在我们头上。</div>
+          <div class="pain">قرار الاستثمار مُوقَّع — ولا أحد ينفّذه.</div>
+          <div class="pain">كل مقاول يشير إلى جاره، وتجاوز الكلفة يقع علينا دائماً.</div>
         </div>
       </div>
       <div class="dmc dmc-wide rv">
-        <div class="dmn">X</div><h3>研究与开发 —— 附加领域</h3>
-        <p>前八个领域依托成熟生态体系运作、解决已知问题；附加领域则用于处理尚无现成方案的课题。AKCO 团队研究该问题、建立对象模型、开发缺失方案的原型，并在真实条件下加以实施。经验证有效的方案将成为产品，并纳入 AK.Store 组件目录。</p>
-        <a class="eco" href="#ecosystems">AK.Store →</a>
+        <div class="dmn">X</div><h3>البحث والتطوير —— المجال الإضافي</h3>
+        <p>تعمل المجالات الثمانية على منظومات جاهزة تحلّ مشكلات معروفة؛ أما المجال الإضافي فلكل ما عداها — مهام لا حل جاهز لها بعد. يدرس فريق AKCO المشكلة، ويبني نموذجاً للمنشأة، ويطوّر نموذجاً أولياً للحل الناقص، وينفّذه في ظروف واقعية. وما يثبت جدواه يصبح منتجاً يُضاف إلى كتالوج AK.Store.</p>
+        <a class="eco" href="#ecosystems">AK.Store ←</a>
       </div>
     </div>
   </div>
@@ -1025,29 +1064,29 @@ body.pmodal-lock{overflow:hidden}
 <section id="ecosystems" class="vsec bgimg" style="--secbg:url('../assets/img/hero-expansive.jpg')">
   <div class="vwrap">
     <div class="vhead rv">
-      <div class="ew"><div class="ewl"></div><span>AK.Family 生态体系</span></div>
-      <h2 class="st">可直接落地，<br><strong>而非独立产品</strong></h2>
-      <p class="vlede">AK.Family 是 AKCO 由预集成、AI 驱动的生态体系构成的组合——完整、可直接落地、且均“内部先跑通”。生态体系并非固定套件：组件可按客户对象与既有系统进行选型、增补或替换。下方所列是参考配置——已在真实运行中组装、跑通并验证。全部基于共享品牌 AKCore™、AKSense™、AKFlow™ 与 AKNeuro™，开箱即协同。组合共 13 套生态体系。</p>
+      <div class="ew"><div class="ewl"></div><span>منظومات AK.Family</span></div>
+      <h2 class="st">جاهزة للتطبيق،<br><strong>لا منتجات قائمة بذاتها</strong></h2>
+      <p class="vlede">AK.Family محفظة AKCO من المنظومات المتكاملة مسبقاً والمدعومة بالذكاء الاصطناعي — حلول مكتملة وجاهزة للتطبيق، كلٌّ منها «مجرَّب في الداخل». والمنظومة ليست مجموعة ثابتة: تُختار المكوّنات وتُضاف وتُستبدل لتلائم منشأة العميل وأنظمته القائمة. وما تراه أدناه تركيبات مرجعية — جُمّعت وشُغّلت وأُثبتت في التشغيل الحيّ. وكلها مبنية على العلامات المشتركة AKCore™ وAKSense™ وAKFlow™ وAKNeuro™، فتعمل المكوّنات معاً جاهزةً. المحفظة تضم 13 منظومة.</p>
     </div>
     <div class="whyeco">
-      <div class="we rv"><h4>面向目标成套集成</h4><p>一套现成的集成栈：硬件、软件、服务与专业知识作为整体，共同应对领域内某个具体痛点。开箱即兼容、plug-and-play。</p></div>
-      <div class="we rv d1"><h4>不是演示，是生产</h4><p>每套生态体系先在集团自身实战环境中运行，之后才交付。承受真实负荷、拥有真实里程的系统。</p></div>
-      <div class="we rv d2"><h4>内部先跑通</h4><p>展示页把内部系统原样呈现——生成报价的智能体、分拣来单的机器人、CRM、MES——经脱敏的实时活动看板。</p></div>
-      <div class="we rv d3"><h4>升级无需推倒重来</h4><p>各层独立版本化：新传感器、新模型、新智能体热插拔接入，而非拆换重建。</p></div>
-      <div class="we rv d4"><h4>自适应</h4><p>七层模块化架构，从传感器到 AI 智能体，每层都能在不停整体的前提下生长与更新。新技术使其增强。</p></div>
+      <div class="we rv"><h4>مجمَّعة وفق الهدف</h4><p>حزمة متكاملة جاهزة في مواجهة ألم محدّد — plug-and-play، لا مجموعة قطع تحتاج سنة تكامل.</p></div>
+      <div class="we rv d1"><h4>ليست عرضاً، بل إنتاجاً</h4><p>كل منظومة تعمل أولاً في بيئة المجموعة الحيّة، ثم تصل إلى العميل. نظام تحت حِمل حقيقي وبسجل تشغيل حقيقي.</p></div>
+      <div class="we rv d2"><h4>مجرَّب في الداخل</h4><p>واجهة المجموعة تبثّ أنظمتنا الداخلية كما هي — الوكيل والبوت وCRM وMES — على لوحات نشاط حيّة ومجهّلة.</p></div>
+      <div class="we rv d3"><h4>ترقية دون هدم</h4><p>الطبقات تُدار بإصدارات مستقلّة: مستشعرات ونماذج ووكلاء جدد يدخلون على الساخن — hot-swap بدل الهدم وإعادة البناء.</p></div>
+      <div class="we rv d4"><h4>قابلة للتكيّف</h4><p>بنية معيارية من سبع طبقات تنمو وتُحدَّث دون إيقاف الكل. التقنية الجديدة تقوّيها.</p></div>
     </div>
     <div class="ecolist">
-      <div class="ecorow rv"><div><span class="el-name">AKSense.Guard</span><span class="el-dom">资产可靠性</span></div><div><p>在不停机的前提下为关键机组加装 AKSense™ 无线传感器以建立测量基础；AI 智能体依据与基准的偏差跟踪剩余寿命，故障提前数周预测，检修按计划推进。</p><div class="el-entry"><b>切入：</b>关键设备群普查，并在最棘手的机组上试点；后续按试点数据推广。</div></div></div>
-      <div class="ecorow rv"><div><span class="el-name">AKCore.MES</span><span class="el-dom">工艺控制</span></div><div><p>为任何在役装置构建实时“神经系统”：测量盲区由无线传感器或数字孪生补齐，偏差在萌芽时刻即被识别，物料平衡每日闭合——无需新增资本设备即达设计指标。</p><div class="el-entry"><b>切入：</b>数周内基于工厂自有数据试点；后续按试点数据推广。</div></div></div>
-      <div class="ecorow rv"><div><span class="el-name">AKCore.Trading</span><span class="el-dom">数字化转型</span></div><div><p>AI 智能体扫描招标平台、评估文件、匹配产品清单、生成技术方案与报价，并集成客户 CRM。每处理一次招标都丰富产品清单模型，下一份方案更快更准。</p><div class="el-entry"><b>可联动</b> AK.COwork——在中国寻源制造商，并按 DAP 发运至全球。</div></div></div>
-      <div class="ecorow rv"><div><span class="el-name">AKCore.Boost</span><span class="el-dom">数字化转型</span></div><div><p>借助 AI 实现业务流程自动化：试点智能体约两周投入运行，附带安全规则、质量度量与可追溯上下文。常规循环从数天压缩到数分钟，每个智能体每周向流程责任人汇报。</p><div class="el-entry"><b>方法：</b>针对 AI 调整的 AK.PRISM，含 BPMN 流程梳理与总体构想。</div></div></div>
-      <div class="ecorow rv"><div><span class="el-name">AKSense.Climate</span><span class="el-dom">生命保障</span></div><div><p>紧凑模块，通过 AKSense.ACC 智能面板与 AI 智能体，将温湿度及空气品质维持在设定范围；统一系统掌管整个气候外壳，能耗有可测量的下降。</p><div class="el-entry"><b>面向：</b>机房与数据中心、生产车间、商业与高端空间。</div></div></div>
-      <div class="ecorow rv"><div><span class="el-name">AKFlow.Cycle</span><span class="el-dom">环保与再生</span></div><div><p>移动式连续装置，以 AKFlow™ 无烟热解将固体废弃物转化为能源产品与二次原料，随原料组分变化灵活重整；排放由 AK.GRID 分析仪跟踪。</p><div class="el-entry"><b>切入：</b>先做废弃物构成分析与处理成本测算，之后再决定是否承诺。</div></div></div>
-      <div class="ecorow rv"><div><span class="el-name">AKFlow.Power</span><span class="el-dom">能源与能效</span></div><div><p>移动式连续装置，以 AKFlow™ 燃气轮机技术用可获取原料（多为 LNG）发电，随燃料组分灵活重整。面向偏远设施与边缘数据中心。</p><div class="el-entry"><b>切入：</b>先做能源审计与度电成本测算，之后再决定是否承诺。</div></div></div>
-      <div class="ecorow rv"><div><span class="el-name">AK.Desk</span><span class="el-dom">商务服务</span></div><div><p>覆盖企业各发展阶段的服务包：银行、薪酬、牌照、会计、税务、跨境结算——以及 AK.COwork 下的代理服务、营销推广、产品认证与投资项目开发。</p><div class="el-entry"><b>面向：</b>新设企业与进入中东北非市场的出口商。</div></div></div>
-      <div class="ecorow rv"><div><span class="el-name">AK.Talent</span><span class="el-dom">商务服务</span></div><div><p>外包服务包，从 AK.COmm 社群迅速调集单个专家或职能团队，并按集团程序培训。“工程师 + 机器”的混合单元，带教已内建。</p><div class="el-entry"><b>面向：</b>进度等不起招聘周期的 EPC 承包商与工业企业。</div></div></div>
-      <div class="ecorow rv"><div><span class="el-name">AK.Prime</span><span class="el-dom">资本项目</span></div><div><p>成建制项目办公室——各专业骨干与负责人，作为唯一责任中心贯穿全部范围：可行性与银行审查、设计、采购、施工、开车与试运行。</p><div class="el-entry"><b>面向：</b>化工、炼油、LNG 与化肥行业、需要一个全程负责伙伴的大型客户。</div></div></div>
-      <div class="ecorow rv"><div><span class="el-name">AKNeuro.Bionic</span><span class="el-dom">医疗 · 研发</span></div><div><p>康复技术：AKNeuro™ 对肌电（EMG）进行类脑处理，把人的意图实时转化为对仿生装置的自然操控，并借 AKCore™ AI 自适应使用者。按医疗研发与公益倡议推进。</p><div class="el-entry"><b>目标：</b>外骨骼与辅助装置的“人—机”接口。</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKSense.Guard</span><span class="el-dom">موثوقية الأصول</span></div><div><p>مستشعرات AKSense™ اللاسلكية تُجهّز الآلات الحرجة دون إيقاف؛ ووكلاء الذكاء الاصطناعي يتتبّعون العمر المتبقي عبر الانحراف عن المرجع، فتُتنبّأ الأعطال قبل أسابيع وتجري الإصلاحات وفق الجدول.</p><div class="el-entry"><b>المدخل:</b> مسح للأصول الحرجة ومشروع تجريبي على أكثر الآلات إشكالاً؛ والتوسّع بحسب أرقامه.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKCore.MES</span><span class="el-dom">إدارة العمليات</span></div><div><p>جهاز عصبي لحظي لأي إنتاج قائم: تُستعاد المناطق الرمادية بمستشعرات لاسلكية أو توائم رقمية، وتُكتشف الانحرافات فور نشوئها، وتُقفل الموازين يومياً — أداء تصميمي دون معدات رأسمالية جديدة.</p><div class="el-entry"><b>المدخل:</b> مشروع تجريبي خلال أسابيع على بيانات المصنع؛ والتوسّع بحسب أرقامه.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKCore.Trading</span><span class="el-dom">التحوّل الرقمي</span></div><div><p>يمسح وكلاء الذكاء الاصطناعي منصّات المناقصات، ويقيّمون الوثائق، ويطابقون الأصناف، ويعدّون العرض الفني والتسعير، بتكامل مع CRM لدى العميل. وكل مناقصة تُثري نموذج الأصناف.</p><div class="el-entry"><b>يقترن بـ</b> AK.COwork — البحث عن مصنّعين في الصين والتوريد DAP حول العالم.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKCore.Boost</span><span class="el-dom">التحوّل الرقمي</span></div><div><p>أتمتة عمليات الأعمال بالذكاء الاصطناعي: يبدأ الوكيل التجريبي بعد أسبوعين تقريباً — بقواعد أمان ومقاييس جودة وسياق قابل للتتبّع. تنكمش الدورات الروتينية من أيام إلى دقائق، ويقدّم كل وكيل تقريراً أسبوعياً لمالك العملية.</p><div class="el-entry"><b>المنهج:</b> AK.PRISM المكيّفة للذكاء الاصطناعي، مع توصيف BPMN وتصوّر عام.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKSense.Climate</span><span class="el-dom">دعم الحياة</span></div><div><p>وحدة مدمجة تحافظ على الحرارة والرطوبة وجودة الهواء ضمن حدود مقرّرة عبر لوحة AKSense.ACC ووكلاء الذكاء الاصطناعي. نظام إدارة واحد يتولّى الغلاف المناخي كله، والاستهلاك ينخفض بشكل قابل للقياس.</p><div class="el-entry"><b>لأجل:</b> غرف الخوادم ومراكز البيانات، وصالات الإنتاج، والمباني التجارية والفاخرة.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKFlow.Cycle</span><span class="el-dom">البيئة وإعادة التدوير</span></div><div><p>وحدة إنتاج مستمر متنقّلة تحوّل النفايات الصلبة إلى موارد طاقة ومواد ثانوية عبر الانحلال الحراري عديم الدخان AKFlow™، مع إعادة ضبط مرنة عند تغيّر المادة الأوّلية؛ وتُرصَد الانبعاثات بمحلّلات AK.GRID.</p><div class="el-entry"><b>المدخل:</b> تحليل بنية النفايات مع حساب كلفة المعالجة قبل أي التزام.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKFlow.Power</span><span class="el-dom">الطاقة والكفاءة</span></div><div><p>وحدة إنتاج مستمر متنقّلة تولّد الكهرباء من مادة أوّلية متاحة — غالباً الغاز الطبيعي المسال — بتقنية التوربينات الغازية AKFlow™، مع إعادة ضبط مرنة. صُمّمت للمواقع البعيدة ومراكز البيانات الطرفية.</p><div class="el-entry"><b>المدخل:</b> تدقيق طاقي مع حساب كلفة الكيلوواط-ساعة قبل أي التزام.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AK.Desk</span><span class="el-dom">خدمات الأعمال</span></div><div><p>حزمة خدمات لكل مراحل النمو: البنك، الرواتب، التراخيص، المحاسبة، الضرائب، التسويات العابرة للحدود — إضافة إلى الخدمات الوكيلية والتسويق والشهادات وإعداد المشاريع الاستثمارية ضمن AK.COwork.</p><div class="el-entry"><b>لأجل:</b> الأعمال الجديدة والمصدّرين الداخلين إلى أسواق الشرق الأوسط وشمال أفريقيا.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AK.Talent</span><span class="el-dom">خدمات الأعمال</span></div><div><p>حزمة إسناد لتعبئة خبراء أفراد أو فرق وظيفية بسرعة من مجتمع AK.COmm، مدرَّبين على إجراءات المجموعة. وحدات هجينة «مهندس + آلة» بإرشاد مدمج.</p><div class="el-entry"><b>لأجل:</b> مقاولي EPC والمنشآت الصناعية التي لا تحتمل جداولها دورات التوظيف.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AK.Prime</span><span class="el-dom">المشاريع الرأسمالية</span></div><div><p>مكتب مشاريع جاهز — اختصاصيون وقادة تخصّصات — بوصفه مركز مسؤولية واحداً عبر النطاق الكامل: دراسة الجدوى والفحص المصرفي، والتصميم والمشتريات والإنشاء، وبدء التشغيل والتشغيل التجريبي.</p><div class="el-entry"><b>لأجل:</b> كبار العملاء في الكيماويات والتكرير والغاز المسال والأسمدة ممن يحتاجون شريكاً مسؤولاً واحداً.</div></div></div>
+      <div class="ecorow rv"><div><span class="el-name">AKNeuro.Bionic</span><span class="el-dom">طب · بحث وتطوير</span></div><div><p>تقنية إعادة تأهيل: المعالجة العصبية-المورفولوجية لإشارة EMG بتقنية AKNeuro™ تحوّل نيّة الإنسان إلى تحكّم طبيعي لحظي بجهاز بيوني، ويتكيّف النظام مع الإنسان عبر AKCore™ AI. يُدار كبحث طبي ومبادرة خيرية.</p><div class="el-entry"><b>الهدف:</b> واجهات «إنسان — آلة» للهياكل الخارجية والأجهزة المساعِدة.</div></div></div>
     </div>
   </div>
 </section>
@@ -1056,25 +1095,25 @@ body.pmodal-lock{overflow:hidden}
 <section id="method" class="vsec alt">
   <div class="vwrap">
     <div class="vhead rv">
-      <div class="ew"><div class="ewl"></div><span>工程的艺术</span></div>
-      <h2 class="st">4CO 方法与<br><strong>生态体系完整性</strong></h2>
-      <p class="vlede">AKCO 把生态体系当作闭环自治系统来搭建：只有当完整性在六个维度上同时保持时，才能达到最高的效能与稳定性。一个集团对整个闭环负责。</p>
+      <div class="ew"><div class="ewl"></div><span>فنّ الهندسة</span></div>
+      <h2 class="st">طريقة 4CO<br><strong>وتكامل المنظومات</strong></h2>
+      <p class="vlede">تبني AKCO منظوماتها بوصفها أنظمة مغلقة ذاتية التشغيل: ولا تبلغ أقصى كفاءتها واستقرارها إلا حين يُصان تكاملها في ستة أبعاد في آن واحد. مجموعة واحدة مسؤولة عن الحلقة كاملة.</p>
     </div>
     <div class="integlist">
-      <div class="il rv"><h4>组合的完整性</h4><p>AK.Family 交付的是一个完整方案，而不是一堆零散组件。集成是我们在签约之前的工作，不是客户在签约之后的工作。</p></div>
-      <div class="il rv"><h4>部署的完整性</h4><p>组装完成的生态体系先在 AKCO 的场地上开始运转，抵达客户环境时已经调试完毕、可直接投用。</p></div>
-      <div class="il rv"><h4>团队的完整性</h4><p>客户与 AKCO 不是合同两侧的两个对手方，而是一个有机体：共用看板、共用数据、对“完成”有共同定义。</p></div>
-      <div class="il rv"><h4>时间的完整性</h4><p>我们不会在移交时抽身；关于任何系统最有价值的数据，恰恰从它开车那天才开始产生。</p></div>
-      <div class="il rv"><h4>责任的完整性</h4><p>一个集团对整个闭环负责。这里不会出现“这不归我们管”；只有结果，以及一切影响结果的因素。</p></div>
-      <div class="il rv"><h4>生命周期的完整性</h4><p>从可行性研究到全寿期服务，都在同一责任范围内。设计方案的那支团队，要对它第五年的运行状况负责。</p></div>
-      <div class="il rv"><h4>完整性是有代价的</h4><p>它需要的是一个集团，而不是一家供应商。就任何单一层级而言，分散型供应商总能报出更低的价格——但没有一家能为整体作保。</p></div>
+      <div class="il rv"><h4>تكامل المحفظة</h4><p>تسلّم AK.Family حلاً مكتملاً، لا مكوّنات متناثرة. فالتكامل عملنا قبل التعاقد، لا عمل العميل بعده.</p></div>
+      <div class="il rv"><h4>تكامل النشر</h4><p>المنظومة بعد تجميعها تبدأ حياتها في موقع AKCO، وتصل إلى بيئة العميل وقد ضُبطت وصارت جاهزة للعمل.</p></div>
+      <div class="il rv"><h4>تكامل الفريق</h4><p>العميل وAKCO ليسا طرفين متقابلين في عقد، بل كائن واحد: لوحات مشتركة، وبيانات مشتركة، وتعريف مشترك لكلمة «منجَز».</p></div>
+      <div class="il rv"><h4>تكامل الزمن</h4><p>لا نغادر عند التسليم؛ بل نبقى في علاقة خدمية طويلة الأمد. فأثمن البيانات عن أي نظام تبدأ يوم بدء تشغيله.</p></div>
+      <div class="il rv"><h4>تكامل المسؤولية</h4><p>مجموعة واحدة مسؤولة عن الحلقة كاملة. عبارة «هذا ليس اختصاصنا» لا تُقال هنا؛ هناك نتيجة — وكل ما يؤثر فيها.</p></div>
+      <div class="il rv"><h4>تكامل دورة الحياة</h4><p>من دراسة الجدوى إلى الخدمة طوال العمر التشغيلي، ضمن نطاق مسؤولية واحد. والفريق الذي صمّم الحل مسؤول عن أدائه في سنته الخامسة.</p></div>
+      <div class="il rv"><h4>وللتكامل ثمن</h4><p>فهو يقتضي مجموعة متكاملة، لا مورّداً منفرداً. ففي أي طبقة بمفردها يعرض المورّد المجزَّأ سعراً أقل — لكن أحداً لا يضمن الكلّ.</p></div>
     </div>
     <div class="stepband rv" style="background-image:url('../assets/img/streams1.png')">
     <div class="costeps">
-      <div class="costp rv"><div class="cnode">01</div><h3>CO<b>mpose</b></h3><div class="cosub">编排解决方案</div><ul><li>先确定现有问题与潜力；固化基线——当前成本、损失与产能。</li><li>遵循方法而非即兴：签约前完成结构化现场勘察并编制详细技术任务书。</li><li>落地的是生态体系，不是一堆产品——整体交付、单一责任范围。</li></ul></div>
-      <div class="costp rv d1"><div class="cnode">02</div><h3>CO<b>nsolidate</b></h3><div class="cosub">整合项目资源</div><ul><li>由客户员工、AKCO 项目办公室与分包商组建一体化团队。</li><li>统一信息空间，激励绑定项目 KPI。</li><li>通过 AK.Grid 伙伴网络启用经过验证的资源。</li><li>接入集团内部服务——AK.Office 后台与 AK.Staff 人才池。</li></ul></div>
-      <div class="costp rv d2"><div class="cnode">03</div><h3>CO<b>ncert</b></h3><div class="cosub">明智地协调各方与资源</div><ul><li>为对象建模——贯穿实施期保持更新的数字模型；决策以它为准，而不是以记忆为准。</li><li>采用 AK.PRISM——每个项目办公室的操作系统，由数字助手增强。</li><li>采用 AK.CANON 保障质量：战略 QA、过程 QC 与实时运行 QC 在同一回路。</li><li>预防不符合项，而非事后纠正——依据数据，而非主观意见。</li></ul></div>
-      <div class="costp rv d3"><div class="cnode">04</div><h3>CO<b>ntribute</b></h3><div class="cosub">与世界协作</div><ul><li>用客户的标准衡量结果——对照技术任务书与合同。</li><li>创造超出合同的价值；把每个项目的教训录入登记册。</li><li>拓展 AK.Grid 网络与产品组合——方案回到目录。</li></ul></div>
+      <div class="costp rv"><div class="cnode">01</div><h3>CO<b>mpose</b></h3><div class="cosub">اجمع الحل المقترح</div><ul><li>حدّد أولاً المشكلات القائمة والإمكانات؛ وثبّت الحالة الأولية — التكاليف والخسائر والإنتاجية.</li><li>اتّبع المنهجية ولا ترتجل: مسح منظَّم للمنشأة ونطاق عمل تقني مفصّل قبل التوقيع.</li><li>طبّق منظومة، لا مجموعة منتجات — متكاملة، نطاق مسؤولية واحد.</li></ul></div>
+      <div class="costp rv d1"><div class="cnode">02</div><h3>CO<b>nsolidate</b></h3><div class="cosub">وحِّد موارد المشروع</div><ul><li>كوّن فريقاً متكاملاً من موظفي العميل ومكتب مشاريع AKCO ومقاولي الباطن.</li><li>فضاء معلوماتي واحد، وحوافز مرتبطة بمؤشرات أداء المشروع.</li><li>استعن بموارد مُتحقَّق منها عبر شبكة الشركاء AK.Grid.</li><li>شغّل الخدمات الداخلية للمجموعة — مكتب AK.Office الخلفي ومجمّع AK.Staff.</li></ul></div>
+      <div class="costp rv d2"><div class="cnode">03</div><h3>CO<b>ncert</b></h3><div class="cosub">نسّق المشاركين والموارد بعقلانية</div><ul><li>نمذج المنشأة — نموذج رقمي يُحدَّث طوال التنفيذ؛ والقرارات تُقاس عليه لا على الذاكرة.</li><li>طبّق AK.PRISM — نظام تشغيل كل مكتب مشاريع، معزّزاً بالمساعدين الرقميين.</li><li>اضمن الجودة بـ AK.CANON: ضمان استراتيجي، وضبط عمليات، وضبط تشغيلي لحظي في حلقة واحدة.</li><li>امنع حالات عدم المطابقة، لا تصحيحها فحسب — على البيانات لا الآراء.</li></ul></div>
+      <div class="costp rv d3"><div class="cnode">04</div><h3>CO<b>ntribute</b></h3><div class="cosub">تعاون مع العالم</div><ul><li>قيّم النتيجة بمعايير العميل — مقابل نطاق العمل والعقد.</li><li>اخلق قيمة تتجاوز العقد؛ وقيّد دروس كل مشروع في سجل.</li><li>وسّع شبكة AK.Grid والمحفظة — الحلول تعود إلى الكتالوج.</li></ul></div>
     </div>
     </div>
   </div>
@@ -1084,29 +1123,29 @@ body.pmodal-lock{overflow:hidden}
 <section id="cases" class="msec">
   <div class="mflex">
     <div>
-      <span class="meye rv">实证</span>
-      <h2 class="st rv d1" style="margin-bottom:0">案例与业绩参考</h2>
+      <span class="meye rv">الأدلّة</span>
+      <h2 class="st rv d1" style="margin-bottom:0">دراسات الحالة والمراجع</h2>
     </div>
-    <button class="mbtn rv d1" onclick="gs('order')"><span class="ln"></span>沟通项目</button>
+    <button class="mbtn rv d1" onclick="gs('order')"><span class="ln"></span>ناقش مشروعاً</button>
   </div>
   <div class="mlist">
     <div class="mrow rv" style="background-image:url('../assets/img/cases-mountain.png');background-position:center 32%">
       <div class="mnum">01</div>
       <div>
-        <div class="mtag">资本项目 · 参考</div>
-        <h3>项目已经启动，队伍还没有</h3>
-        <p>乌斯季-卢加波罗的海化工综合体——全球最大的聚乙烯项目之一（约年产 300 万吨 PE，资本投入约 170 亿欧元）进入实施阶段，却没有项目办公室。马拉特·巴沙罗夫通过直接引进经过验证的专业人员组建了它——这套动员机制如今封装为 AK.Talent，依托 AK.Staff 人才池与 AK.COmm 社群。</p>
+        <div class="mtag">المشاريع الرأسمالية · مرجع</div>
+        <h3>المشروع انطلق، والفريق غير موجود</h3>
+        <p>مجمع البلطيق الكيميائي في أوست-لوغا — أحد أكبر مشاريع البولي إيثيلين في العالم (نحو 3 ملايين طن سنوياً، باستثمار يناهز 17 مليار يورو) انتقل إلى التنفيذ دون مكتب مشاريع. شكّله مارات باشاروف عبر استقطاب مباشر لاختصاصيين مُتحقَّق من كفاءتهم — وهي الآلية المعبّأة اليوم في AK.Talent، مستندة إلى مجمّع AK.Staff ومجتمع AK.COmm.</p>
       </div>
-      <div class="mres"><small>结果</small>项目发起三个月后，一个完整运转的项目办公室到位</div>
+      <div class="mres"><small>النتيجة</small>مكتب مشاريع يعمل بكامل طاقته بعد ثلاثة أشهر من الإطلاق</div>
     </div>
     <div class="mrow rv d1" style="background-image:url('../assets/img/cases-whitewater.png');background-position:center 30%">
       <div class="mnum">02</div>
       <div>
-        <div class="mtag">资本项目 · 参考</div>
-        <h3>四年，从一片空地到一座炼油厂</h3>
-        <p>下卡姆斯克 TANECO——绿地炼油综合体（一期约年处理原油 700 万吨，一期投资约 58 亿美元）。巴沙罗夫与今日 AKCO 团队的核心成员，同 Fluor（项目管理）及 12 家以上国际专利商（UOP、Axens、Shell、Haldor Topsøe、LyondellBasell）在统一项目纪律下完成建设——如今已固化为 4CO 与 AK.PRISM。</p>
+        <div class="mtag">المشاريع الرأسمالية · مرجع</div>
+        <h3>مصنع من أرض خالية في أربع سنوات</h3>
+        <p>TANECO، نيجنكامسك — مجمّع تكرير من نوع greenfield (مرحلة أولى نحو 7 ملايين طن سنوياً، باستثمار نحو 5.8 مليار دولار). نفّذه باشاروف ونواة فريق AKCO الحالي مع Fluor (إدارة المشروع) وأكثر من 12 مانح تراخيص دولياً (UOP، Axens، Shell، Haldor Topsøe، LyondellBasell) ضمن انضباط مشروعي واحد — مثبَّت اليوم في 4CO وAK.PRISM.</p>
       </div>
-      <div class="mres"><small>结果</small>2006 年公司成立 → 2010 年 10 月一期开车</div>
+      <div class="mres"><small>النتيجة</small>تأسيس الشركة 2006 → بدء تشغيل المرحلة الأولى أكتوبر 2010</div>
     </div>
   </div>
 </section>
@@ -1116,12 +1155,12 @@ body.pmodal-lock{overflow:hidden}
   <div class="vwrap">
     <div class="partners">
       <div class="rv">
-        <div class="ew"><div class="ewl"></div><span>伙伴关系与协作</span></div>
+        <div class="ew"><div class="ewl"></div><span>الشراكة والتعاون</span></div>
         <h2 class="st" style="margin-bottom:14px">1 + 1 = 3</h2>
-        <p class="sd" style="max-width:none;margin-bottom:20px">AKCO 是一个面向未来的开放型集团。我们相信互利与协同，相信明智的人与专业团队之间 1 + 1 = 3，无论他们胸前挂着谁的工牌。在世界走向割裂的时候，我们呼吁走到一起。在我们的理解中，伙伴关系不只是签合同，而是一条共同的发展之路——管理、质量与可持续发展的实践在团队之间自由流动。</p>
-        <p class="vlede" style="margin-top:0;margin-bottom:16px">AK.Grid 的大门向所有同向而行者敞开——协作形式不限：方案集成、联合开发、项目实施、贸易、投资、初创合作：</p>
+        <p class="sd" style="max-width:none;margin-bottom:20px">AKCO مجموعة منفتحة تتطلّع إلى المستقبل. نؤمن بالمنفعة المتبادلة والتآزر بين العقلاء والفرق المهنية، أياً كان الشعار الذي يحملونه. وفي وقت يتّجه فيه العالم نحو التفكّك، ندعو إلى الاجتماع. والشراكة في فهمنا ليست مجرّد عقود، بل طريق تطوّر مشترك تنتقل فيه ممارسات الإدارة والجودة والاستدامة بحرية بين الفرق.</p>
+        <p class="vlede" style="margin-top:0;margin-bottom:16px">أبواب AK.Grid مفتوحة لكل من يبني — وشكل التعاون مفتوح: تكامل الحلول، والتطوير المشترك، وتنفيذ المشاريع، والتجارة، والاستثمار، والشركات الناشئة:</p>
         <div class="ptypes">
-          <span>自由职业者</span><span>制造商与供应商</span><span>专业承包商</span><span>集成商</span><span>技术伙伴</span>
+          <span>المستقلّون</span><span>المصنّعون والموردون</span><span>المقاولون المتخصّصون</span><span>المُكامِلون</span><span>شركاء التقنية</span>
         </div>
       </div>
       <div class="pimg rv d1" style="background-image:url('../assets/img/streams-electric.PNG')"></div>
@@ -1134,21 +1173,21 @@ body.pmodal-lock{overflow:hidden}
   <div class="sp-bg" style="background-image:url('../assets/img/blog-whitewater.jpg');background-position:center 35%"></div>
   <div class="sp-ov"></div>
   <div class="sp-panel rv">
-    <div class="ew rv"><div class="ewl"></div><span>关于集团</span></div>
-    <h2 class="st rv d1">一个架构，<br><strong>一条价值链</strong></h2>
-    <p class="sd rv d2">AKCO 由相互关联的法人实体构成，并由专业社群加以强化，统一在同一母品牌下运营。每个成员在共同价值链中的角色都有明确界定；协同成果汇集到同一个跨境运营中心。</p>
+    <div class="ew rv"><div class="ewl"></div><span>عن المجموعة</span></div>
+    <h2 class="st rv d1">هيكل واحد،<br><strong>سلسلة قيمة واحدة</strong></h2>
+    <p class="sd rv d2">تضم AKCO كيانات قانونية مترابطة، يعزّزها مجتمع مهني، تحت علامة رئيسية واحدة. ودور كل عضو في سلسلة القيمة المشتركة محدّد بوضوح؛ وتتكامل النتائج في مركز تشغيلي واحد عابر للحدود.</p>
     <div class="abt-ents rv d2">
-      <a class="ment" href="https://www.aksystems.co" target="_blank" rel="noopener"><b><span class="arw">↗</span> Smart Systems Industrial Plant Equipment FZCO</b><span>阿联酋 · 迪拜 —— 总部</span></a>
-      <a class="ment" href="https://akfinance.ae" target="_blank" rel="noopener"><b><span class="arw">↗</span> AKFinance Advisory Services FZCO</b><span>阿联酋 · 迪拜</span></a>
-      <a class="ment" href="https://www.aksense.org" target="_blank" rel="noopener"><b><span class="arw">↗</span> Shanghai AKSENSE Technology</b><span>中国 · 上海</span></a>
-      <a class="ment" href="https://www.aksystems.org" target="_blank" rel="noopener"><b><span class="arw">↗</span> AK.COmm</b><span>独联体 · 100+ 工程师</span></a>
+      <a class="ment" href="https://www.aksystems.co" target="_blank" rel="noopener"><b><span class="arw">↗</span> Smart Systems Industrial Plant Equipment FZCO</b><span>الإمارات · دبي —— المقرّ</span></a>
+      <a class="ment" href="https://akfinance.ae" target="_blank" rel="noopener"><b><span class="arw">↗</span> AKFinance Advisory Services FZCO</b><span>الإمارات · دبي</span></a>
+      <a class="ment" href="https://www.aksense.org" target="_blank" rel="noopener"><b><span class="arw">↗</span> Shanghai AKSENSE Technology</b><span>الصين · شانغهاي</span></a>
+      <a class="ment" href="https://www.aksystems.org" target="_blank" rel="noopener"><b><span class="arw">↗</span> AK.COmm</b><span>رابطة الدول المستقلة · +100 مهندس</span></a>
     </div>
-    <p class="mbrands rv d3">集团总部与旗舰 —— Smart Systems FZCO：品牌、商标、专利、战略与研发 · 财务 —— AKFinance · 制造中心 —— AKSENSE · 专家工程池 —— AK.COmm</p>
+    <p class="mbrands rv d3">المقرّ والشركة الرائدة —— Smart Systems FZCO: العلامة والعلامات التجارية والبراءات والاستراتيجية والبحث والتطوير · المالية —— AKFinance · المركز الإنتاجي —— AKSENSE · نخبة الكوادر الهندسية —— AK.COmm</p>
     <div class="founder rv d3">
-      <blockquote>“我们一生都在学习——从一个项目走向另一个项目，掌握新技术，打磨方法论。我们并不局限于内部专长：我们是一个开放的集团，与数十家机构合作。他们每一个都让集团变得更聪明。而这，归根结底，正是我们的名字对我们提出的要求。”</blockquote>
-      <blockquote>“有人偶尔会问我：工程师眼中的成功是什么？二十年来我的回答没有变过：一座离开你也能正常运转的工厂；一支超越了你的团队；一位成为你伙伴的客户。”</blockquote>
-      <div class="fname">马拉特·巴沙罗夫</div>
-      <div class="frole">创始人，AKCO™</div>
+      <blockquote>«نحن نتعلّم طوال حياتنا — ننتقل من مشروع إلى آخر، ونتقن تقنيات جديدة، ونصقل منهجياتنا. ولا نكتفي بخبرتنا الداخلية: نحن مجموعة منفتحة تتعاون مع عشرات الشركات. كل واحدة منها تجعل المجموعة أذكى. وهذا في نهاية المطاف ما يُلزمنا به اسمنا».</blockquote>
+      <blockquote>«يسألني بعضهم أحياناً: ما الذي يعدّه المهندس نجاحاً؟ جوابي لم يتغيّر منذ عشرين عاماً: مصنع يعمل من دونك؛ وفريق تجاوزك؛ وعميل يصير شريكاً».</blockquote>
+      <div class="fname">مارات باشاروف</div>
+      <div class="frole">المؤسّس، AKCO™</div>
     </div>
   </div>
 </section>
@@ -1157,15 +1196,15 @@ body.pmodal-lock{overflow:hidden}
 <section id="blog" class="msec" style="--blogbg:url('../assets/img/blog-streams.jpg')">
   <div class="mflex">
     <div>
-      <span class="meye rv">专长</span>
-      <h2 class="st rv d1" style="margin-bottom:0">博客与专家文章</h2>
+      <span class="meye rv">الخبرة</span>
+      <h2 class="st rv d1" style="margin-bottom:0">المدوّنة ومقالات الخبراء</h2>
     </div>
-    <a href="../pages/blog/index.html" class="mbtn rv"><span class="ln"></span>全部文章</a>
+    <a href="../pages/blog/index.html" class="mbtn rv"><span class="ln"></span>كل المقالات</a>
   </div>
   <div class="marts">
-    <div class="mart rv"><div class="mtxt"><h3>内部先跑通：为什么我们是自己的第一个客户</h3><p>每套 AK.Family 生态体系在交付前，如何在集团内部走完完整生命周期。</p></div><div class="mmeta"><span class="mcat">方法</span></div></div>
-    <div class="mart rv d1"><div class="mtxt"><h3>从领域痛点到可落地生态体系</h3><p>现场反复出现的痛点，如何变成预集成、AI 驱动的技术栈。</p></div><div class="mmeta"><span class="mcat">生态体系</span></div></div>
-    <div class="mart rv d2"><div class="mtxt"><h3>协同工程：奖金绑定你的 KPI</h3><p>我们为何从内部融入你的团队——并在你的痛点消失时离开。</p></div><div class="mmeta"><span class="mcat">文化</span></div></div>
+    <div class="mart rv"><div class="mtxt"><h3>مجرَّب في الداخل: لماذا نحن أول عملائنا</h3><p>كيف تمرّ كل منظومة AK.Family بدورة حياة كاملة داخل المجموعة قبل طرحها.</p></div><div class="mmeta"><span class="mcat">المنهج</span></div></div>
+    <div class="mart rv d1"><div class="mtxt"><h3>من ألم المجال إلى منظومة جاهزة للتطبيق</h3><p>كيف يتحوّل ألم متكرّر في الموقع إلى حزمة متكاملة مسبقاً ومدعومة بالذكاء الاصطناعي.</p></div><div class="mmeta"><span class="mcat">المنظومات</span></div></div>
+    <div class="mart rv d2"><div class="mtxt"><h3>الهندسة التشاركية: مكافآت مرتبطة بمؤشراتك</h3><p>لماذا نندمج في فريقك من الداخل — ونغادر حين يغادر ألمك.</p></div><div class="mmeta"><span class="mcat">الثقافة</span></div></div>
   </div>
 </section>
 
@@ -1173,17 +1212,17 @@ body.pmodal-lock{overflow:hidden}
 <div class="msec" id="contacts">
   <div class="cmap-wrap">
     <div class="cmap-left">
-      <span class="meye rv">联系方式 · AK.MEDIA</span>
-      <h2 class="st rv d1">我们随时乐于对话</h2>
-      <p class="sd rv d2" style="max-width:none">总部 —— 阿联酋迪拜。所有来函都由我们的数字助手处理并转交相应方向的负责人——当你的问题需要时，随即把你交给一位具体的联系人。</p>
+      <span class="meye rv">تواصل · AK.MEDIA</span>
+      <h2 class="st rv d1">مستعدون للحوار دائماً</h2>
+      <p class="sd rv d2" style="max-width:none">المقرّ — دبي، الإمارات. يقرأ كل طلب مساعدُنا الرقمي فيوجّهه إلى المسؤول عن الاتجاه المعني — ويحيلك إلى شخص بعينه فور أن يحتاج سؤالك ذلك.</p>
       <div class="clist rv d2">
-        <a class="crow" href="mailto:info@aksystems.co"><span class="k">✉️ 邮箱</span><span class="v">info@aksystems.co</span></a>
-        <a class="crow" href="tel:+971581625132"><span class="k">🇦🇪 电话 · 阿联酋</span><span class="v">+971 58 162 51 32</span></a>
-        <a class="crow" href="tel:+971586007782"><span class="k">🇦🇪 阿联酋 · WhatsApp</span><span class="v">+971 58 600 77 82</span></a>
-        <a class="crow" href="tel:+78437177717"><span class="k">🌍 独联体办公室</span><span class="v">+7 843 717 77 17</span></a>
+        <a class="crow" href="mailto:info@aksystems.co"><span class="k">✉️ البريد</span><span class="v">info@aksystems.co</span></a>
+        <a class="crow" href="tel:+971581625132"><span class="k">🇦🇪 هاتف · الإمارات</span><span class="v">+971 58 162 51 32</span></a>
+        <a class="crow" href="tel:+971586007782"><span class="k">🇦🇪 الإمارات · WhatsApp</span><span class="v">+971 58 600 77 82</span></a>
+        <a class="crow" href="tel:+78437177717"><span class="k">🌍 مكتب رابطة الدول المستقلة</span><span class="v">+7 843 717 77 17</span></a>
         <a class="crow" href="https://t.me/infoAKCO" target="_blank" rel="noopener"><span class="k">✈️ Telegram</span><span class="v">@infoAKCO</span></a>
         <a class="crow" href="https://www.linkedin.com/company/aksystemsco/" target="_blank" rel="noopener"><span class="k">in LinkedIn</span><span class="v">/company/aksystemsco</span></a>
-        <div class="crow"><span class="k">💬 微信</span><span class="v">Ak_Systems</span></div>
+        <div class="crow"><span class="k">💬 WeChat</span><span class="v">Ak_Systems</span></div>
       </div>
     </div>
     <div class="cmap-right rv d2">
@@ -1193,7 +1232,7 @@ body.pmodal-lock{overflow:hidden}
         <a href="https://wa.me/971586007782" target="_blank" rel="noopener" aria-label="WhatsApp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.5 14.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.2-.2.3-.7.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.3-.5-2.4-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.6-.9-2.2-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5.7.3 1.3.5 1.7.6.7.2 1.4.2 1.9.1.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.6-.3zM12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.4 1.3 4.9L2 22l5.3-1.4c1.4.8 3 1.2 4.7 1.2 5.5 0 10-4.5 10-10S17.5 2 12 2z"/></svg><span>WhatsApp</span></a>
         <a href="https://www.linkedin.com/company/aksystemsco/?viewAsMember=true" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.9 8.8H3.6V21h3.3V8.8zM5.3 3.4C4.2 3.4 3.4 4.2 3.4 5.2s.8 1.8 1.8 1.8 1.9-.8 1.9-1.8-.8-1.8-1.8-1.8zM20.6 21v-6.7c0-3.2-1.7-4.7-4-4.7-1.8 0-2.6 1-3.1 1.7V8.8H10.2v12.2h3.3v-6.8c0-.3 0-.6.1-.8.3-.6.8-1.3 1.8-1.3 1.3 0 1.8 1 1.8 2.4V21h3.4z"/></svg><span>LinkedIn</span></a>
       </div>
-      <div class="cmap-cap"><span class="pin">📍</span>Smart Systems FZCO · 迪拜数字园区 IFZA 商务园 B4 座 105 室，阿联酋迪拜</div>
+      <div class="cmap-cap"><span class="pin">📍</span>Smart Systems FZCO · مكتب 105، مبنى B4، مجمّع IFZA للأعمال، دبي ديجيتال بارك، دبي، الإمارات</div>
     </div>
   </div>
 </div>
@@ -1202,33 +1241,33 @@ body.pmodal-lock{overflow:hidden}
 <div class="ctaw" id="order">
   <div class="ctai rv">
     <div>
-      <div class="ew rv"><div class="ewl"></div><span>咨询</span></div>
-      <h2 class="st rv d1"><span>准备好探讨</span><br><strong>你的课题了吗？</strong></h2>
-      <p class="sd rv d2">选择一个方向——你的咨询会送达对应负责人。我们在 4 个工作小时内回复。</p>
+      <div class="ew rv"><div class="ewl"></div><span>طلب</span></div>
+      <h2 class="st rv d1"><span>مستعدون لمناقشة</span><br><strong>مهمتك؟</strong></h2>
+      <p class="sd rv d2">اختر اتجاهاً — يصل طلبك إلى المسؤول المناسب. نردّ خلال 4 ساعات عمل.</p>
     </div>
     <div class="rv d2">
       <div id="ctaFlds">
-        <p class="clbl">提交咨询</p>
+        <p class="clbl">أرسل طلباً</p>
         <div class="cform">
-          <input class="cinp" type="text" placeholder="您的姓名" id="cn">
-          <input class="cinp" type="tel" placeholder="电话 / Telegram" id="cp">
+          <input class="cinp" type="text" placeholder="اسمك" id="cn">
+          <input class="cinp" type="tel" placeholder="هاتف / Telegram" id="cp">
           <select class="cinp csel" id="cs">
-            <option value="">您感兴趣的方向</option>
-            <option>资产可靠性与绩效</option>
-            <option>工艺与质量管理</option>
-            <option>能源与能效</option>
-            <option>生命保障系统</option>
-            <option>环保与再生利用</option>
-            <option>商务服务与金融</option>
-            <option>业务运营与数字化转型</option>
-            <option>伙伴关系 / AK.Grid</option>
-            <option>其他 / 咨询</option>
+            <option value="">اهتمامك</option>
+            <option>موثوقية الأصول وأداؤها</option>
+            <option>إدارة العمليات والجودة</option>
+            <option>الطاقة والكفاءة</option>
+            <option>أنظمة دعم الحياة</option>
+            <option>البيئة وإعادة التدوير</option>
+            <option>خدمات الأعمال والتمويل</option>
+            <option>عمليات الأعمال والتحوّل الرقمي</option>
+            <option>الشراكة / AK.Grid</option>
+            <option>أخرى / استشارة</option>
           </select>
-          <button class="cbtn" onclick="sub()">发送咨询 <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
-          <p class="cfine">点击按钮即表示您同意<a href="#" class="privacy-open">隐私政策</a></p>
+          <button class="cbtn" onclick="sub()">إرسال الطلب <svg width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 5h12M8 1l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+          <p class="cfine">بالنقر على الزر فإنك توافق على <a href="#" class="privacy-open">سياسة الخصوصية</a></p>
         </div>
       </div>
-      <div class="fdone" id="ctaDone"><div class="ico">✅</div><h4>咨询已收到！</h4><p>我们将在 4 个工作小时内与您联系。<br>也可发邮件至 <a href="mailto:info@aksystems.co" style="color:var(--teal)">info@aksystems.co</a>。</p></div>
+      <div class="fdone" id="ctaDone"><div class="ico">✅</div><h4>تم استلام الطلب!</h4><p>سنتواصل معك خلال 4 ساعات عمل.<br>أو راسلنا على <a href="mailto:info@aksystems.co" style="color:var(--teal)">info@aksystems.co</a>.</p></div>
     </div>
   </div>
 </div>
@@ -1240,42 +1279,42 @@ body.pmodal-lock{overflow:hidden}
       <div class="flogo">
         <img src="../assets/logos/akco-logo-white.svg" alt="AKCO™" height="48" style="width:auto">
       </div>
-      <p class="fcol" style="font-size:12px;color:var(--muted);line-height:1.8">全周期国际工程集团。<br>Concerto for Industry.<br>AKCore™ · AKSense™ · AKFlow™ · AKNeuro™ · AK.COwork</p>
+      <p class="fcol" style="font-size:12px;color:var(--muted);line-height:1.8">مجموعة هندسية دولية متكاملة الدورة.<br>Concerto for Industry.<br>AKCore™ · AKSense™ · AKFlow™ · AKNeuro™ · AK.COwork</p>
     </div>
     <div class="fcol">
-      <h5>法律信息</h5>
-      <p><b style="color:var(--ink)">Smart Systems Industrial Plant Equipment — FZCO</b><br>迪拜数字园区 IFZA 商务园 B4 座 105 室<br>阿联酋迪拜</p>
+      <h5>بيانات قانونية</h5>
+      <p><b style="color:var(--ink)">Smart Systems Industrial Plant Equipment — FZCO</b><br>مكتب 105، مبنى B4، مجمّع IFZA للأعمال<br>دبي ديجيتال بارك، دبي، الإمارات العربية المتحدة</p>
     </div>
     <div class="fcol">
-      <h5>探索</h5>
+      <h5>استكشف</h5>
       <ul>
-        <li><a href="#domains">领域</a></li>
-        <li><a href="#ecosystems">生态体系</a></li>
-        <li><a href="#method">4CO 方法</a></li>
-        <li><a href="#cases">实证</a></li>
+        <li><a href="#domains">المجالات</a></li>
+        <li><a href="#ecosystems">المنظومات</a></li>
+        <li><a href="#method">طريقة 4CO</a></li>
+        <li><a href="#cases">الأدلّة</a></li>
       </ul>
     </div>
     <div class="fcol">
-      <h5>集团</h5>
+      <h5>المجموعة</h5>
       <ul>
-        <li><a href="#about">关于</a></li>
-        <li><a href="#partners">伙伴</a></li>
-        <li><a href="../pages/blog/index.html">博客</a></li>
-        <li><a href="#" class="privacy-open">隐私政策</a></li>
+        <li><a href="#about">عن المجموعة</a></li>
+        <li><a href="#partners">الشركاء</a></li>
+        <li><a href="../pages/blog/index.html">المدوّنة</a></li>
+        <li><a href="#" class="privacy-open">سياسة الخصوصية</a></li>
       </ul>
     </div>
     <div class="fcol">
-      <h5>联系</h5>
+      <h5>تواصل</h5>
       <ul>
         <li><a href="mailto:info@aksystems.co">info@aksystems.co</a></li>
         <li><a href="tel:+971581625132">+971 58 162 51 32</a></li>
         <li><a href="https://t.me/infoAKCO">@infoAKCO</a></li>
-        <li><a href="#contacts">全部联系方式</a></li>
+        <li><a href="#contacts">كل وسائل التواصل</a></li>
       </ul>
     </div>
   </div>
   <div class="fb rv d1">
-    <p>© 2026 AKCO™ · AKCore™ —— 俄罗斯注册有效 · 其他商标 —— 注册进行中</p>
+    <p>© 2026 AKCO™ · AKCore™ — تسجيل ساري في روسيا · علامات أخرى — التسجيل قيد الإجراء</p>
     <div class="fsoc">
       <a href="https://t.me/infoAKCO" class="fsc">✈</a>
       <a href="mailto:info@aksystems.co" class="fsc">✉</a>
@@ -1431,29 +1470,29 @@ function sub(){
   <div class="pmodal__bg"></div>
   <div class="pmodal__panel">
     <button class="pmodal__close" type="button" aria-label="Close">&times;</button>
-    <div class="pm-title" id="pmTitle">隐私政策</div>
-    <p class="pm-meta">自 2026 年 7 月 10 日起生效。</p>
-    <h3>1. 总则</h3>
-    <p>本政策说明网站 <strong>aksystems.co</strong> 用户的个人数据如何被收集、处理与保护。</p>
-    <p><strong>数据控制者：</strong>Smart Systems FZCO，迪拜数字园区 IFZA 商务园，阿联酋迪拜。联系方式：<a href="mailto:info@aksystems.co">info@aksystems.co</a>。</p>
-    <p>使用本网站并提交咨询表单，即表示您同意本政策。</p>
-    <h3>2. 我们收集的数据</h3>
-    <p>您通过表单提供的数据，以及浏览器发送的技术数据：</p>
-    <ul><li>姓名；</li><li>电话和/或 Telegram、WhatsApp；</li><li>电子邮箱；</li><li>您的留言；</li><li>匿名化技术数据：IP、浏览器与设备类型、Cookie、来源渠道（UTM）。</li></ul>
-    <h3>3. 使用目的</h3>
-    <ul><li>处理并回复您的咨询；</li><li>应请求编制商务报价；</li><li>改进网站、网络分析；</li><li>遵守适用法律。</li></ul>
-    <h3>4. 法律依据</h3>
-    <p>处理基于您的同意（提交表单）以及我们回复您请求的正当利益。</p>
-    <h3>5. 与第三方共享</h3>
-    <p>我们不出售您的数据。表单通过 <strong>FormSubmit.co</strong>（消息投递处理方）投递。分析服务处理匿名化数据。</p>
-    <h3>6. 保存期限</h3>
-    <p>数据保存期不超过必要期限，或至您撤回同意为止。</p>
-    <h3>7. 您的权利</h3>
-    <p>您可通过 <a href="mailto:info@aksystems.co">info@aksystems.co</a> 请求获取、更正、限制或删除您的数据，并撤回同意。</p>
-    <h3>8. Cookie 与分析</h3>
-    <p>本网站使用 Cookie 以实现功能与流量分析。您可在浏览器中将其停用。</p>
-    <h3>9. 变更</h3>
-    <p>我们可能更新本政策；最新版本始终可在网站上获取。</p>
+    <div class="pm-title" id="pmTitle">سياسة الخصوصية</div>
+    <p class="pm-meta">سارية اعتباراً من 10 يوليو 2026.</p>
+    <h3>1. أحكام عامة</h3>
+    <p>توضّح هذه السياسة كيفية جمع البيانات الشخصية لمستخدمي موقع <strong>aksystems.co</strong> ومعالجتها وحمايتها.</p>
+    <p><strong>المتحكّم في البيانات:</strong> Smart Systems FZCO، مجمّع IFZA للأعمال، دبي ديجيتال بارك، دبي، الإمارات. للتواصل: <a href="mailto:info@aksystems.co">info@aksystems.co</a>.</p>
+    <p>باستخدامك الموقع وإرسال نموذج الطلب فإنك توافق على هذه السياسة.</p>
+    <h3>2. البيانات التي نجمعها</h3>
+    <p>البيانات التي تقدّمها عبر النموذج، والبيانات التقنية التي يرسلها متصفّحك:</p>
+    <ul><li>الاسم؛</li><li>الهاتف و/أو Telegram وWhatsApp؛</li><li>البريد الإلكتروني؛</li><li>رسالتك؛</li><li>بيانات تقنية مجهّلة: IP، ونوع المتصفّح والجهاز، وملفات تعريف الارتباط، ومصدر الإحالة (UTM).</li></ul>
+    <h3>3. الأغراض</h3>
+    <ul><li>معالجة طلبك والردّ عليه؛</li><li>إعداد عروض تجارية عند الطلب؛</li><li>تحسين الموقع، وتحليلات الويب؛</li><li>الامتثال للقوانين المعمول بها.</li></ul>
+    <h3>4. الأساس القانوني</h3>
+    <p>تستند المعالجة إلى موافقتك (إرسال النموذج) وإلى مصلحتنا المشروعة في الردّ على طلبك.</p>
+    <h3>5. المشاركة مع أطراف أخرى</h3>
+    <p>نحن لا نبيع بياناتك. يُوصَّل النموذج عبر <strong>FormSubmit.co</strong> (جهة معالجة لتوصيل الرسائل). وتعالج خدمات التحليلات بيانات مجهّلة.</p>
+    <h3>6. مدة الحفظ</h3>
+    <p>تُحفظ البيانات مدة لا تتجاوز الضرورة، أو حتى تسحب موافقتك.</p>
+    <h3>7. حقوقك</h3>
+    <p>يمكنك طلب الاطّلاع على بياناتك أو تصحيحها أو تقييدها أو حذفها وسحب الموافقة عبر <a href="mailto:info@aksystems.co">info@aksystems.co</a>.</p>
+    <h3>8. ملفات تعريف الارتباط والتحليلات</h3>
+    <p>يستخدم الموقع ملفات تعريف الارتباط لأداء وظائفه وتحليل الزيارات. ويمكنك تعطيلها في متصفّحك.</p>
+    <h3>9. التغييرات</h3>
+    <p>قد نحدّث هذه السياسة؛ والنسخة الحالية متاحة دائماً على الموقع.</p>
   </div>
 </div>
 
@@ -1477,7 +1516,7 @@ function sub(){
   "@type": "Organization",
   "name": "AKCO",
   "legalName": "Smart Systems Industrial Plant Equipment — FZCO",
-  "description": "AKCO —— 全周期国际工程集团（协同工程）。面向 9 大工业领域、可直接落地的 AI 驱动生态体系；一个整合团队、一个统一责任主体，覆盖中东北非、中国与独联体。",
+  "description": "AKCO — مجموعة هندسية دولية متكاملة الدورة (الهندسة التشاركية). منظومات جاهزة للتطبيق ومدعومة بالذكاء الاصطناعي عبر 9 مجالات صناعية؛ فريق واحد متكامل ونطاق مسؤولية واحد في الشرق الأوسط وشمال أفريقيا والصين ورابطة الدول المستقلة.",
   "slogan": "Concerto for Industry",
   "url": "https://www.aksystems.co",
   "email": "info@aksystems.co",
