@@ -205,6 +205,11 @@ nav.sc{background:rgba(24,24,24,.92);backdrop-filter:blur(20px);box-shadow:0 1px
 @media(max-width:900px){nav .lang{display:none}}
 .mob .lang{display:flex;margin:26px 0 0;gap:20px;border-top:1px solid var(--border);padding-top:22px}
 .mob .lang a,.mob .lang span{font-size:17px}
+/* Site tour button */
+.ntour{display:inline-flex;align-items:center;gap:7px;font-family:inherit;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:10px 18px;border-radius:8px;border:1px solid var(--border);background:transparent;color:var(--ink);cursor:pointer;transition:border-color .22s,color .22s,background .22s;text-decoration:none;white-space:nowrap;margin-left:4px}
+.ntour:hover{border-color:var(--teal);color:#fff;background:rgba(255,255,255,.05)}
+.ntour svg{width:10px;height:10px;fill:currentColor}
+@media(max-width:900px){nav .ntour{display:none}}
 @media(prefers-reduced-motion:reduce){
   .rv,.rv.on{opacity:1!important;transform:none!important;transition:none!important}
   .hi{opacity:1!important;animation:none!important}
@@ -776,6 +781,8 @@ nav .lang{margin-left:0;margin-right:16px}
 #cases .mbtn{align-self:flex-start}
 /* SVG arrows point left in RTL */
 .cbtn svg{transform:scaleX(-1)}
+.ntour svg{transform:scaleX(-1)}
+.ntour{margin-left:0;margin-right:4px}
 </style>
 </head>
 <body>
@@ -794,6 +801,7 @@ nav .lang{margin-left:0;margin-right:16px}
   <a href="#blog" onclick="cm()">المدوّنة</a>
   <a href="#about" onclick="cm()">الهيكل</a>
   <a href="#contacts" onclick="cm()">تواصل</a>
+  <a href="../tour/" target="_blank" rel="noopener" onclick="cm()">◂ جولة في الموقع</a>
   <a href="#order" onclick="cm()">تواصل معنا</a>
   <div class="lang">
     <a href="../index.html" hreflang="en">EN</a>
@@ -822,6 +830,7 @@ nav .lang{margin-left:0;margin-right:16px}
     <a href="../zh/index.html" hreflang="zh">中文</a>
     <a class="is-cur" aria-current="true">العربية</a>
   </div>
+  <a class="ntour" href="../tour/" target="_blank" rel="noopener"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>جولة</a>
   <button class="nbtn" onclick="gs('order')">تواصل معنا</button>
   <button class="burger" onclick="document.getElementById('mob').classList.toggle('open')">
     <span></span><span></span><span></span>
