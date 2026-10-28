@@ -288,4 +288,4 @@ if(window.self===window.top && window.innerWidth<=700){
  frame.addEventListener('load',()=>{const child=frame.contentWindow;child.location.hash=currentSlide;child.show(Math.max(0,(parseInt(currentSlide.slice(1))||1)-1));});
 }
 
-</script></html>
+</script><script>addEventListener('load',function(){try{var w=function(){(typeof uniqueBackgrounds!=='undefined'?uniqueBackgrounds:[]).forEach(warmImage);(typeof slides!=='undefined'?slides:[]).forEach(function(s){s&&s.image&&warmImage(s.image)});};('requestIdleCallback' in window)?requestIdleCallback(w,{timeout:300}):setTimeout(w,80);}catch(e){}});</script></html>
